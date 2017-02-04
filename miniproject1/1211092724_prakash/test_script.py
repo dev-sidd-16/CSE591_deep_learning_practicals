@@ -76,6 +76,8 @@ class dataset_generator(object):
 
         x = np.random.normal(size = (samples,self.dimensions))        
         y = np.dot(x,self.w) + np.random.normal(self.mu, self.sigma, (samples,1)) + self.b
+        #y = np.dot(x,self.w) + np.random.binomial(100, 0.4, (samples,1))  + self.b
+        #y = np.dot(x,self.w) + np.random.poisson(0.6, (samples,1)) + self.b
         
 
         #p.save('x50K.npy', x)
@@ -97,33 +99,43 @@ class dataset_generator(object):
 if __name__ == '__main__':
     
     dg = dataset_generator() # Initialize a dataset creator
-
-    for itr in range(9):
-        cost = np.zeros((101,1))
-        a = 1
-        b = 0
-        print 'N: ',(itr*50)+1000,
-        #data_train = dg.query_data(samples = 5000) # Create a random training dataset.
-        for i in range(1,101):
-
-            #data = dg.query_data()
-            #print len(data[0])*4/5, len(data[1])*4/5
-
-            #data_train = data[0][0 : len(data[0])* 4/5, :], data[1][0: len(data[1])*4/5]
-            data_train = dg.query_data(samples = (itr*50)+1000) # Create a random training dataset.
-
-
-            r = regressor(data_train)  # This call should return a regressor object that is fully trained.
-            params = r.get_params()    # This call should reaturn parameters of the model that are 
+    data_train = dg.query_data(samples = 1000) # Create a random training dataset.
+    
+    r = regressor(data_train)  # This call should return a regressor object that is fully trained.
+    params = r.get_params()    # This call should reaturn parameters of the model that are 
             
-            #data_test = data[0][len(data[0])*4/5 : len(data[0]),:], data[1][len(data[1])*4/5 : len(data[1])]
-            data_test = dg.query_data(samples = (itr*50)+1000)  # Create a random testing dataset.
 
-            predictions = r.get_predictions(data_test[0]) # This call should return predictions.
-            #print data_test[1].shape, predictions.shape
-            #print rmse(data_test[1], predictions)
-            #print itr, i, ": Rmse error of predictions = " + str(rmse(data_test[1], predictions))
-            cost[i] = rmse(data_test[1], predictions)
-            if cost[i] < a : a = cost[i]
-            if cost[i] > b : b = cost[i]
-        print itr, ': min, max :', a, b
+    #data_test = dg.query_data(samples = 1000, mu = 10, sigma = 0.1)  # Create a random testing dataset.
+    data_test = dg.query_data(samples = 1000)  # Create a random testing dataset.
+
+    predictions = r.get_predictions(data_test[0]) # This call should return predictions.
+    print "Rmse error of predictions = " + str(rmse(data_test[1], predictions))
+    # for itr in range(5):
+    #     cost = np.zeros((101,1))
+    #     a = 100
+    #     b = 0
+    #     print 'N: ',(itr*1000)+1000,
+    #     #data_train = dg.query_data(samples = 5000) # Create a random training dataset.
+    #     for i in range(1,101):
+
+    #         #data = dg.query_data()
+    #         #print len(data[0])*4/5, len(data[1])*4/5
+
+    #         #data_train = data[0][0 : len(data[0])* 4/5, :], data[1][0: len(data[1])*4/5]
+    #         data_train = dg.query_data(samples = (itr*50)+1000, sigma = 0.5) # Create a random training dataset.
+
+
+    #         r = regressor(data_train)  # This call should return a regressor object that is fully trained.
+    #         params = r.get_params()    # This call should reaturn parameters of the model that are 
+            
+    #         #data_test = data[0][len(data[0])*4/5 : len(data[0]),:], data[1][len(data[1])*4/5 : len(data[1])]
+    #         data_test = dg.query_data(samples = (itr*50)+1000, mu = 5, sigma = 0.1)  # Create a random testing dataset.
+
+    #         predictions = r.get_predictions(data_test[0]) # This call should return predictions.
+    #         #print data_test[1].shape, predictions.shape
+    #         #print rmse(data_test[1], predictions)
+    #         #print itr, i, ": Rmse error of predictions = " + str(rmse(data_test[1], predictions))
+    #         cost[i] = rmse(data_test[1], predictions)
+    #         if cost[i] < a : a = cost[i]
+    #         if cost[i] > b : b = cost[i]
+    #     print itr, ': min, max, mean :', a, b, np.mean(cost)

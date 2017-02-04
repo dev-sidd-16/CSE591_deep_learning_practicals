@@ -102,7 +102,7 @@ if __name__ == '__main__':
         cost = np.zeros((101,1))
         a = 1
         b = 0
-        print 'N: ',(itr*50)+1000,
+        print 'N: ',(itr*500)+1000,
         #data_train = dg.query_data(samples = 5000) # Create a random training dataset.
         for i in range(1,101):
 
