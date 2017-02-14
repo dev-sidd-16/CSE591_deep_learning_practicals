@@ -61,14 +61,16 @@ class xor_net(object):
         self.x = data
         self.y = labels
 
-        train = 0.85
-        valid = 0.15
+        # train = 0.85
+        # valid = 0.15
 
-        train_data = self.x[:int(train*len(self.x)),:]
-        train_label = self.y[:int(train*len(self.y)):]
+        # train_data = self.x[:int(train*len(self.x)),:]
+        # train_label = self.y[:int(train*len(self.y)):]
 
-        valid_data = self.x[int(train*len(self.x)): , :]
-        valid_label = self.y[int(train*len(self.y)): ]
+        # valid_data = self.x[int(train*len(self.x)): , :]
+        # valid_label = self.y[int(train*len(self.y)): ]
+        train_data = self.x
+        train_label = self.y
 
         input_dim = train_data.shape[1]
         self.output_dim = 2
@@ -102,10 +104,10 @@ class xor_net(object):
 
         #print 'Hyper-parameters: epochs = ', self.epochs,' alpha = ', self.alpha, ' beta = ', self.beta, ' hidden dims = ', self.hidden_dim, ' activation = ', self.act
 
-        training = self.get_predictions(train_data)
+        #training = self.get_predictions(train_data)
         #print 'Training accuracy = ', calc_acc(train_label,training), '%'
 
-        validation = self.get_predictions(valid_data)
+        #validation = self.get_predictions(valid_data)
         #print 'Validation accuracy = ', calc_acc(valid_label,validation), '%'
 
     def calc_loss(self, X, y, w1, b1, w2, b2):
@@ -129,51 +131,58 @@ class xor_net(object):
 
     def train_model(self,train_data,train_label, w1,b1,w2,b2, alpha, beta, epochs):
         num_data = len(train_data)
+
+        batch = num_data/5
+
         for i in range(epochs):
 
-            # Forward Propagation
-            z_1 = np.dot(train_data, w1) + b1
-            #print 'z_1 shape: ', z_1.shape
+            for j in range(5):
+                #print 'Batch: ', j+1
+                t_data = train_data[(j)*batch: (j+1)*batch, :]
+                t_label = train_label[(j)*batch: (j+1)*batch]
+                # Forward Propagation
+                z_1 = np.dot(t_data, w1) + b1
+                #print 'z_1 shape: ', z_1.shape
 
-            a_1 = activation(z_1, self.act)
-            #print 'a_1 shape: ', a_1.shape
+                a_1 = activation(z_1, self.act)
+                #print 'a_1 shape: ', a_1.shape
 
-            z_2 = np.dot(a_1,w2) + b2
-            #print 'z_2 shape: ', z_2.shape
-            
-            score = np.exp(z_2)
-            model = score / np.sum(score,axis = 1, keepdims=True)
+                z_2 = np.dot(a_1,w2) + b2
+                #print 'z_2 shape: ', z_2.shape
+                
+                score = np.exp(z_2)
+                model = score / np.sum(score,axis = 1, keepdims=True)
 
-            # Backward Propagation, weight updates
+                # Backward Propagation, weight updates
 
-            del_3 = score
-            del_3[range(num_data), train_label] -= 1
-            #del_3 /= num_data
+                del_3 = score
+                del_3[range(batch), t_label] -= 1
+                #del_3 /= num_data
 
-            dw2 = np.dot(a_1.T, del_3)
-            db2 = np.sum(del_3)
+                dw2 = np.dot(a_1.T, del_3)
+                db2 = np.sum(del_3)
 
-            if self.act is not 'r':
-                del_2 = np.dot(del_3,w2.T) * activation(a_1, self.act, deriv=True)
-            # backprop with relu non-linearity    
-            else:
-                del_2 = np.dot(del_3,w2.T)
-                del_2[a_1 <= 0] = 0
-            
-            #del_2 = np.dot(del_3,w2.T) * activation(a_1, self.act, deriv=True)
-            dw1 = np.dot(train_data.T, del_2)
-            db1 = np.sum(del_2)
+                if self.act is not 'r':
+                    del_2 = np.dot(del_3,w2.T) * activation(a_1, self.act, deriv=True)
+                # backprop with relu non-linearity    
+                else:
+                    del_2 = np.dot(del_3,w2.T)
+                    del_2[a_1 <= 0] = 0
+                
+                #del_2 = np.dot(del_3,w2.T) * activation(a_1, self.act, deriv=True)
+                dw1 = np.dot(t_data.T, del_2)
+                db1 = np.sum(del_2)
 
 
-            # Regularizing
-            dw2 = dw2 + (beta * w2)
-            dw1 = dw1 + (beta * w1)
+                # Regularizing
+                dw2 = dw2 + (beta * w2)
+                dw1 = dw1 + (beta * w1)
 
-            # Weight update
-            w2 = w2 - (alpha*dw2)
-            b2 = b2 - (alpha*db2)
-            w1 = w1 - (alpha*dw1)
-            b1 = b1 - (alpha*db1)
+                # Weight update
+                w2 = w2 - (alpha*dw2)
+                b2 = b2 - (alpha*db2)
+                w1 = w1 - (alpha*dw1)
+                b1 = b1 - (alpha*db1)
 
             if printtrue and i % 10000 == 0:
                 #alpha =  alpha - (i/1000)*1e-9
@@ -239,14 +248,17 @@ class mlnn(xor_net):
         #self.x = np.divide(data, 255.)
         self.y = labels
 
-        train = 0.85
-        valid = 0.15
+        # train = 0.85
+        # valid = 0.15
 
-        train_data = self.x[:int(train*len(self.x)),:]
-        train_label = self.y[:int(train*len(self.y)):]
+        # train_data = self.x[:int(train*len(self.x)),:]
+        # train_label = self.y[:int(train*len(self.y)):]
 
-        valid_data = self.x[int(train*len(self.x)): , :]
-        valid_label = self.y[int(train*len(self.y)): ]
+        # valid_data = self.x[int(train*len(self.x)): , :]
+        # valid_label = self.y[int(train*len(self.y)): ]
+
+        train_data = self.x
+        train_label = self.y
 
         input_dim = train_data.shape[1]
         self.output_dim = 2
@@ -280,10 +292,10 @@ class mlnn(xor_net):
 
         #print 'Hyper-parameters: epochs = ', self.epochs,' alpha = ', self.alpha, ' beta = ', self.beta, ' hidden dims = ', self.hidden_dim, ' activation = ', self.act  
         
-        training = self.get_predictions(train_data)
+        #training = self.get_predictions(train_data)
         #print 'Training accuracy = ', calc_acc(train_label,training), '%'
 
-        validation = self.get_predictions(valid_data)
+        #validation = self.get_predictions(valid_data)
         #print 'Validation accuracy = ', calc_acc(valid_label,validation), '%'
 
 
