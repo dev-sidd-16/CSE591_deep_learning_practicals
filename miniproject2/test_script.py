@@ -28,6 +28,8 @@ def test_xor():
     dg = xor() # Initialize a dataset creator
     training_data, training_labels = dg.query_data(samples = 100) 
 
+    #dg._demo()
+
     n = xor_net(training_data, training_labels)  # This call should return a net object
     params = n.get_params()    # This call should reaturn parameters of the model that are 
                                # fully trained.
@@ -43,14 +45,17 @@ def test_waldo():
     """
     This method will run the test on waldo dataset. 
     """
+    #dg = waldo(dimensions = (256,256)) # Initialize a dataset creator
     dg = waldo() # Initialize a dataset creator
-    training_data, training_labels = dg.query_data(samples = 100) 
+    training_data, training_labels = dg.query_data(samples = 200) 
+
+    #dg._demo()
 
     n = mlnn(training_data, training_labels)  # This call should return a net object that is trained.
     params = n.get_params()    # This call should reaturn parameters of the model that are 
                                # fully trained.
 
-    testing_data, testing_labels = dg.query_data(samples = 100) 
+    testing_data, testing_labels = dg.query_data(samples = 200) 
     predictions = n.get_predictions(testing_data) # This call should return predictions.
 
     acc = accuracy(testing_labels, predictions)
@@ -59,21 +64,25 @@ def test_waldo():
 
 if __name__ == '__main__':
     
-    # Part 1 of the project. 
-    xor_acc = test_xor()
-    
-    # Part 2 of the project.
-    waldo_acc = test_waldo()   
+    for i in range(5):
+        # Part 1 of the project. 
+        xor_acc = test_xor()
+        
+        # Part 2 of the project.
+        waldo_acc = test_waldo()
+        #xor_acc = waldo_acc
+        #print "Accuracy of predictions on XOR data = " + str(xor_acc) + "%"
+        #print "Accuracy of predictions on waldo data = " + str(waldo_acc) + "%"
 
-    weight = np.random.uniform(low = 0.3, high = 0.7)
-    # This means that if you score 0.9 on random weighted average,
-    #  I will give you full grade essentially...
+        weight = np.random.uniform(low = 0.3, high = 0.7)
+        # This means that if you score 0.9 on random weighted average,
+        #  I will give you full grade essentially...
 
-    mix = min(100, weight* xor_acc + (1-weight) * waldo_acc + 10)
+        mix = min(100, weight* xor_acc + (1-weight) * waldo_acc + 10)
 
-    # 3+ points minimum for either getting a code that works, or submitting the same code as it is.
-    # Grader will check if code produces random number like what the sample does, then he will give 
-    # you a zero. 
-    grade = 2 + (mix / 50)    
-    print "Grade = " + str( grade )
+        # 3+ points minimum for either getting a code that works, or submitting the same code as it is.
+        # Grader will check if code produces random number like what the sample does, then he will give 
+        # you a zero. 
+        grade = 2 + (mix / 50)    
+        print i, " Grade = " + str( grade )
 

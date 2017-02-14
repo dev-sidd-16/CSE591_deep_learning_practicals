@@ -99,14 +99,14 @@ class dataset_generator(object):
 if __name__ == '__main__':
     
     dg = dataset_generator() # Initialize a dataset creator
-    data_train = dg.query_data(samples = 1000) # Create a random training dataset.
+    data_train = dg.query_data(samples = 5000) # Create a random training dataset.
     
     r = regressor(data_train)  # This call should return a regressor object that is fully trained.
     params = r.get_params()    # This call should reaturn parameters of the model that are 
             
 
     #data_test = dg.query_data(samples = 1000, mu = 10, sigma = 0.1)  # Create a random testing dataset.
-    data_test = dg.query_data(samples = 1000)  # Create a random testing dataset.
+    data_test = dg.query_data(samples = 5000)  # Create a random testing dataset.
 
     predictions = r.get_predictions(data_test[0]) # This call should return predictions.
     print "Rmse error of predictions = " + str(rmse(data_test[1], predictions))
