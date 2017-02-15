@@ -66,7 +66,7 @@ def test_waldo(num):
 if __name__ == '__main__':
     mini = 5
     maxi = 0
-    for i in range(1,6):
+    for i in range(1,11):
         t0 = time.time()
         # Part 1 of the project. 
         xor_acc = test_xor(i)
