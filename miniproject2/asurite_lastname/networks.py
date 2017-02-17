@@ -2,7 +2,7 @@
 import numpy as np
 
 
-printtrue = 0
+printtrue = 1 
     
 
 def activation(x, act, deriv = False):
@@ -240,7 +240,7 @@ class mlnn(xor_net):
     """
     At the moment just inheriting the network above. 
     """
-    def __init__ (self, data, labels):
+    def __init__ (self, data, labels, n):
         #super(mlnn,self).__init__(data, labels)
         self.x = data / data.max()
 
@@ -264,7 +264,7 @@ class mlnn(xor_net):
         self.output_dim = 2
         
         # Number of nodes in the hidden layer
-        self.hidden_dim = 100
+        self.hidden_dim = n
         self.epochs = 100001
 
         self.alpha = 1e-5
@@ -292,8 +292,8 @@ class mlnn(xor_net):
 
         #print 'Hyper-parameters: epochs = ', self.epochs,' alpha = ', self.alpha, ' beta = ', self.beta, ' hidden dims = ', self.hidden_dim, ' activation = ', self.act  
         
-        #training = self.get_predictions(train_data)
-        #print 'Training accuracy = ', calc_acc(train_label,training), '%'
+        training = self.get_predictions(train_data)
+        print 'Training accuracy = ', calc_acc(train_label,training), '%'
 
         #validation = self.get_predictions(valid_data)
         #print 'Validation accuracy = ', calc_acc(valid_label,validation), '%'
