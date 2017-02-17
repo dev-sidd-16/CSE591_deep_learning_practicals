@@ -5,8 +5,9 @@ net = network()
 dataset_params = {"dataset": "_datasets/_dataset_46006", "id": 'mnist', "n_classes": 10}
 net.add_layer(type = "input", id = "input", dataset_init_args = dataset_params)
 
-momentum = ["false","polyak","nesterov"]
+momentum = ["polyak","nesterov","false"]
 optim = ["sgd","adagrad","rmsprop"]
+lr = [(0.05,0.01,0.001),(0.1,0.05,0.01),(0.01,0.001,0.0001)]
 
 # adding layers
 
@@ -39,33 +40,38 @@ net.add_layer(type = "objective",
 
 net.pretty_print()
 
-id = momentum[1]+'-'+optim[1]
-optimizer_params = { 
-	"momentum_type" 	: momentum[1],
-	"momentum_params" 	: (0.9,0.95, 30),
-	"regularization" 	: (0.0001,0.0002),
-	"optimizer_type" 	: optim[1],
-	"id"				: id
-	}
+for k in range(len(lr)):
+	for i in range(len(momentum)):
+		for j in range(len(optim)):
 
-net.add_module(type = 'optimizer', params = optimizer_params )
+			id = momentum[i]+'-'+optim[j]
+			optimizer_params = { 
+				"momentum_type" 	: momentum[i],
+				"momentum_params" 	: (0.6,0.95, 30),
+				"regularization" 	: (0.0001,0.0002),
+				"optimizer_type" 	: optim[j],
+				"id"				: id
+				}
 
-learning_rates = (0.05, 0.01, 0.001)
+			net.add_module(type = 'optimizer', params = optimizer_params )
 
-net.cook( optimizer = id,
-		objective_layer = 'nil',
-		datastream = 'mnist',
-		classifier = 'softmax'
-		)
+			learning_rates = lr[k]
 
-net.train( epochs = (10,10),
-	validate_after_epochs = 2,
-	training_accuracy = True,
-	learning_rates = learning_rates,
-	show_progress =True,
-	early_terminate = True)
+			net.cook( optimizer = id,
+					objective_layer = 'nil',
+					datastream = 'mnist',
+					classifier = 'softmax'
+					)
 
-net.test()
+			net.train( epochs = (20,20),
+				validate_after_epochs = 2,
+				training_accuracy = True,
+				learning_rates = learning_rates,
+				show_progress =False,
+				early_terminate = True)
 
-print "------------------",id,"------------------"
+			net.test()
+
+			print "------------------",id,lr[1],"------------------"
+			print "================================================"
 
