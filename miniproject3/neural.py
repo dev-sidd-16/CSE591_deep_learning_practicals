@@ -1,71 +1,85 @@
 from yann.network import network
+import time
 
-# create a network
-net = network()
-dataset_params = {"dataset": "_datasets/_dataset_46006", "id": 'mnist', "n_classes": 10}
-net.add_layer(type = "input", id = "input", dataset_init_args = dataset_params)
 
 momentum = ["false","polyak","nesterov"]
 optim = ["sgd","adagrad","rmsprop"]
+lr = [(0.05,0.01,0.001),(0.1,0.05,0.01),(0.01,0.001,0.0001)]
 
-# adding layers
+count = 1
 
-net.add_layer(type = "dot_product", 
-	origin = "input", 
-	id = "dot_product_1", 
-	num_neurons = 800, 
-	regularize = True, 
-	activation = 'relu'
-	)
+for k in range(len(lr)):
+	for i in range(len(momentum)):
+		for j in range(len(optim)):
 
-net.add_layer(type = "dot_product",
-	origin = "dot_product_1",
-	id = "dot_product_2",
-	num_neurons = 800,
-	regularize = True,
-	activation = 'relu'
-	)
+			# create a network
+			net = network()
+			dataset_params = {"dataset": "_datasets/_dataset_46006", "id": 'mnist', "n_classes": 10}
+			net.add_layer(type = "input", id = "input", dataset_init_args = dataset_params)
 
-net.add_layer(type = "classifier",
-	id = "softmax",
-	origin = "dot_product_2",
-	num_classes = 10,
-	activation = "softmax"
-	)
+			# adding layers
 
-net.add_layer(type = "objective",
-	id = "nil",
-	origin = "softmax")
+			net.add_layer(type = "dot_product", 
+				origin = "input", 
+				id = "dot_product_1", 
+				num_neurons = 800, 
+				regularize = True, 
+				activation = 'relu'
+				)
 
-net.pretty_print()
+			net.add_layer(type = "dot_product",
+				origin = "dot_product_1",
+				id = "dot_product_2",
+				num_neurons = 800,
+				regularize = True,
+				activation = 'relu'
+				)
 
-id = momentum[1]+'-'+optim[1]
-optimizer_params = { 
-	"momentum_type" 	: momentum[1],
-	"momentum_params" 	: (0.9,0.95, 30),
-	"regularization" 	: (0.0001,0.0002),
-	"optimizer_type" 	: optim[1],
-	"id"				: id
-	}
+			net.add_layer(type = "classifier",
+				id = "softmax",
+				origin = "dot_product_2",
+				num_classes = 10,
+				activation = "softmax"
+				)
 
-net.add_module(type = 'optimizer', params = optimizer_params )
+			net.add_layer(type = "objective",
+				id = "nil",
+				origin = "softmax")
 
-learning_rates = (0.05, 0.01, 0.001)
+			net.pretty_print()
 
-net.cook( optimizer = id,
-		objective_layer = 'nil',
-		datastream = 'mnist',
-		classifier = 'softmax'
-		)
 
-net.train( epochs = (10,10),
-	validate_after_epochs = 2,
-	training_accuracy = True,
-	learning_rates = learning_rates,
-	show_progress =True,
-	early_terminate = True)
+			id = momentum[i]+'-'+optim[j]
+			print "-----",count,id,"-------"
 
-net.test()
+			optimizer_params = { 
+				"momentum_type" 	: momentum[i],
+				"momentum_params" 	: (0.6,0.95, 30),
+				"regularization" 	: (0.0001,0.0002),
+				"optimizer_type" 	: optim[j],
+				"id"				: id
+				}
 
-print "------------------",id,"------------------"
+			net.add_module(type = 'optimizer', params = optimizer_params )
+
+			learning_rates = lr[k]
+
+			net.cook( optimizer = id,
+					objective_layer = 'nil',
+					datastream = 'mnist',
+					classifier = 'softmax'
+					)
+
+			net.train( epochs = (20,20),
+				validate_after_epochs = 2,
+				training_accuracy = True,
+				learning_rates = learning_rates,
+				show_progress =False,
+				early_terminate = True)
+
+			net.test()
+
+			print "------------------",id,lr[k],"------------------"
+			print "================================================"
+			time.sleep(150)
 

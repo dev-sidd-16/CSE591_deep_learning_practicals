@@ -1,0 +1,6915 @@
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.30134987536
+.. Validation accuracy : 14.81
+.. Training accuracy : 15.654
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.30134987536
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.29746241287
+.. Cost                : 2.29746241287
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.29319415357
+.. Validation accuracy : 22.51
+.. Training accuracy : 22.96
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.29319415357
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.28813287514
+.. Cost                : 2.28813287514
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.28180631627
+.. Validation accuracy : 37.56
+.. Training accuracy : 36.49
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.28180631627
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.27362222287
+.. Cost                : 2.27362222287
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.2628059539
+.. Validation accuracy : 46.91
+.. Training accuracy : 45.186
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.2628059539
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 2.24831957842
+.. Cost                : 2.24831957842
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 2.22876215475
+.. Validation accuracy : 46.03
+.. Training accuracy : 44.94
+.. Cost                : 2.22876215475
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 2.20231549532
+.. Cost                : 2.20231549532
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 2.16685470678
+.. Validation accuracy : 45.78
+.. Training accuracy : 44.646
+.. Cost                : 2.16685470678
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.12030737285
+.. Cost                : 2.12030737285
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 2.06118420893
+.. Validation accuracy : 50.35
+.. Training accuracy : 49.444
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.06118420893
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.98884921341
+.. Cost                : 1.98884921341
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.90342116694
+.. Validation accuracy : 58.39
+.. Training accuracy : 57.326
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.90342116694
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.80610180956
+.. Cost                : 1.80610180956
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.7002060302
+.. Validation accuracy : 64.18
+.. Training accuracy : 62.544
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.7002060302
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.59140778449
+.. Cost                : 1.59140778449
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.48614996345
+.. Validation accuracy : 67.38
+.. Training accuracy : 65.564
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.48614996345
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.38941662271
+.. Cost                : 1.38941662271
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.4198325166
+.. Validation accuracy : 67.81
+.. Training accuracy : 66.016
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.4198325166
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.395710636
+.. Cost                : 1.395710636
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.37337321094
+.. Validation accuracy : 68.42
+.. Training accuracy : 66.644
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.37337321094
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.35253955922
+.. Cost                : 1.35253955922
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.33311902849
+.. Validation accuracy : 69.12
+.. Training accuracy : 67.288
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.33311902849
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.3150202777
+.. Cost                : 1.3150202777
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.29815265166
+.. Validation accuracy : 69.86
+.. Training accuracy : 67.864
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.29815265166
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.2824280594
+.. Cost                : 1.2824280594
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.26776244018
+.. Validation accuracy : 70.41
+.. Training accuracy : 68.322
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.26776244018
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.2540749203
+.. Cost                : 1.2540749203
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.24128766962
+.. Validation accuracy : 70.81
+.. Training accuracy : 68.776
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.24128766962
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.22935234258
+.. Cost                : 1.22935234258
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.21821314297
+.. Validation accuracy : 71.24
+.. Training accuracy : 69.176
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.21821314297
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.20781089766
+.. Cost                : 1.20781089766
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.19809093284
+.. Validation accuracy : 71.71
+.. Training accuracy : 69.492
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.19809093284
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.18900282905
+.. Cost                : 1.18900282905
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.18050027757
+.. Validation accuracy : 72.2
+.. Training accuracy : 69.826
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.18050027757
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.17254061622
+.. Cost                : 1.17254061622
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.16508473446
+.. Validation accuracy : 72.61
+.. Training accuracy : 70.038
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.16508473446
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.15809666264
+.. Cost                : 1.15809666264
+.. Training complete.Took 19.3200383 minutes
+.. Testing
+.. Testing accuracy : 71.12
+------------------ polyak-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.574122513139
+.. Validation accuracy : 94.74
+.. Training accuracy : 94.122
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.574122513139
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.176798189206
+.. Cost                : 0.176798189206
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.129178582754
+.. Validation accuracy : 96.56
+.. Training accuracy : 96.826
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.129178582754
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.104023669189
+.. Cost                : 0.104023669189
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0876280952147
+.. Validation accuracy : 96.91
+.. Training accuracy : 97.782
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0876280952147
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0757340235903
+.. Cost                : 0.0757340235903
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0666553377941
+.. Validation accuracy : 97.26
+.. Training accuracy : 98.272
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0666553377941
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.0594353001933
+.. Cost                : 0.0594353001933
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0535732780583
+.. Validation accuracy : 97.45
+.. Training accuracy : 98.622
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0535732780583
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0487173043326
+.. Cost                : 0.0487173043326
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0446495076015
+.. Validation accuracy : 97.46
+.. Training accuracy : 98.9
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0446495076015
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.0411946421372
+.. Cost                : 0.0411946421372
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.0382302620318
+.. Validation accuracy : 97.52
+.. Training accuracy : 99.064
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0382302620318
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.0356689448395
+.. Cost                : 0.0356689448395
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.0334257077729
+.. Validation accuracy : 97.59
+.. Training accuracy : 99.228
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0334257077729
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.0314420683149
+.. Cost                : 0.0314420683149
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.0296811846565
+.. Validation accuracy : 97.65
+.. Training accuracy : 99.354
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0296811846565
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.0281024629527
+.. Cost                : 0.0281024629527
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.0266907226183
+.. Validation accuracy : 97.72
+.. Training accuracy : 99.444
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0266907226183
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.0254222298494
+.. Cost                : 0.0254222298494
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.0250275077618
+.. Validation accuracy : 97.76
+.. Training accuracy : 99.478
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0250275077618
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 0.0244281887767
+.. Cost                : 0.0244281887767
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 0.0241170525651
+.. Validation accuracy : 97.76
+.. Training accuracy : 99.494
+.. Best training accuracy
+.. Cost                : 0.0241170525651
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 0.0238477908324
+.. Cost                : 0.0238477908324
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 0.0236047740076
+.. Validation accuracy : 97.77
+.. Training accuracy : 99.514
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0236047740076
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 0.0233819665841
+.. Cost                : 0.0233819665841
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 0.0231756909199
+.. Validation accuracy : 97.78
+.. Training accuracy : 99.526
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0231756909199
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 0.0229845266338
+.. Cost                : 0.0229845266338
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 0.0228005445072
+.. Validation accuracy : 97.81
+.. Training accuracy : 99.534
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0228005445072
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 0.0226257937503
+.. Cost                : 0.0226257937503
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 0.0224494259045
+.. Validation accuracy : 97.82
+.. Training accuracy : 99.54
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0224494259045
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 0.0222812221963
+.. Cost                : 0.0222812221963
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 0.022134393723
+.. Validation accuracy : 97.82
+.. Training accuracy : 99.55
+.. Best training accuracy
+.. Cost                : 0.022134393723
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 0.0219996843478
+.. Cost                : 0.0219996843478
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 0.0218732522196
+.. Validation accuracy : 97.84
+.. Training accuracy : 99.556
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0218732522196
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 0.0217568526748
+.. Cost                : 0.0217568526748
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 0.0216470286723
+.. Validation accuracy : 97.84
+.. Training accuracy : 99.56
+.. Best training accuracy
+.. Cost                : 0.0216470286723
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 0.0215444293557
+.. Cost                : 0.0215444293557
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 0.0214489004691
+.. Validation accuracy : 97.83
+.. Training accuracy : 99.568
+.. Best training accuracy
+.. Cost                : 0.0214489004691
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 0.0213594472859
+.. Cost                : 0.0213594472859
+.. Training complete.Took 18.7080755833 minutes
+.. Testing
+.. Testing accuracy : 97.86
+------------------ polyak-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.06652777744
+.. Validation accuracy : 94.84
+.. Training accuracy : 95.042
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.06652777744
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.12507662588
+.. Cost                : 0.12507662588
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.085433029618
+.. Validation accuracy : 97.67
+.. Training accuracy : 98.448
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.085433029618
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.0624666008146
+.. Cost                : 0.0624666008146
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0520989065788
+.. Validation accuracy : 97.27
+.. Training accuracy : 98.88
+.. Best training accuracy
+.. Cost                : 0.0520989065788
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0394805285758
+.. Cost                : 0.0394805285758
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0333264306612
+.. Validation accuracy : 97.47
+.. Training accuracy : 98.904
+.. Best training accuracy
+.. Cost                : 0.0333264306612
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.0268939191979
+.. Cost                : 0.0268939191979
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0222173082344
+.. Validation accuracy : 97.85
+.. Training accuracy : 99.344
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0222173082344
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0175449889262
+.. Cost                : 0.0175449889262
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0149769076823
+.. Validation accuracy : 97.9
+.. Training accuracy : 99.66
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0149769076823
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.0112107083595
+.. Cost                : 0.0112107083595
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.00886576421406
+.. Validation accuracy : 97.77
+.. Training accuracy : 99.57
+.. Cost                : 0.00886576421406
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.00827070011365
+.. Cost                : 0.00827070011365
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.00417590478713
+.. Validation accuracy : 97.88
+.. Training accuracy : 99.72
+.. Best training accuracy
+.. Cost                : 0.00417590478713
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.00424884235537
+.. Cost                : 0.00424884235537
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.0035290092514
+.. Validation accuracy : 97.92
+.. Training accuracy : 99.908
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0035290092514
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.00105077716949
+.. Cost                : 0.00105077716949
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.000460477504738
+.. Validation accuracy : 98.25
+.. Training accuracy : 99.99
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.000460477504738
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.000370965390538
+.. Cost                : 0.000370965390538
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.000204250692649
+.. Validation accuracy : 98.29
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.000204250692649
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.36906183734e-05
+.. Cost                : 4.36906183734e-05
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 3.13674441682e-05
+.. Validation accuracy : 98.3
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 3.13674441682e-05
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 2.75521837237e-05
+.. Cost                : 2.75521837237e-05
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 2.50675734346e-05
+.. Validation accuracy : 98.31
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 2.50675734346e-05
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 2.32589939458e-05
+.. Cost                : 2.32589939458e-05
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 2.18613026755e-05
+.. Validation accuracy : 98.34
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 2.18613026755e-05
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 2.07446002198e-05
+.. Cost                : 2.07446002198e-05
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.98252954728e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.98252954728e-05
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.90519832867e-05
+.. Cost                : 1.90519832867e-05
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.83856136282e-05
+.. Validation accuracy : 98.32
+.. Training accuracy : 100.0
+.. Cost                : 1.83856136282e-05
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.78284459993e-05
+.. Cost                : 1.78284459993e-05
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.73451541783e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.73451541783e-05
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.6919870805e-05
+.. Cost                : 1.6919870805e-05
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.65421805601e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.65421805601e-05
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.62057019625e-05
+.. Cost                : 1.62057019625e-05
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.59029922192e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.59029922192e-05
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.56302843677e-05
+.. Cost                : 1.56302843677e-05
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.53829097884e-05
+.. Validation accuracy : 98.32
+.. Training accuracy : 100.0
+.. Cost                : 1.53829097884e-05
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.51567244234e-05
+.. Cost                : 1.51567244234e-05
+.. Training complete.Took 18.16682075 minutes
+.. Testing
+.. Testing accuracy : 98.29
+------------------ polyak-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.4956715458e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.4956715458e-05
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.49549589377e-05
+.. Cost                : 1.49549589377e-05
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.49533152327e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49533152327e-05
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.4951788714e-05
+.. Cost                : 1.4951788714e-05
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.49503743289e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49503743289e-05
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.49490675616e-05
+.. Cost                : 1.49490675616e-05
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.49478627671e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49478627671e-05
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.49467572142e-05
+.. Cost                : 1.49467572142e-05
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.49457449825e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49457449825e-05
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.49448234807e-05
+.. Cost                : 1.49448234807e-05
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 1.49439875573e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49439875573e-05
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.49432346525e-05
+.. Cost                : 1.49432346525e-05
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.49425600647e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49425600647e-05
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.49419614651e-05
+.. Cost                : 1.49419614651e-05
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.494143458e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.494143458e-05
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.49409772186e-05
+.. Cost                : 1.49409772186e-05
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.49405855021e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49405855021e-05
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.49402573642e-05
+.. Cost                : 1.49402573642e-05
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.49399892822e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49399892822e-05
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.49397790885e-05
+.. Cost                : 1.49397790885e-05
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.49548847898e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49548847898e-05
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.49556119716e-05
+.. Cost                : 1.49556119716e-05
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.49563592359e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49563592359e-05
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.49571199455e-05
+.. Cost                : 1.49571199455e-05
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.49578934516e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49578934516e-05
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.49586790951e-05
+.. Cost                : 1.49586790951e-05
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.49594761854e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49594761854e-05
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.49602839642e-05
+.. Cost                : 1.49602839642e-05
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.4961101548e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.4961101548e-05
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.49619278385e-05
+.. Cost                : 1.49619278385e-05
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.49627614024e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49627614024e-05
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.496361225e-05
+.. Cost                : 1.496361225e-05
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.49644738706e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49644738706e-05
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.49653453872e-05
+.. Cost                : 1.49653453872e-05
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.49662263071e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49662263071e-05
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.49671161645e-05
+.. Cost                : 1.49671161645e-05
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.49680145167e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49680145167e-05
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.49689209434e-05
+.. Cost                : 1.49689209434e-05
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.49698350451e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.49698350451e-05
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.49707564423e-05
+.. Cost                : 1.49707564423e-05
+.. Training complete.Took 17.4865896667 minutes
+.. Testing
+.. Testing accuracy : 98.29
+------------------ nesterov-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.54870267773e-05
+.. Validation accuracy : 98.34
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.54870267773e-05
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.00107815447832
+.. Cost                : 0.00107815447832
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.000845977256882
+.. Validation accuracy : 98.09
+.. Training accuracy : 99.954
+.. Cost                : 0.000845977256882
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.000187484569853
+.. Cost                : 0.000187484569853
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.903739699e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 2.903739699e-05
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.46607613042e-05
+.. Cost                : 1.46607613042e-05
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.26769357757e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 1.26769357757e-05
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.14211917268e-05
+.. Cost                : 1.14211917268e-05
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.05167150545e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 1.05167150545e-05
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 9.82094304701e-06
+.. Cost                : 9.82094304701e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 9.26436093646e-06
+.. Validation accuracy : 98.25
+.. Training accuracy : 100.0
+.. Cost                : 9.26436093646e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 8.80536620085e-06
+.. Cost                : 8.80536620085e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 8.42386016576e-06
+.. Validation accuracy : 98.26
+.. Training accuracy : 100.0
+.. Cost                : 8.42386016576e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 8.09348478346e-06
+.. Cost                : 8.09348478346e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 7.80738574761e-06
+.. Validation accuracy : 98.27
+.. Training accuracy : 100.0
+.. Cost                : 7.80738574761e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 7.55850551018e-06
+.. Cost                : 7.55850551018e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 7.33812065029e-06
+.. Validation accuracy : 98.26
+.. Training accuracy : 100.0
+.. Cost                : 7.33812065029e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 7.14233265182e-06
+.. Cost                : 7.14233265182e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 6.96757739853e-06
+.. Validation accuracy : 98.27
+.. Training accuracy : 100.0
+.. Cost                : 6.96757739853e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 6.80916942138e-06
+.. Cost                : 6.80916942138e-06
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.23676817117e-05
+.. Validation accuracy : 98.34
+.. Training accuracy : 100.0
+.. Cost                : 1.23676817117e-05
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.16833031061e-05
+.. Cost                : 1.16833031061e-05
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.12289576516e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.12289576516e-05
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.08980618992e-05
+.. Cost                : 1.08980618992e-05
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.06419731777e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.06419731777e-05
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.04352702749e-05
+.. Cost                : 1.04352702749e-05
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.02635321938e-05
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 1.02635321938e-05
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.01176212616e-05
+.. Cost                : 1.01176212616e-05
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 9.99132866926e-06
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 9.99132866926e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 9.88034179426e-06
+.. Cost                : 9.88034179426e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 9.78159071171e-06
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 9.78159071171e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 9.69468228424e-06
+.. Cost                : 9.69468228424e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 9.61669267858e-06
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 9.61669267858e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 9.54649425302e-06
+.. Cost                : 9.54649425302e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 9.48293445114e-06
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 9.48293445114e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 9.42507868607e-06
+.. Cost                : 9.42507868607e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 9.37215710196e-06
+.. Validation accuracy : 98.32
+.. Training accuracy : 100.0
+.. Cost                : 9.37215710196e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 9.3235879834e-06
+.. Cost                : 9.3235879834e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 9.27888986201e-06
+.. Validation accuracy : 98.33
+.. Training accuracy : 100.0
+.. Cost                : 9.27888986201e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 9.23765916911e-06
+.. Cost                : 9.23765916911e-06
+.. Training complete.Took 17.95961 minutes
+.. Testing
+.. Testing accuracy : 98.31
+------------------ nesterov-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 9.33106066335e-06
+.. Validation accuracy : 98.34
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 9.33106066335e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 7.10901187078e-06
+.. Cost                : 7.10901187078e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 5.92608810242e-06
+.. Validation accuracy : 98.36
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 5.92608810242e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 5.14071116646e-06
+.. Cost                : 5.14071116646e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.59338574314e-06
+.. Validation accuracy : 98.37
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 4.59338574314e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.18394523669e-06
+.. Cost                : 4.18394523669e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 3.86089290019e-06
+.. Validation accuracy : 98.38
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 3.86089290019e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 3.59723855002e-06
+.. Cost                : 3.59723855002e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 3.38260908653e-06
+.. Validation accuracy : 98.39
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 3.38260908653e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 3.19983446098e-06
+.. Cost                : 3.19983446098e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 3.04569509651e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 3.04569509651e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.91395966695e-06
+.. Cost                : 2.91395966695e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 2.79713444229e-06
+.. Validation accuracy : 98.39
+.. Training accuracy : 100.0
+.. Cost                : 2.79713444229e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 2.69624724074e-06
+.. Cost                : 2.69624724074e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 2.606194457e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.606194457e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 2.52518380212e-06
+.. Cost                : 2.52518380212e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 2.45377004447e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.45377004447e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 2.38943295016e-06
+.. Cost                : 2.38943295016e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 2.33109929418e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.33109929418e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 2.27871952925e-06
+.. Cost                : 2.27871952925e-06
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 2.89003274811e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.89003274811e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 2.86570439714e-06
+.. Cost                : 2.86570439714e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 2.84360502166e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.84360502166e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 2.82321169793e-06
+.. Cost                : 2.82321169793e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 2.80429901346e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.80429901346e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 2.78662749849e-06
+.. Cost                : 2.78662749849e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 2.77005985733e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 2.77005985733e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 2.75440687848e-06
+.. Cost                : 2.75440687848e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 2.73955259346e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.73955259346e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 2.72540716188e-06
+.. Cost                : 2.72540716188e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 2.71178925395e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.71178925395e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 2.69961119294e-06
+.. Cost                : 2.69961119294e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 2.68817326658e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.68817326658e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 2.677462825e-06
+.. Cost                : 2.677462825e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 2.66736636145e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.66736636145e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 2.65793014407e-06
+.. Cost                : 2.65793014407e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 2.64900036388e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.64900036388e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 2.64062395851e-06
+.. Cost                : 2.64062395851e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 2.63272874267e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.63272874267e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 2.62528185159e-06
+.. Cost                : 2.62528185159e-06
+.. Training complete.Took 18.1700689667 minutes
+.. Testing
+.. Testing accuracy : 98.37
+------------------ nesterov-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.61696724885e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.61696724885e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.6171708566e-06
+.. Cost                : 2.6171708566e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.61737620902e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61737620902e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.61758322015e-06
+.. Cost                : 2.61758322015e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.6177918083e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.6177918083e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.61800189587e-06
+.. Cost                : 2.61800189587e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.61821340913e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61821340913e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 2.61842627803e-06
+.. Cost                : 2.61842627803e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 2.61864043602e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61864043602e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 2.6188558199e-06
+.. Cost                : 2.6188558199e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 2.61907236957e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61907236957e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.61929002797e-06
+.. Cost                : 2.61929002797e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 2.61950874144e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61950874144e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 2.61972846268e-06
+.. Cost                : 2.61972846268e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 2.61994913773e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61994913773e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 2.62017072011e-06
+.. Cost                : 2.62017072011e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 2.62039318345e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.62039318345e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 2.62061646388e-06
+.. Cost                : 2.62061646388e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 2.62084052534e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.62084052534e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 2.62106532998e-06
+.. Cost                : 2.62106532998e-06
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 2.61716591981e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61716591981e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 2.61740070118e-06
+.. Cost                : 2.61740070118e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 2.61763567619e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61763567619e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 2.61787083624e-06
+.. Cost                : 2.61787083624e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 2.61810617319e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61810617319e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 2.61834167928e-06
+.. Cost                : 2.61834167928e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 2.61857734714e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61857734714e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 2.61881316979e-06
+.. Cost                : 2.61881316979e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 2.61904914058e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61904914058e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 2.61928525318e-06
+.. Cost                : 2.61928525318e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 2.61952150161e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61952150161e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 2.61975788015e-06
+.. Cost                : 2.61975788015e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 2.61999438339e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.61999438339e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 2.62023100619e-06
+.. Cost                : 2.62023100619e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 2.62046774421e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.62046774421e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 2.62070459625e-06
+.. Cost                : 2.62070459625e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 2.62094155391e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.62094155391e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 2.62117861301e-06
+.. Cost                : 2.62117861301e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 2.62141576956e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Cost                : 2.62141576956e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 2.62165301977e-06
+.. Cost                : 2.62165301977e-06
+.. Training complete.Took 17.2624333167 minutes
+.. Testing
+.. Testing accuracy : 98.37
+------------------ false-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.64208674003e-06
+.. Validation accuracy : 98.39
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.64208674003e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.54909260264e-06
+.. Cost                : 2.54909260264e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.46597330638e-06
+.. Validation accuracy : 98.39
+.. Training accuracy : 100.0
+.. Cost                : 2.46597330638e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.392949065e-06
+.. Cost                : 2.392949065e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.32633660327e-06
+.. Validation accuracy : 98.4
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 2.32633660327e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.26856450291e-06
+.. Cost                : 2.26856450291e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.21511101169e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 2.21511101169e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 2.16709416335e-06
+.. Cost                : 2.16709416335e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 2.12370300445e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.12370300445e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 2.08368129717e-06
+.. Cost                : 2.08368129717e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 2.04751139546e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.04751139546e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.01427395296e-06
+.. Cost                : 2.01427395296e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.98380817329e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.98380817329e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.95565872294e-06
+.. Cost                : 1.95565872294e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.92994428043e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.92994428043e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.90576065574e-06
+.. Cost                : 1.90576065574e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.88361007445e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.88361007445e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.86306346726e-06
+.. Cost                : 1.86306346726e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.84404336975e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.84404336975e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.826348768e-06
+.. Cost                : 1.826348768e-06
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 2.15755738813e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.15755738813e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 2.15114782725e-06
+.. Cost                : 2.15114782725e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 2.1451309308e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.1451309308e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 2.13950572835e-06
+.. Cost                : 2.13950572835e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 2.13420811168e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.13420811168e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 2.12922084776e-06
+.. Cost                : 2.12922084776e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 2.12451972702e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.12451972702e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 2.12009315931e-06
+.. Cost                : 2.12009315931e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 2.11591127173e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.11591127173e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 2.11198699724e-06
+.. Cost                : 2.11198699724e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 2.10828016302e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.10828016302e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 2.10477706266e-06
+.. Cost                : 2.10477706266e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 2.10148089009e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.10148089009e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 2.09837499407e-06
+.. Cost                : 2.09837499407e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 2.09544511441e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.09544511441e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 2.09267765104e-06
+.. Cost                : 2.09267765104e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 2.09005822464e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.09005822464e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 2.08759489708e-06
+.. Cost                : 2.08759489708e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 2.08526647968e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.08526647968e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 2.08307229342e-06
+.. Cost                : 2.08307229342e-06
+.. Training complete.Took 18.0396669 minutes
+.. Testing
+.. Testing accuracy : 98.38
+------------------ false-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.09647224729e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.09647224729e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.03928677391e-06
+.. Cost                : 2.03928677391e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.98781412707e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.98781412707e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.94111523347e-06
+.. Cost                : 1.94111523347e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.89868345754e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.89868345754e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.8597857747e-06
+.. Cost                : 1.8597857747e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.8249139881e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.8249139881e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.7925938316e-06
+.. Cost                : 1.7925938316e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.76350348844e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.76350348844e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.73598161169e-06
+.. Cost                : 1.73598161169e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 1.71139924567e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.71139924567e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.68818169806e-06
+.. Cost                : 1.68818169806e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.6671180413e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.6671180413e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.64739581206e-06
+.. Cost                : 1.64739581206e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.62906079953e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.62906079953e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.61229631126e-06
+.. Cost                : 1.61229631126e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.59656652453e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.59656652453e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.58201952775e-06
+.. Cost                : 1.58201952775e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.56836898547e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.56836898547e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.55561260267e-06
+.. Cost                : 1.55561260267e-06
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 2.02708103929e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.02708103929e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 2.02144713962e-06
+.. Cost                : 2.02144713962e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 2.01616468969e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.01616468969e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 2.01119042922e-06
+.. Cost                : 2.01119042922e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 2.00652830295e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 2.00652830295e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 2.00214381791e-06
+.. Cost                : 2.00214381791e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.99799845901e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.99799845901e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.99410785108e-06
+.. Cost                : 1.99410785108e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.99044116149e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.99044116149e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.98698038712e-06
+.. Cost                : 1.98698038712e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.98373240222e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.98373240222e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.98066360866e-06
+.. Cost                : 1.98066360866e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.97776940394e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.97776940394e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.97502538779e-06
+.. Cost                : 1.97502538779e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.97245331558e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.97245331558e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.97000892471e-06
+.. Cost                : 1.97000892471e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.96771075032e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96771075032e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.96553092059e-06
+.. Cost                : 1.96553092059e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.96348143295e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96348143295e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.96154368121e-06
+.. Cost                : 1.96154368121e-06
+.. Training complete.Took 17.8671064 minutes
+.. Testing
+.. Testing accuracy : 98.38
+------------------ false-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.95920681052e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.95920681052e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.95929547424e-06
+.. Cost                : 1.95929547424e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.95939359446e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95939359446e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.9595003898e-06
+.. Cost                : 1.9595003898e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.95961494917e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95961494917e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.95973649933e-06
+.. Cost                : 1.95973649933e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.95986441746e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95986441746e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.95999796804e-06
+.. Cost                : 1.95999796804e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.96013659862e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96013659862e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.96027981524e-06
+.. Cost                : 1.96027981524e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 1.96042723038e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96042723038e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.96057835047e-06
+.. Cost                : 1.96057835047e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.96073281239e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96073281239e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.96089037261e-06
+.. Cost                : 1.96089037261e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.96105058989e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96105058989e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.96121330085e-06
+.. Cost                : 1.96121330085e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.96137822755e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96137822755e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.9615451018e-06
+.. Cost                : 1.9615451018e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.96171381499e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96171381499e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.96188411102e-06
+.. Cost                : 1.96188411102e-06
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.95927780797e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95927780797e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.9594506055e-06
+.. Cost                : 1.9594506055e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.95962459878e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95962459878e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.9597996552e-06
+.. Cost                : 1.9597996552e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.95997566689e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.95997566689e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.96015254399e-06
+.. Cost                : 1.96015254399e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.96033019127e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96033019127e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.96050852063e-06
+.. Cost                : 1.96050852063e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.96068746876e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96068746876e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.96086694883e-06
+.. Cost                : 1.96086694883e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.96104688365e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96104688365e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.96122753874e-06
+.. Cost                : 1.96122753874e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.96140862521e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96140862521e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.9615901003e-06
+.. Cost                : 1.9615901003e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.96177192528e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96177192528e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.96195406692e-06
+.. Cost                : 1.96195406692e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.96213649533e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96213649533e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.96231918361e-06
+.. Cost                : 1.96231918361e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.96250210752e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 1.96250210752e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.96268524523e-06
+.. Cost                : 1.96268524523e-06
+.. Training complete.Took 17.1606982 minutes
+.. Testing
+.. Testing accuracy : 98.38
+------------------ polyak-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.03583912096e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.03583912096e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.797822425e-06
+.. Cost                : 1.797822425e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.615815143e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 1.615815143e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.47828980098e-06
+.. Cost                : 1.47828980098e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.37425651972e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.37425651972e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.29468120222e-06
+.. Cost                : 1.29468120222e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.22924032156e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.22924032156e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.17762022707e-06
+.. Cost                : 1.17762022707e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.13366915262e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.13366915262e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.09843780935e-06
+.. Cost                : 1.09843780935e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 1.06781594842e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.06781594842e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.04215723302e-06
+.. Cost                : 1.04215723302e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.02004325158e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.02004325158e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.00111160675e-06
+.. Cost                : 1.00111160675e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 9.84621483954e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 9.84621483954e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 9.70224768619e-07
+.. Cost                : 9.70224768619e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 9.57812953197e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 9.57812953197e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 9.46817307535e-07
+.. Cost                : 9.46817307535e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 9.37163751898e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 9.37163751898e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 9.28717868886e-07
+.. Cost                : 9.28717868886e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.46296986264e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.46296986264e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.43794965102e-06
+.. Cost                : 1.43794965102e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.41901217735e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.41901217735e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.40366487557e-06
+.. Cost                : 1.40366487557e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.39071482071e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.39071482071e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.37950608267e-06
+.. Cost                : 1.37950608267e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.36974124742e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.36974124742e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.36111797032e-06
+.. Cost                : 1.36111797032e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.35349114755e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.35349114755e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.34662850385e-06
+.. Cost                : 1.34662850385e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.3404424682e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.3404424682e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.33523045806e-06
+.. Cost                : 1.33523045806e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.33061949812e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.33061949812e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.32650611569e-06
+.. Cost                : 1.32650611569e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.32284701906e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.32284701906e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.31959544546e-06
+.. Cost                : 1.31959544546e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.31669196447e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.31669196447e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.31411215166e-06
+.. Cost                : 1.31411215166e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.31179953204e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.31179953204e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.30974490672e-06
+.. Cost                : 1.30974490672e-06
+.. Training complete.Took 17.9149275 minutes
+.. Testing
+.. Testing accuracy : 98.36
+------------------ polyak-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.3426339868e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.3426339868e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.24005992657e-06
+.. Cost                : 1.24005992657e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.15110267614e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.15110267614e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.08377743194e-06
+.. Cost                : 1.08377743194e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.02864815323e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.02864815323e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 9.84761204178e-07
+.. Cost                : 9.84761204178e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 9.4748623157e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 9.4748623157e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 9.17566763827e-07
+.. Cost                : 9.17566763827e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 8.91701595022e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.91701595022e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 8.69674209875e-07
+.. Cost                : 8.69674209875e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 8.50916076198e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.50916076198e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 8.34976654083e-07
+.. Cost                : 8.34976654083e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 8.20802822913e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.20802822913e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 8.08759313985e-07
+.. Cost                : 8.08759313985e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 7.98161709787e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.98161709787e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 7.88847358706e-07
+.. Cost                : 7.88847358706e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 7.80696038847e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.80696038847e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 7.73492851486e-07
+.. Cost                : 7.73492851486e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 7.67170376755e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.67170376755e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 7.61512581294e-07
+.. Cost                : 7.61512581294e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.22474285148e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.22474285148e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.20673020883e-06
+.. Cost                : 1.20673020883e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.19306452785e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.19306452785e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.18204798746e-06
+.. Cost                : 1.18204798746e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.17280498227e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.17280498227e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.16484379419e-06
+.. Cost                : 1.16484379419e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.15791152629e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.15791152629e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.15179236568e-06
+.. Cost                : 1.15179236568e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.14636466421e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.14636466421e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.14150559375e-06
+.. Cost                : 1.14150559375e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.13710276876e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.13710276876e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.13341714524e-06
+.. Cost                : 1.13341714524e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.13014256784e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.13014256784e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.12722660799e-06
+.. Cost                : 1.12722660799e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.12463601506e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.12463601506e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.122321671e-06
+.. Cost                : 1.122321671e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.12025672376e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.12025672376e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.11841334385e-06
+.. Cost                : 1.11841334385e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.11677704276e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11677704276e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.11531770052e-06
+.. Cost                : 1.11531770052e-06
+.. Training complete.Took 17.8618600167 minutes
+.. Testing
+.. Testing accuracy : 98.35
+------------------ polyak-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.11371689968e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.11371689968e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.11377987091e-06
+.. Cost                : 1.11377987091e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 1.11384729893e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11384729893e-06
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.11391884611e-06
+.. Cost                : 1.11391884611e-06
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 1.11399416936e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11399416936e-06
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.11407291821e-06
+.. Cost                : 1.11407291821e-06
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 1.11415470945e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11415470945e-06
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.11423933319e-06
+.. Cost                : 1.11423933319e-06
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 1.11432648301e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11432648301e-06
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.11441596045e-06
+.. Cost                : 1.11441596045e-06
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 1.11450749044e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11450749044e-06
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.11460096346e-06
+.. Cost                : 1.11460096346e-06
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 1.11469611317e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11469611317e-06
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.11479286989e-06
+.. Cost                : 1.11479286989e-06
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.11489100468e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11489100468e-06
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.11499046041e-06
+.. Cost                : 1.11499046041e-06
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.11509105139e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11509105139e-06
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.1151927271e-06
+.. Cost                : 1.1151927271e-06
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.11529534588e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11529534588e-06
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.11539884425e-06
+.. Cost                : 1.11539884425e-06
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.11377012865e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11377012865e-06
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.11387497326e-06
+.. Cost                : 1.11387497326e-06
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.11398046681e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11398046681e-06
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.11408654829e-06
+.. Cost                : 1.11408654829e-06
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.11419315868e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11419315868e-06
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.11430025679e-06
+.. Cost                : 1.11430025679e-06
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.11440778994e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11440778994e-06
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.11451571275e-06
+.. Cost                : 1.11451571275e-06
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.11462398232e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11462398232e-06
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.114732556e-06
+.. Cost                : 1.114732556e-06
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.11484138975e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11484138975e-06
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.11495065144e-06
+.. Cost                : 1.11495065144e-06
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.11506018229e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11506018229e-06
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.11516995345e-06
+.. Cost                : 1.11516995345e-06
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.11527994199e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11527994199e-06
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.11539012731e-06
+.. Cost                : 1.11539012731e-06
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.11550049088e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11550049088e-06
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.115611016e-06
+.. Cost                : 1.115611016e-06
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.11572168763e-06
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 1.11572168763e-06
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.11583249227e-06
+.. Cost                : 1.11583249227e-06
+.. Training complete.Took 17.3492463 minutes
+.. Testing
+.. Testing accuracy : 98.35
+------------------ nesterov-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.15694977121e-06
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.15694977121e-06
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.03994206369e-06
+.. Cost                : 1.03994206369e-06
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 9.42809586594e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 9.42809586594e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 8.71653933335e-07
+.. Cost                : 8.71653933335e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 8.14985457902e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.14985457902e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 7.69569985031e-07
+.. Cost                : 7.69569985031e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 7.33558614639e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.33558614639e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 7.03638149275e-07
+.. Cost                : 7.03638149275e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 6.78541207898e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 6.78541207898e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 6.57572103971e-07
+.. Cost                : 6.57572103971e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 6.39768483082e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 6.39768483082e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 6.24419886688e-07
+.. Cost                : 6.24419886688e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 6.11272549359e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.11272549359e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 5.99860368604e-07
+.. Cost                : 5.99860368604e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 5.89728921074e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 5.89728921074e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 5.81195357646e-07
+.. Cost                : 5.81195357646e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 5.73395146057e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.73395146057e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 5.66656909478e-07
+.. Cost                : 5.66656909478e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 5.60702253892e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.60702253892e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 5.55369653903e-07
+.. Cost                : 5.55369653903e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 8.61383672586e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.61383672586e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 8.46274243262e-07
+.. Cost                : 8.46274243262e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 8.34942184089e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.34942184089e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 8.25686074341e-07
+.. Cost                : 8.25686074341e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 8.17783703586e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.17783703586e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 8.10885278927e-07
+.. Cost                : 8.10885278927e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 8.04834003221e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 8.04834003221e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 7.99425036612e-07
+.. Cost                : 7.99425036612e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 7.94608652175e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.94608652175e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 7.90233639525e-07
+.. Cost                : 7.90233639525e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 7.86254573385e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.86254573385e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 7.82901607212e-07
+.. Cost                : 7.82901607212e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 7.79915169873e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.79915169873e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 7.77253303917e-07
+.. Cost                : 7.77253303917e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 7.74901358621e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 7.74901358621e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 7.72788137678e-07
+.. Cost                : 7.72788137678e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 7.70916998213e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 7.70916998213e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 7.69246377812e-07
+.. Cost                : 7.69246377812e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 7.67751803332e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 7.67751803332e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 7.66424375268e-07
+.. Cost                : 7.66424375268e-07
+.. Training complete.Took 17.6472885167 minutes
+.. Testing
+.. Testing accuracy : 98.35
+------------------ nesterov-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 7.86831026986e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 7.86831026986e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 7.32334519756e-07
+.. Cost                : 7.32334519756e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 6.85119273557e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 6.85119273557e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 6.46930405998e-07
+.. Cost                : 6.46930405998e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 6.1645671251e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 6.1645671251e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 5.90951980566e-07
+.. Cost                : 5.90951980566e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 5.69841267845e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.69841267845e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 5.52131032094e-07
+.. Cost                : 5.52131032094e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 5.36931638916e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 5.36931638916e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 5.23941572767e-07
+.. Cost                : 5.23941572767e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 5.12766326839e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.12766326839e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 5.02982570675e-07
+.. Cost                : 5.02982570675e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.94581643722e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.94581643722e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.87049934898e-07
+.. Cost                : 4.87049934898e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.80637116013e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.80637116013e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.7489018132e-07
+.. Cost                : 4.7489018132e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.69732963201e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.69732963201e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.65298814258e-07
+.. Cost                : 4.65298814258e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.61280608294e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.61280608294e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.57663326609e-07
+.. Cost                : 4.57663326609e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 7.22280425559e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.22280425559e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 7.11589541846e-07
+.. Cost                : 7.11589541846e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 7.03449847573e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 7.03449847573e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 6.96826064193e-07
+.. Cost                : 6.96826064193e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 6.91171536402e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 6.91171536402e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 6.86256104223e-07
+.. Cost                : 6.86256104223e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 6.81917104211e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.81917104211e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 6.78061962175e-07
+.. Cost                : 6.78061962175e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 6.74612395105e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.74612395105e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 6.71510449245e-07
+.. Cost                : 6.71510449245e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 6.68695180802e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.68695180802e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 6.66310604167e-07
+.. Cost                : 6.66310604167e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 6.64201117146e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.64201117146e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 6.62324732491e-07
+.. Cost                : 6.62324732491e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 6.60658245558e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.60658245558e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 6.59164640262e-07
+.. Cost                : 6.59164640262e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 6.57838683535e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.57838683535e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 6.56651712185e-07
+.. Cost                : 6.56651712185e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 6.55600212862e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.55600212862e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 6.5465006617e-07
+.. Cost                : 6.5465006617e-07
+.. Training complete.Took 17.8048285333 minutes
+.. Testing
+.. Testing accuracy : 98.36
+------------------ nesterov-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 6.53588534947e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 6.53588534947e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 6.53647422358e-07
+.. Cost                : 6.53647422358e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 6.53707344904e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53707344904e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 6.53768199921e-07
+.. Cost                : 6.53768199921e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 6.53829895001e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53829895001e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 6.53892347403e-07
+.. Cost                : 6.53892347403e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 6.53955481881e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53955481881e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 6.54019231536e-07
+.. Cost                : 6.54019231536e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 6.54083535176e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54083535176e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 6.54148354767e-07
+.. Cost                : 6.54148354767e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 6.54213621317e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54213621317e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 6.54279294343e-07
+.. Cost                : 6.54279294343e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 6.54345334184e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54345334184e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 6.54411704839e-07
+.. Cost                : 6.54411704839e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 6.54478373926e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54478373926e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 6.54545312372e-07
+.. Cost                : 6.54545312372e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 6.54612494007e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54612494007e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 6.54679895272e-07
+.. Cost                : 6.54679895272e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 6.54747495008e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54747495008e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 6.54815274246e-07
+.. Cost                : 6.54815274246e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 6.53645291673e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53645291673e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 6.53713237357e-07
+.. Cost                : 6.53713237357e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 6.53781315196e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53781315196e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 6.53849512716e-07
+.. Cost                : 6.53849512716e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 6.53917818841e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.53917818841e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 6.53986223771e-07
+.. Cost                : 6.53986223771e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 6.54054717987e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54054717987e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 6.54123308612e-07
+.. Cost                : 6.54123308612e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 6.54191975107e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54191975107e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 6.54260708728e-07
+.. Cost                : 6.54260708728e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 6.54329503493e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54329503493e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 6.54398354018e-07
+.. Cost                : 6.54398354018e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 6.54467255459e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54467255459e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 6.54536203453e-07
+.. Cost                : 6.54536203453e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 6.54605194073e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54605194073e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 6.54674223968e-07
+.. Cost                : 6.54674223968e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 6.5474328984e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.5474328984e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 6.54812388759e-07
+.. Cost                : 6.54812388759e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 6.54881518144e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.54881518144e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 6.54950675677e-07
+.. Cost                : 6.54950675677e-07
+.. Training complete.Took 17.1115067 minutes
+.. Testing
+.. Testing accuracy : 98.36
+------------------ false-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 6.64268087141e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 6.64268087141e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 6.38417137861e-07
+.. Cost                : 6.38417137861e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 6.16187059397e-07
+.. Validation accuracy : 98.41
+.. Training accuracy : 100.0
+.. Cost                : 6.16187059397e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 5.97291011105e-07
+.. Cost                : 5.97291011105e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 5.81490639779e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 5.81490639779e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 5.67698624152e-07
+.. Cost                : 5.67698624152e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 5.56199756419e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.56199756419e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 5.46123272079e-07
+.. Cost                : 5.46123272079e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 5.37191772336e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.37191772336e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 5.29707309465e-07
+.. Cost                : 5.29707309465e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 5.22949106632e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.22949106632e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 5.17073424836e-07
+.. Cost                : 5.17073424836e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 5.1196523471e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.1196523471e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 5.07407387124e-07
+.. Cost                : 5.07407387124e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 5.03372044947e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.03372044947e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.99880230812e-07
+.. Cost                : 4.99880230812e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.96722387308e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.96722387308e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.93901173608e-07
+.. Cost                : 4.93901173608e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.91465205461e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.91465205461e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.89229164184e-07
+.. Cost                : 4.89229164184e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 5.64329682041e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.64329682041e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 5.61794508733e-07
+.. Cost                : 5.61794508733e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 5.59567540566e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.59567540566e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 5.57602753812e-07
+.. Cost                : 5.57602753812e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 5.55858174877e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.55858174877e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 5.54318908551e-07
+.. Cost                : 5.54318908551e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 5.52938971315e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.52938971315e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 5.51713904647e-07
+.. Cost                : 5.51713904647e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 5.5062721441e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.5062721441e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 5.49653877611e-07
+.. Cost                : 5.49653877611e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 5.48789795803e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.48789795803e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 5.48019884496e-07
+.. Cost                : 5.48019884496e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 5.47330943307e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.47330943307e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 5.46717066693e-07
+.. Cost                : 5.46717066693e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 5.46173032236e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.46173032236e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 5.45689901786e-07
+.. Cost                : 5.45689901786e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 5.45259296312e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.45259296312e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 5.44875272477e-07
+.. Cost                : 5.44875272477e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 5.44537669816e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.44537669816e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 5.44237794032e-07
+.. Cost                : 5.44237794032e-07
+.. Training complete.Took 17.6623176333 minutes
+.. Testing
+.. Testing accuracy : 98.36
+------------------ false-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 5.51276141777e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 5.51276141777e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 5.33281159184e-07
+.. Cost                : 5.33281159184e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 5.18111346803e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 5.18111346803e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 5.04739498492e-07
+.. Cost                : 5.04739498492e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.93552352552e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.93552352552e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.83768839833e-07
+.. Cost                : 4.83768839833e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.75403785813e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.75403785813e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.68002215461e-07
+.. Cost                : 4.68002215461e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.61591169526e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.61591169526e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.56010858637e-07
+.. Cost                : 4.56010858637e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.51059981181e-07
+.. Validation accuracy : 98.42
+.. Training accuracy : 100.0
+.. Cost                : 4.51059981181e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.46761362829e-07
+.. Cost                : 4.46761362829e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.42940124678e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 4.42940124678e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.39536762795e-07
+.. Cost                : 4.39536762795e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.36589167115e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.36589167115e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.33908188259e-07
+.. Cost                : 4.33908188259e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.31587141362e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.31587141362e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.29495349482e-07
+.. Cost                : 4.29495349482e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.27615163378e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27615163378e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.25978163037e-07
+.. Cost                : 4.25978163037e-07
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.38890982671e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.38890982671e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.37443768169e-07
+.. Cost                : 4.37443768169e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.3615497001e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.3615497001e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.35023641885e-07
+.. Cost                : 4.35023641885e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.34011165889e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.34011165889e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.33102487333e-07
+.. Cost                : 4.33102487333e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.32311169919e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.32311169919e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.31585850329e-07
+.. Cost                : 4.31585850329e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.3095048157e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.3095048157e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.30378420106e-07
+.. Cost                : 4.30378420106e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.29875462172e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29875462172e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.2941957693e-07
+.. Cost                : 4.2941957693e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.29020287457e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29020287457e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.28661122323e-07
+.. Cost                : 4.28661122323e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.28343433057e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28343433057e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.28060167169e-07
+.. Cost                : 4.28060167169e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.27811796452e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27811796452e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.27591659769e-07
+.. Cost                : 4.27591659769e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.27393392436e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27393392436e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.27224273754e-07
+.. Cost                : 4.27224273754e-07
+.. Training complete.Took 17.8851625 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ false-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.27002768785e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.27002768785e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.27049778981e-07
+.. Cost                : 4.27049778981e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.27096798778e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27096798778e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.27143825845e-07
+.. Cost                : 4.27143825845e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.27190863329e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27190863329e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.27237908944e-07
+.. Cost                : 4.27237908944e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.27284960463e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27284960463e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.27332017953e-07
+.. Cost                : 4.27332017953e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.27379081393e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27379081393e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.27426150716e-07
+.. Cost                : 4.27426150716e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.27473225915e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27473225915e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.27520309062e-07
+.. Cost                : 4.27520309062e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.27567406342e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27567406342e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.27614510611e-07
+.. Cost                : 4.27614510611e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.27661620957e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27661620957e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.27708737552e-07
+.. Cost                : 4.27708737552e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.27755859972e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27755859972e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.27802988373e-07
+.. Cost                : 4.27802988373e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.27850123361e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27850123361e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.2789726329e-07
+.. Cost                : 4.2789726329e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.27049751079e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27049751079e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.27096846674e-07
+.. Cost                : 4.27096846674e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.27143949127e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27143949127e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.27191061106e-07
+.. Cost                : 4.27191061106e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.27238180616e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27238180616e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.27285305296e-07
+.. Cost                : 4.27285305296e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.27332435204e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27332435204e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.27379570319e-07
+.. Cost                : 4.27379570319e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.27426710551e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27426710551e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.27473855868e-07
+.. Cost                : 4.27473855868e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.27521006732e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27521006732e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.27568172909e-07
+.. Cost                : 4.27568172909e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.27615345506e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27615345506e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.27662523621e-07
+.. Cost                : 4.27662523621e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.2770970727e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2770970727e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.27756896108e-07
+.. Cost                : 4.27756896108e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.27804090275e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27804090275e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.27851290431e-07
+.. Cost                : 4.27851290431e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.27898494744e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27898494744e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.27945703718e-07
+.. Cost                : 4.27945703718e-07
+.. Training complete.Took 16.7183787667 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ polyak-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.28084277707e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.28084277707e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.27867421826e-07
+.. Cost                : 4.27867421826e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.2765012786e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2765012786e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.27442324622e-07
+.. Cost                : 4.27442324622e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.27229379497e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27229379497e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.27025639747e-07
+.. Cost                : 4.27025639747e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.26828997101e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26828997101e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.2664978736e-07
+.. Cost                : 4.2664978736e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.26477202433e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26477202433e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.26308156039e-07
+.. Cost                : 4.26308156039e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.26143177974e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26143177974e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.25979638268e-07
+.. Cost                : 4.25979638268e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.25819696387e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25819696387e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.25663603297e-07
+.. Cost                : 4.25663603297e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.25507935376e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25507935376e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.25356134914e-07
+.. Cost                : 4.25356134914e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.25206437804e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25206437804e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.25056639053e-07
+.. Cost                : 4.25056639053e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.24913241624e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.24913241624e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.24767393236e-07
+.. Cost                : 4.24767393236e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.27781563808e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27781563808e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.27800649612e-07
+.. Cost                : 4.27800649612e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.27820971194e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27820971194e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.278416034e-07
+.. Cost                : 4.278416034e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.27862455835e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27862455835e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.27883571486e-07
+.. Cost                : 4.27883571486e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.2790477759e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2790477759e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.27926221711e-07
+.. Cost                : 4.27926221711e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.27947681341e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27947681341e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.27968996402e-07
+.. Cost                : 4.27968996402e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.27989993839e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27989993839e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.28012771489e-07
+.. Cost                : 4.28012771489e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.28035823999e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28035823999e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.28059291088e-07
+.. Cost                : 4.28059291088e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.28082932976e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28082932976e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.28106797881e-07
+.. Cost                : 4.28106797881e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.28130879083e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28130879083e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.28155280327e-07
+.. Cost                : 4.28155280327e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.28179939348e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28179939348e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.28204687369e-07
+.. Cost                : 4.28204687369e-07
+.. Training complete.Took 17.7638324333 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ polyak-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.28322768316e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.28322768316e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.28104200305e-07
+.. Cost                : 4.28104200305e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.27889638351e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27889638351e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.27676796875e-07
+.. Cost                : 4.27676796875e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.27467612991e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27467612991e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.27258944231e-07
+.. Cost                : 4.27258944231e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.27056504065e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27056504065e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.2685792309e-07
+.. Cost                : 4.2685792309e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.26667060103e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26667060103e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.26481573424e-07
+.. Cost                : 4.26481573424e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.26307636336e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26307636336e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.26141398765e-07
+.. Cost                : 4.26141398765e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.25972649595e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25972649595e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.258145373e-07
+.. Cost                : 4.258145373e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.25657567068e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25657567068e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.25501541657e-07
+.. Cost                : 4.25501541657e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.25350620991e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25350620991e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.2519867158e-07
+.. Cost                : 4.2519867158e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.250496372e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.250496372e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.2490322251e-07
+.. Cost                : 4.2490322251e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.28015428441e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28015428441e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.28034474072e-07
+.. Cost                : 4.28034474072e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.28054935709e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28054935709e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.28075527807e-07
+.. Cost                : 4.28075527807e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.28096620383e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28096620383e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.28117612741e-07
+.. Cost                : 4.28117612741e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.28139058169e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28139058169e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.28160840275e-07
+.. Cost                : 4.28160840275e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.28182313908e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28182313908e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.28203976565e-07
+.. Cost                : 4.28203976565e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.28225240992e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28225240992e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.28248204693e-07
+.. Cost                : 4.28248204693e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.28271504563e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28271504563e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.28295084959e-07
+.. Cost                : 4.28295084959e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.28318992204e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28318992204e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.28343022281e-07
+.. Cost                : 4.28343022281e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.28367237534e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28367237534e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.28391872147e-07
+.. Cost                : 4.28391872147e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.28416518566e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28416518566e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.28441510884e-07
+.. Cost                : 4.28441510884e-07
+.. Training complete.Took 17.5879733833 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ polyak-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.28462435621e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.28462435621e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.28509580441e-07
+.. Cost                : 4.28509580441e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.28556737405e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28556737405e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.28603908959e-07
+.. Cost                : 4.28603908959e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.28651087533e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28651087533e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.28698273968e-07
+.. Cost                : 4.28698273968e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.28745466219e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28745466219e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.28792667118e-07
+.. Cost                : 4.28792667118e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.28839874274e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28839874274e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.28887087322e-07
+.. Cost                : 4.28887087322e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.28934307494e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28934307494e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.28981541772e-07
+.. Cost                : 4.28981541772e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.29028782218e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29028782218e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.29076028187e-07
+.. Cost                : 4.29076028187e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.29123279683e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29123279683e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.29170536893e-07
+.. Cost                : 4.29170536893e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.29217799652e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29217799652e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.29265067849e-07
+.. Cost                : 4.29265067849e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.29312344937e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29312344937e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.29359628358e-07
+.. Cost                : 4.29359628358e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.28509535055e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28509535055e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.2855681123e-07
+.. Cost                : 4.2855681123e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.28604103008e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28604103008e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.28651401404e-07
+.. Cost                : 4.28651401404e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.28698707363e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28698707363e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.28746018595e-07
+.. Cost                : 4.28746018595e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.28793338481e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28793338481e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.28840664215e-07
+.. Cost                : 4.28840664215e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.28887995136e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28887995136e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.28935331547e-07
+.. Cost                : 4.28935331547e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.28982678863e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28982678863e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.29030036042e-07
+.. Cost                : 4.29030036042e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.2907739887e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2907739887e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.29124766983e-07
+.. Cost                : 4.29124766983e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.29172140479e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29172140479e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.29219519359e-07
+.. Cost                : 4.29219519359e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.29266903555e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29266903555e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.29314294243e-07
+.. Cost                : 4.29314294243e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.29361693008e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29361693008e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.29409097061e-07
+.. Cost                : 4.29409097061e-07
+.. Training complete.Took 17.1015075667 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ nesterov-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.29612836269e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.29612836269e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.29237070008e-07
+.. Cost                : 4.29237070008e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.28858409166e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28858409166e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.28483939466e-07
+.. Cost                : 4.28483939466e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.28112516657e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28112516657e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.27739247959e-07
+.. Cost                : 4.27739247959e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.27373540745e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27373540745e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.27003214668e-07
+.. Cost                : 4.27003214668e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.26646610455e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26646610455e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.26301313844e-07
+.. Cost                : 4.26301313844e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.25964752741e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25964752741e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.25648054551e-07
+.. Cost                : 4.25648054551e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.25332163153e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25332163153e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.25026597158e-07
+.. Cost                : 4.25026597158e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.2472496647e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2472496647e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.24427607253e-07
+.. Cost                : 4.24427607253e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.24128680735e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.24128680735e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.23831653441e-07
+.. Cost                : 4.23831653441e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.2354064408e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2354064408e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.23245893304e-07
+.. Cost                : 4.23245893304e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.29090796714e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29090796714e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.29086284563e-07
+.. Cost                : 4.29086284563e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.29083973692e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29083973692e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.29082001077e-07
+.. Cost                : 4.29082001077e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.29080514555e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29080514555e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.29079417579e-07
+.. Cost                : 4.29079417579e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.29077719024e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29077719024e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.29076361485e-07
+.. Cost                : 4.29076361485e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.29074853371e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29074853371e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.2907264122e-07
+.. Cost                : 4.2907264122e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.29069636811e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29069636811e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.29069446576e-07
+.. Cost                : 4.29069446576e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.29070229553e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29070229553e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.29071024742e-07
+.. Cost                : 4.29071024742e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.29072905031e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29072905031e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.290747179e-07
+.. Cost                : 4.290747179e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.29077079537e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29077079537e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.29080244378e-07
+.. Cost                : 4.29080244378e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.29083390807e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29083390807e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.29087365561e-07
+.. Cost                : 4.29087365561e-07
+.. Training complete.Took 17.61683015 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ nesterov-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.29240695508e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.29240695508e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.28863025468e-07
+.. Cost                : 4.28863025468e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.28488344301e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28488344301e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.28114252855e-07
+.. Cost                : 4.28114252855e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.27743496061e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27743496061e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.27370833835e-07
+.. Cost                : 4.27370833835e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.27007877937e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27007877937e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.26639041486e-07
+.. Cost                : 4.26639041486e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.2629360994e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2629360994e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.25948275363e-07
+.. Cost                : 4.25948275363e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.25614725021e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.25614725021e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.25301680968e-07
+.. Cost                : 4.25301680968e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.24984028161e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.24984028161e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.24678172593e-07
+.. Cost                : 4.24678172593e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.24372244179e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.24372244179e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.24076662552e-07
+.. Cost                : 4.24076662552e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.23781181844e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.23781181844e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.23484469435e-07
+.. Cost                : 4.23484469435e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.23191752592e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.23191752592e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.22896185487e-07
+.. Cost                : 4.22896185487e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.28718823676e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28718823676e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.28714450161e-07
+.. Cost                : 4.28714450161e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.28712335167e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28712335167e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.28710392058e-07
+.. Cost                : 4.28710392058e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.28708611352e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28708611352e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.28707386719e-07
+.. Cost                : 4.28707386719e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.28706206977e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28706206977e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.28704505893e-07
+.. Cost                : 4.28704505893e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.28703344379e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28703344379e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.28700992341e-07
+.. Cost                : 4.28700992341e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.28698234327e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28698234327e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.28698225333e-07
+.. Cost                : 4.28698225333e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.28698891379e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28698891379e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.28700025324e-07
+.. Cost                : 4.28700025324e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.28701557572e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28701557572e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.28703776573e-07
+.. Cost                : 4.28703776573e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.28706205393e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28706205393e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.28709380993e-07
+.. Cost                : 4.28709380993e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.28712794232e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28712794232e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.2871676284e-07
+.. Cost                : 4.2871676284e-07
+.. Training complete.Took 17.827211 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ nesterov-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.28712419729e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.28712419729e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.28759651261e-07
+.. Cost                : 4.28759651261e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.2880689698e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2880689698e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.28854155467e-07
+.. Cost                : 4.28854155467e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.28901422726e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28901422726e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.28948698148e-07
+.. Cost                : 4.28948698148e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.28995980001e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28995980001e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.2904327262e-07
+.. Cost                : 4.2904327262e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.29090576643e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29090576643e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.29137886686e-07
+.. Cost                : 4.29137886686e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.29185202636e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29185202636e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.29232524421e-07
+.. Cost                : 4.29232524421e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.29279857223e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29279857223e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.29327199139e-07
+.. Cost                : 4.29327199139e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.29374548433e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29374548433e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.29421904183e-07
+.. Cost                : 4.29421904183e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.29469267824e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29469267824e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.2951663961e-07
+.. Cost                : 4.2951663961e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.29564018156e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29564018156e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.2961140255e-07
+.. Cost                : 4.2961140255e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.28759628786e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28759628786e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.28806950621e-07
+.. Cost                : 4.28806950621e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.28854284792e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28854284792e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.28901626701e-07
+.. Cost                : 4.28901626701e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.28948976227e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28948976227e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.28996331529e-07
+.. Cost                : 4.28996331529e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.29043695935e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29043695935e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.29091071931e-07
+.. Cost                : 4.29091071931e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.29138453259e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29138453259e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.29185839805e-07
+.. Cost                : 4.29185839805e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.29233231491e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29233231491e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.29280631653e-07
+.. Cost                : 4.29280631653e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.29328041574e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29328041574e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.29375458637e-07
+.. Cost                : 4.29375458637e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.29422881022e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29422881022e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.29470310321e-07
+.. Cost                : 4.29470310321e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.2951774607e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2951774607e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.29565189326e-07
+.. Cost                : 4.29565189326e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.29612638214e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29612638214e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.29660093563e-07
+.. Cost                : 4.29660093563e-07
+.. Training complete.Took 17.16778325 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ false-sgd (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.29792016699e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.29792016699e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.29572302061e-07
+.. Cost                : 4.29572302061e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.29354556714e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29354556714e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.2914062157e-07
+.. Cost                : 4.2914062157e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.289305623e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.289305623e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.28720322422e-07
+.. Cost                : 4.28720322422e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.28516672304e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28516672304e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.2831356861e-07
+.. Cost                : 4.2831356861e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.2811367591e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2811367591e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.27916972075e-07
+.. Cost                : 4.27916972075e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.27719873976e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27719873976e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.27529310156e-07
+.. Cost                : 4.27529310156e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.2733937353e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2733937353e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.27151570938e-07
+.. Cost                : 4.27151570938e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.26967782782e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26967782782e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.26784791919e-07
+.. Cost                : 4.26784791919e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.26604993029e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26604993029e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.2642884663e-07
+.. Cost                : 4.2642884663e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.2625582857e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2625582857e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.26087168603e-07
+.. Cost                : 4.26087168603e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.29498532882e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29498532882e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.29518743013e-07
+.. Cost                : 4.29518743013e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.29539180976e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29539180976e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.29560092328e-07
+.. Cost                : 4.29560092328e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.29581196331e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29581196331e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.29602768401e-07
+.. Cost                : 4.29602768401e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.29624678565e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29624678565e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.29646792289e-07
+.. Cost                : 4.29646792289e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.29669224825e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29669224825e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.29691741079e-07
+.. Cost                : 4.29691741079e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.29714829127e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29714829127e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.29737886222e-07
+.. Cost                : 4.29737886222e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.29761504104e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29761504104e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.29785047202e-07
+.. Cost                : 4.29785047202e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.2980887801e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2980887801e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.29833144741e-07
+.. Cost                : 4.29833144741e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.29857496918e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29857496918e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.29882173003e-07
+.. Cost                : 4.29882173003e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.29907035967e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29907035967e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.29932048591e-07
+.. Cost                : 4.29932048591e-07
+.. Training complete.Took 18.3484381167 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ false-adagrad (0.1, 0.05, 0.01) ------------------
+================================================
+.. Setting up the optimizer
+.. Cooking the network
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 4.3003576786e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 4.3003576786e-07
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 4.29815695121e-07
+.. Cost                : 4.29815695121e-07
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 4.29598821345e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29598821345e-07
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 4.29383729467e-07
+.. Cost                : 4.29383729467e-07
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 4.29174410981e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29174410981e-07
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 4.28964226363e-07
+.. Cost                : 4.28964226363e-07
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 4.28760088869e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28760088869e-07
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 4.28554979633e-07
+.. Cost                : 4.28554979633e-07
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 4.28357086422e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.28357086422e-07
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 4.28157353753e-07
+.. Cost                : 4.28157353753e-07
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 4.27961836126e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27961836126e-07
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 4.27770572865e-07
+.. Cost                : 4.27770572865e-07
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 4.27579330559e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.27579330559e-07
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 4.27394316171e-07
+.. Cost                : 4.27394316171e-07
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 4.2720768082e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.2720768082e-07
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 4.270248386e-07
+.. Cost                : 4.270248386e-07
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 4.26846666615e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26846666615e-07
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 4.26667493203e-07
+.. Cost                : 4.26667493203e-07
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 4.26494444173e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.26494444173e-07
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 4.2631994278e-07
+.. Cost                : 4.2631994278e-07
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 4.29742577561e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29742577561e-07
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 4.29762693131e-07
+.. Cost                : 4.29762693131e-07
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 4.29783167221e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29783167221e-07
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 4.29804111035e-07
+.. Cost                : 4.29804111035e-07
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 4.29825273841e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29825273841e-07
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 4.29846680968e-07
+.. Cost                : 4.29846680968e-07
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 4.29868548726e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29868548726e-07
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 4.29890489813e-07
+.. Cost                : 4.29890489813e-07
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 4.29912991595e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29912991595e-07
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 4.29935542255e-07
+.. Cost                : 4.29935542255e-07
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.29958630685e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.29958630685e-07
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.29981813705e-07
+.. Cost                : 4.29981813705e-07
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.30005209006e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.30005209006e-07
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.30028961959e-07
+.. Cost                : 4.30028961959e-07
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.3005282624e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.3005282624e-07
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.30077085888e-07
+.. Cost                : 4.30077085888e-07
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.30101501199e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.30101501199e-07
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.30125926759e-07
+.. Cost                : 4.30125926759e-07
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 4.30150947643e-07
+.. Validation accuracy : 98.43
+.. Training accuracy : 100.0
+.. Cost                : 4.30150947643e-07
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 4.3017613932e-07
+.. Cost                : 4.3017613932e-07
+.. Training complete.Took 18.2509099 minutes
+.. Testing
+.. Testing accuracy : 98.34
+------------------ false-rmsprop (0.1, 0.05, 0.01) ------------------
+================================================

@@ -1,0 +1,2123 @@
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 false-sgd -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.30113284685
+.. Validation accuracy : 16.59
+.. Training accuracy : 16.958
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.30113284685
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.29736112074
+.. Cost                : 2.29736112074
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.29324993826
+.. Validation accuracy : 23.36
+.. Training accuracy : 23.788
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.29324993826
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.2884145074
+.. Cost                : 2.2884145074
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.28242363571
+.. Validation accuracy : 43.89
+.. Training accuracy : 42.02
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.28242363571
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.27475307814
+.. Cost                : 2.27475307814
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.26472464889
+.. Validation accuracy : 55.75
+.. Training accuracy : 53.78
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.26472464889
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 2.25140969983
+.. Cost                : 2.25140969983
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 2.23351376359
+.. Validation accuracy : 57.62
+.. Training accuracy : 56.126
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.23351376359
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 2.20930844394
+.. Cost                : 2.20930844394
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 2.17667740169
+.. Validation accuracy : 54.86
+.. Training accuracy : 53.66
+.. Cost                : 2.17667740169
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.13335876832
+.. Cost                : 2.13335876832
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 2.07748085529
+.. Validation accuracy : 54.58
+.. Training accuracy : 53.576
+.. Cost                : 2.07748085529
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 2.00821306251
+.. Cost                : 2.00821306251
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.92603005746
+.. Validation accuracy : 59.28
+.. Training accuracy : 58.388
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.92603005746
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.83265344231
+.. Cost                : 1.83265344231
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.73135090583
+.. Validation accuracy : 64.33
+.. Training accuracy : 63.27
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.73135090583
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.6269256949
+.. Cost                : 1.6269256949
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.52464472512
+.. Validation accuracy : 67.68
+.. Training accuracy : 65.922
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.52464472512
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.42886930454
+.. Cost                : 1.42886930454
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.4622078016
+.. Validation accuracy : 68.01
+.. Training accuracy : 66.254
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.4622078016
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.43832337612
+.. Cost                : 1.43832337612
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.41590665957
+.. Validation accuracy : 68.57
+.. Training accuracy : 66.822
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.41590665957
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.39489328429
+.. Cost                : 1.39489328429
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.37521305578
+.. Validation accuracy : 69.36
+.. Training accuracy : 67.382
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.37521305578
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.35679269344
+.. Cost                : 1.35679269344
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.33955830627
+.. Validation accuracy : 69.93
+.. Training accuracy : 67.98
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.33955830627
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.32343647421
+.. Cost                : 1.32343647421
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.30835566512
+.. Validation accuracy : 70.45
+.. Training accuracy : 68.502
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.30835566512
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.29424744951
+.. Cost                : 1.29424744951
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.28104651959
+.. Validation accuracy : 70.95
+.. Training accuracy : 69.016
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.28104651959
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.26869118699
+.. Cost                : 1.26869118699
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.25712358399
+.. Validation accuracy : 71.33
+.. Training accuracy : 69.426
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.25712358399
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.24628957185
+.. Cost                : 1.24628957185
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.23613857232
+.. Validation accuracy : 71.68
+.. Training accuracy : 69.77
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.23613857232
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.22662357926
+.. Cost                : 1.22662357926
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.21770088565
+.. Validation accuracy : 71.96
+.. Training accuracy : 70.08
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.21770088565
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.20932981128
+.. Cost                : 1.20932981128
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.20147276951
+.. Validation accuracy : 72.29
+.. Training accuracy : 70.352
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.20147276951
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.19409490642
+.. Cost                : 1.19409490642
+.. Training complete.Took 20.8431716167 minutes
+.. Testing
+.. Testing accuracy : 71.38
+------------------ false-sgd (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 false-adagrad -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.610133332371
+.. Validation accuracy : 94.61
+.. Training accuracy : 93.844
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.610133332371
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.169649059415
+.. Cost                : 0.169649059415
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.119074541564
+.. Validation accuracy : 96.97
+.. Training accuracy : 97.22
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.119074541564
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.0918937029587
+.. Cost                : 0.0918937029587
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0739012237628
+.. Validation accuracy : 97.41
+.. Training accuracy : 98.236
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0739012237628
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0610194139568
+.. Cost                : 0.0610194139568
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0514352166276
+.. Validation accuracy : 97.64
+.. Training accuracy : 98.736
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0514352166276
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.0441628231504
+.. Cost                : 0.0441628231504
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0384899397721
+.. Validation accuracy : 97.81
+.. Training accuracy : 99.106
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0384899397721
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0339270208052
+.. Cost                : 0.0339270208052
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0302216685407
+.. Validation accuracy : 97.87
+.. Training accuracy : 99.35
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0302216685407
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.0271568416311
+.. Cost                : 0.0271568416311
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.0245838025374
+.. Validation accuracy : 97.89
+.. Training accuracy : 99.532
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0245838025374
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.0224627526884
+.. Cost                : 0.0224627526884
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.0206384912471
+.. Validation accuracy : 97.88
+.. Training accuracy : 99.626
+.. Best training accuracy
+.. Cost                : 0.0206384912471
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.0190875166341
+.. Cost                : 0.0190875166341
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.0177360982422
+.. Validation accuracy : 97.9
+.. Training accuracy : 99.69
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0177360982422
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.0165691770623
+.. Cost                : 0.0165691770623
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.015553926322
+.. Validation accuracy : 97.96
+.. Training accuracy : 99.744
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.015553926322
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.0146503847901
+.. Cost                : 0.0146503847901
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.014422755458
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.788
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.014422755458
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 0.0140676744056
+.. Cost                : 0.0140676744056
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 0.0138437772211
+.. Validation accuracy : 98.02
+.. Training accuracy : 99.804
+.. Best training accuracy
+.. Cost                : 0.0138437772211
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 0.0136520012024
+.. Cost                : 0.0136520012024
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 0.0134783495471
+.. Validation accuracy : 98.04
+.. Training accuracy : 99.806
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0134783495471
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 0.0133186746056
+.. Cost                : 0.0133186746056
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 0.0131718438629
+.. Validation accuracy : 98.02
+.. Training accuracy : 99.814
+.. Best training accuracy
+.. Cost                : 0.0131718438629
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 0.0130363653924
+.. Cost                : 0.0130363653924
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 0.0129098140786
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.814
+.. Cost                : 0.0129098140786
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 0.0127922862485
+.. Cost                : 0.0127922862485
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 0.0126830911503
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.82
+.. Best training accuracy
+.. Cost                : 0.0126830911503
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 0.0125818913803
+.. Cost                : 0.0125818913803
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 0.0124865898777
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.824
+.. Best training accuracy
+.. Cost                : 0.0124865898777
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 0.0123983110568
+.. Cost                : 0.0123983110568
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 0.012315160294
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.828
+.. Best training accuracy
+.. Cost                : 0.012315160294
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 0.0122382405177
+.. Cost                : 0.0122382405177
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 0.0121650103926
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.834
+.. Best training accuracy
+.. Cost                : 0.0121650103926
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 0.0120974037573
+.. Cost                : 0.0120974037573
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 0.0120331435213
+.. Validation accuracy : 98.03
+.. Training accuracy : 99.834
+.. Cost                : 0.0120331435213
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 0.0119737447806
+.. Cost                : 0.0119737447806
+.. Training complete.Took 21.2096527667 minutes
+.. Testing
+.. Testing accuracy : 97.98
+------------------ false-adagrad (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 false-rmsprop -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 1.45875693587
+.. Validation accuracy : 92.81
+.. Training accuracy : 92.008
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.45875693587
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.242730493971
+.. Cost                : 0.242730493971
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.154857587378
+.. Validation accuracy : 95.33
+.. Training accuracy : 95.716
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.154857587378
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.113099339648
+.. Cost                : 0.113099339648
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0918590087476
+.. Validation accuracy : 95.45
+.. Training accuracy : 96.13
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0918590087476
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0698584539519
+.. Cost                : 0.0698584539519
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0549853627093
+.. Validation accuracy : 96.98
+.. Training accuracy : 98.262
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0549853627093
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.047286947758
+.. Cost                : 0.047286947758
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0395252418773
+.. Validation accuracy : 97.14
+.. Training accuracy : 98.642
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0395252418773
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0333557489077
+.. Cost                : 0.0333557489077
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0261244933075
+.. Validation accuracy : 97.64
+.. Training accuracy : 99.234
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0261244933075
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.0224654422741
+.. Cost                : 0.0224654422741
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.0181845762754
+.. Validation accuracy : 97.14
+.. Training accuracy : 98.772
+.. Cost                : 0.0181845762754
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.0157869399797
+.. Cost                : 0.0157869399797
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.0131315470536
+.. Validation accuracy : 97.74
+.. Training accuracy : 99.616
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0131315470536
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.00967172398247
+.. Cost                : 0.00967172398247
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.00953304083923
+.. Validation accuracy : 97.86
+.. Training accuracy : 99.726
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.00953304083923
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.00795934617199
+.. Cost                : 0.00795934617199
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.00530792114056
+.. Validation accuracy : 97.9
+.. Training accuracy : 99.644
+.. Best validation accuracy
+.. Cost                : 0.00530792114056
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.00371145261219
+.. Cost                : 0.00371145261219
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.00217786137755
+.. Validation accuracy : 98.07
+.. Training accuracy : 99.99
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.00217786137755
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 0.000709955907513
+.. Cost                : 0.000709955907513
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 0.000483998310999
+.. Validation accuracy : 98.16
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.000483998310999
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 0.000393927919656
+.. Cost                : 0.000393927919656
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 0.000339833174518
+.. Validation accuracy : 98.18
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 0.000339833174518
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 0.000303375513724
+.. Cost                : 0.000303375513724
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 0.000276686322768
+.. Validation accuracy : 98.18
+.. Training accuracy : 100.0
+.. Cost                : 0.000276686322768
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 0.000255864873918
+.. Cost                : 0.000255864873918
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 0.000239315405703
+.. Validation accuracy : 98.19
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 0.000239315405703
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 0.000225596074723
+.. Cost                : 0.000225596074723
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 0.000214172210679
+.. Validation accuracy : 98.2
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 0.000214172210679
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 0.000204421985643
+.. Cost                : 0.000204421985643
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 0.000196153741534
+.. Validation accuracy : 98.17
+.. Training accuracy : 100.0
+.. Cost                : 0.000196153741534
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 0.000188853419085
+.. Cost                : 0.000188853419085
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 0.000182562434161
+.. Validation accuracy : 98.16
+.. Training accuracy : 100.0
+.. Cost                : 0.000182562434161
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 0.000176985704231
+.. Cost                : 0.000176985704231
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 0.000172079736265
+.. Validation accuracy : 98.16
+.. Training accuracy : 100.0
+.. Cost                : 0.000172079736265
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 0.000167665531966
+.. Cost                : 0.000167665531966
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 0.00016370866027
+.. Validation accuracy : 98.18
+.. Training accuracy : 100.0
+.. Cost                : 0.00016370866027
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 0.00016009429973
+.. Cost                : 0.00016009429973
+.. Training complete.Took 19.8280115167 minutes
+.. Testing
+.. Testing accuracy : 97.95
+------------------ false-rmsprop (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 polyak-sgd -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.30082852136
+.. Validation accuracy : 28.98
+.. Training accuracy : 28.064
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.30082852136
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.29729731717
+.. Cost                : 2.29729731717
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.29341756777
+.. Validation accuracy : 29.28
+.. Training accuracy : 28.928
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.29341756777
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.28882852584
+.. Cost                : 2.28882852584
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.2831572506
+.. Validation accuracy : 46.2
+.. Training accuracy : 44.636
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.2831572506
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.27595460169
+.. Cost                : 2.27595460169
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.266635038
+.. Validation accuracy : 57.2
+.. Training accuracy : 56.188
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.266635038
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 2.25442780026
+.. Cost                : 2.25442780026
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 2.23828330686
+.. Validation accuracy : 60.42
+.. Training accuracy : 59.172
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.23828330686
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 2.21679602357
+.. Cost                : 2.21679602357
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 2.1881836245
+.. Validation accuracy : 59.71
+.. Training accuracy : 58.198
+.. Cost                : 2.1881836245
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 2.15032175052
+.. Cost                : 2.15032175052
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 2.1009793692
+.. Validation accuracy : 59.89
+.. Training accuracy : 58.17
+.. Cost                : 2.1009793692
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 2.03827420635
+.. Cost                : 2.03827420635
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 1.96123089345
+.. Validation accuracy : 63.22
+.. Training accuracy : 61.54
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.96123089345
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 1.87022449009
+.. Cost                : 1.87022449009
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 1.76747960938
+.. Validation accuracy : 67.09
+.. Training accuracy : 65.082
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.76747960938
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 1.6575726552
+.. Cost                : 1.6575726552
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 1.54693997126
+.. Validation accuracy : 69.03
+.. Training accuracy : 67.31
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.54693997126
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 1.44200060922
+.. Cost                : 1.44200060922
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 1.47534198965
+.. Validation accuracy : 69.36
+.. Training accuracy : 67.588
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.47534198965
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 1.44894130171
+.. Cost                : 1.44894130171
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 1.42437442206
+.. Validation accuracy : 69.76
+.. Training accuracy : 67.946
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.42437442206
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 1.4013711058
+.. Cost                : 1.4013711058
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 1.37986200055
+.. Validation accuracy : 70.26
+.. Training accuracy : 68.342
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.37986200055
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 1.35976953924
+.. Cost                : 1.35976953924
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 1.34101148737
+.. Validation accuracy : 70.68
+.. Training accuracy : 68.658
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.34101148737
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 1.32350381658
+.. Cost                : 1.32350381658
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 1.3071626547
+.. Validation accuracy : 71.06
+.. Training accuracy : 69.002
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.3071626547
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 1.29190501882
+.. Cost                : 1.29190501882
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 1.27764908677
+.. Validation accuracy : 71.35
+.. Training accuracy : 69.416
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.27764908677
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 1.26434327769
+.. Cost                : 1.26434327769
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 1.25192860014
+.. Validation accuracy : 71.73
+.. Training accuracy : 69.748
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.25192860014
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 1.24034025968
+.. Cost                : 1.24034025968
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 1.22951767916
+.. Validation accuracy : 72.12
+.. Training accuracy : 70.042
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.22951767916
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 1.21940498713
+.. Cost                : 1.21940498713
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 1.20995042201
+.. Validation accuracy : 72.48
+.. Training accuracy : 70.28
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.20995042201
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 1.2011059715
+.. Cost                : 1.2011059715
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 1.19282754046
+.. Validation accuracy : 72.65
+.. Training accuracy : 70.536
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.19282754046
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 1.18507439351
+.. Cost                : 1.18507439351
+.. Training complete.Took 22.77124485 minutes
+.. Testing
+.. Testing accuracy : 71.57
+------------------ polyak-sgd (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 polyak-adagrad -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.447463966389
+.. Validation accuracy : 95.99
+.. Training accuracy : 95.472
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.447463966389
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.135212722055
+.. Cost                : 0.135212722055
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.0950486122108
+.. Validation accuracy : 97.22
+.. Training accuracy : 97.792
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0950486122108
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.0731124762304
+.. Cost                : 0.0731124762304
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0587106269328
+.. Validation accuracy : 97.51
+.. Training accuracy : 98.596
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0587106269328
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0484467217023
+.. Cost                : 0.0484467217023
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0407117241018
+.. Validation accuracy : 97.7
+.. Training accuracy : 99.034
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0407117241018
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.0346937371689
+.. Cost                : 0.0346937371689
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0299578612652
+.. Validation accuracy : 97.73
+.. Training accuracy : 99.342
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0299578612652
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0261563932933
+.. Cost                : 0.0261563932933
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0230899527914
+.. Validation accuracy : 97.75
+.. Training accuracy : 99.528
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0230899527914
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.020523796167
+.. Cost                : 0.020523796167
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.0184026032842
+.. Validation accuracy : 97.8
+.. Training accuracy : 99.656
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0184026032842
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.0166064918072
+.. Cost                : 0.0166064918072
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.0150982783241
+.. Validation accuracy : 97.86
+.. Training accuracy : 99.754
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0150982783241
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.0138066629516
+.. Cost                : 0.0138066629516
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.0127033033572
+.. Validation accuracy : 97.87
+.. Training accuracy : 99.81
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0127033033572
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.0117480874527
+.. Cost                : 0.0117480874527
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.0109146556219
+.. Validation accuracy : 97.92
+.. Training accuracy : 99.848
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0109146556219
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.0101883475862
+.. Cost                : 0.0101883475862
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.0100590612809
+.. Validation accuracy : 97.92
+.. Training accuracy : 99.872
+.. Best training accuracy
+.. Cost                : 0.0100590612809
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 0.0097148949511
+.. Cost                : 0.0097148949511
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 0.00953568373012
+.. Validation accuracy : 97.92
+.. Training accuracy : 99.878
+.. Best training accuracy
+.. Cost                : 0.00953568373012
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 0.00938431691953
+.. Cost                : 0.00938431691953
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 0.00925007248812
+.. Validation accuracy : 97.92
+.. Training accuracy : 99.884
+.. Best training accuracy
+.. Cost                : 0.00925007248812
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 0.00912786769278
+.. Cost                : 0.00912786769278
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 0.0090149510084
+.. Validation accuracy : 97.93
+.. Training accuracy : 99.894
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0090149510084
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 0.00891109547462
+.. Cost                : 0.00891109547462
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 0.00881243390345
+.. Validation accuracy : 97.93
+.. Training accuracy : 99.902
+.. Best training accuracy
+.. Cost                : 0.00881243390345
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 0.00871812903587
+.. Cost                : 0.00871812903587
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 0.00862318908718
+.. Validation accuracy : 97.93
+.. Training accuracy : 99.904
+.. Best training accuracy
+.. Cost                : 0.00862318908718
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 0.00853276989648
+.. Cost                : 0.00853276989648
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 0.00845354221387
+.. Validation accuracy : 97.95
+.. Training accuracy : 99.904
+.. Best validation accuracy
+.. Cost                : 0.00845354221387
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 0.00838051268623
+.. Cost                : 0.00838051268623
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 0.00831308309218
+.. Validation accuracy : 97.94
+.. Training accuracy : 99.904
+.. Cost                : 0.00831308309218
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 0.00825012082901
+.. Cost                : 0.00825012082901
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 0.00819142518352
+.. Validation accuracy : 97.94
+.. Training accuracy : 99.906
+.. Best training accuracy
+.. Cost                : 0.00819142518352
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 0.00813736355242
+.. Cost                : 0.00813736355242
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 0.00808665251966
+.. Validation accuracy : 97.94
+.. Training accuracy : 99.91
+.. Best training accuracy
+.. Cost                : 0.00808665251966
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 0.00803916995806
+.. Cost                : 0.00803916995806
+.. Training complete.Took 19.8583124167 minutes
+.. Testing
+.. Testing accuracy : 98.08
+------------------ polyak-adagrad (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 polyak-rmsprop -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.991357203763
+.. Validation accuracy : 94.77
+.. Training accuracy : 94.44
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.991357203763
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.160295923104
+.. Cost                : 0.160295923104
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.105933349324
+.. Validation accuracy : 96.45
+.. Training accuracy : 97.366
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.105933349324
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.0781074799212
+.. Cost                : 0.0781074799212
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.0619111792654
+.. Validation accuracy : 97.57
+.. Training accuracy : 98.72
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0619111792654
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.0475221256166
+.. Cost                : 0.0475221256166
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.0365256300126
+.. Validation accuracy : 97.57
+.. Training accuracy : 98.688
+.. Cost                : 0.0365256300126
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.0348681309472
+.. Cost                : 0.0348681309472
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.0235693185303
+.. Validation accuracy : 97.51
+.. Training accuracy : 99.114
+.. Best training accuracy
+.. Cost                : 0.0235693185303
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.0205875655151
+.. Cost                : 0.0205875655151
+. 
+
+.. Epoch: 10 Era: 0
+.. Cost                : 0.0176421821339
+.. Validation accuracy : 97.63
+.. Training accuracy : 99.292
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0176421821339
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 0.0127598552771
+.. Cost                : 0.0127598552771
+. 
+
+.. Epoch: 12 Era: 0
+.. Cost                : 0.0131276950754
+.. Validation accuracy : 97.73
+.. Training accuracy : 99.472
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0131276950754
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 0.0128022211975
+.. Cost                : 0.0128022211975
+. 
+
+.. Epoch: 14 Era: 0
+.. Cost                : 0.010509808722
+.. Validation accuracy : 97.28
+.. Training accuracy : 99.344
+.. Cost                : 0.010509808722
+. 
+
+.. Epoch: 15 Era: 0
+.. Cost                : 0.0066510493807
+.. Cost                : 0.0066510493807
+. 
+
+.. Epoch: 16 Era: 0
+.. Cost                : 0.00561440305082
+.. Validation accuracy : 97.63
+.. Training accuracy : 99.596
+.. Best training accuracy
+.. Cost                : 0.00561440305082
+. 
+
+.. Epoch: 17 Era: 0
+.. Cost                : 0.00473282857433
+.. Cost                : 0.00473282857433
+. 
+
+.. Epoch: 18 Era: 0
+.. Cost                : 0.00408806500339
+.. Validation accuracy : 97.89
+.. Training accuracy : 99.828
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.00408806500339
+. 
+
+.. Epoch: 19 Era: 0
+.. Cost                : 0.00245139699088
+.. Cost                : 0.00245139699088
+. 
+
+.. Epoch: 20 Era: 1
+.. Cost                : 0.0017513825485
+.. Validation accuracy : 98.21
+.. Training accuracy : 100.0
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.0017513825485
+. 
+
+.. Epoch: 21 Era: 1
+.. Cost                : 0.000167767629169
+.. Cost                : 0.000167767629169
+. 
+
+.. Epoch: 22 Era: 1
+.. Cost                : 0.000102890391685
+.. Validation accuracy : 98.21
+.. Training accuracy : 100.0
+.. Cost                : 0.000102890391685
+. 
+
+.. Epoch: 23 Era: 1
+.. Cost                : 8.37336094063e-05
+.. Cost                : 8.37336094063e-05
+. 
+
+.. Epoch: 24 Era: 1
+.. Cost                : 7.36271899451e-05
+.. Validation accuracy : 98.21
+.. Training accuracy : 100.0
+.. Cost                : 7.36271899451e-05
+. 
+
+.. Epoch: 25 Era: 1
+.. Cost                : 6.68784967277e-05
+.. Cost                : 6.68784967277e-05
+. 
+
+.. Epoch: 26 Era: 1
+.. Cost                : 6.18624763379e-05
+.. Validation accuracy : 98.22
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 6.18624763379e-05
+. 
+
+.. Epoch: 27 Era: 1
+.. Cost                : 5.7877448098e-05
+.. Cost                : 5.7877448098e-05
+. 
+
+.. Epoch: 28 Era: 1
+.. Cost                : 5.46761012755e-05
+.. Validation accuracy : 98.21
+.. Training accuracy : 100.0
+.. Cost                : 5.46761012755e-05
+. 
+
+.. Epoch: 29 Era: 1
+.. Cost                : 5.20151197483e-05
+.. Cost                : 5.20151197483e-05
+. 
+
+.. Epoch: 30 Era: 1
+.. Cost                : 4.9722998144e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Best validation accuracy
+.. Cost                : 4.9722998144e-05
+. 
+
+.. Epoch: 31 Era: 1
+.. Cost                : 4.78503720582e-05
+.. Cost                : 4.78503720582e-05
+. 
+
+.. Epoch: 32 Era: 1
+.. Cost                : 4.6249923787e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 4.6249923787e-05
+. 
+
+.. Epoch: 33 Era: 1
+.. Cost                : 4.48501170158e-05
+.. Cost                : 4.48501170158e-05
+. 
+
+.. Epoch: 34 Era: 1
+.. Cost                : 4.36115014142e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 4.36115014142e-05
+. 
+
+.. Epoch: 35 Era: 1
+.. Cost                : 4.25134187619e-05
+.. Cost                : 4.25134187619e-05
+. 
+
+.. Epoch: 36 Era: 1
+.. Cost                : 4.15372544489e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 4.15372544489e-05
+. 
+
+.. Epoch: 37 Era: 1
+.. Cost                : 4.06604846295e-05
+.. Cost                : 4.06604846295e-05
+. 
+
+.. Epoch: 38 Era: 1
+.. Cost                : 3.98736462124e-05
+.. Validation accuracy : 98.23
+.. Training accuracy : 100.0
+.. Cost                : 3.98736462124e-05
+. 
+
+.. Epoch: 39 Era: 1
+.. Cost                : 3.91607839299e-05
+.. Cost                : 3.91607839299e-05
+.. Training complete.Took 20.4111267667 minutes
+.. Testing
+.. Testing accuracy : 98.36
+------------------ polyak-rmsprop (0.05, 0.01, 0.001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 2
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 2
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: dot_product_1
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 800)
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: dot_product_2
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: nil
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+----- 1 nesterov-sgd -------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 2.29971832549
+.. Validation accuracy : 31.21
+.. Training accuracy : 30.294
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.29971832549
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 2.29238525862
+.. Cost                : 2.29238525862
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 2.28211298314
+.. Validation accuracy : 51.81
+.. Training accuracy : 50.366
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.28211298314
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 2.26519592146
+.. Cost                : 2.26519592146
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 2.23455563137
+.. Validation accuracy : 52.72
+.. Training accuracy : 51.278
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 2.23455563137
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 2.17592270459
+.. Cost                : 2.17592270459
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 2.0646975435
