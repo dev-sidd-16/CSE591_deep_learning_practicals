@@ -70,7 +70,7 @@ clear y;
 
 x = data(  1:train_size * batch_size ,:);
 y = labels(1:train_size * batch_size);
-dump( 'train',10, batch_size, x, y );
+dump( 'train',20, batch_size, x, y );
 
 x = data(  train_size * batch_size + 1 : train_size * batch_size + test_size * batch_size ,:);
 y = labels(train_size * batch_size + 1 : train_size * batch_size + test_size * batch_size);
@@ -78,4 +78,4 @@ dump( 'test',10, batch_size, x, y );
 
 x = data(  (train_size + test_size) * batch_size + 1 : end ,:);
 y = labels((train_size + test_size) * batch_size + 1 : end);
-dump( 'valid',10, batch_size, x, y );
+dump( 'valid',20, batch_size, x, y );
