@@ -8,7 +8,7 @@ dataset = sys.argv[1]
 
 momentum = "nesterov"
 optim = "rmsprop"
-lr = (0.05,0.01,0.001)
+lr = (0.01,0.001,0.0001)
 
 # create a network
 net = network()
@@ -40,16 +40,27 @@ net.add_layer(type = "conv_pool",
 
 net.add_layer(type = "conv_pool",
 	origin = "conv_pool_2",
-	id = "conv_pool_3",
+	id = "conv_1",
 	num_neurons = 270,
 	filter_size = (3,3),
-	pool_size = (2,2),
+	pool_size = (1,1),
+	batch_norm = True,
+	activation = 'relu',
+	)
+
+
+net.add_layer(type = "conv_pool",
+	origin = "conv_1",
+	id = "conv_2",
+	num_neurons = 360,
+	filter_size = (3,3),
+	pool_size = (1,1),
 	batch_norm = True,
 	activation = 'relu',
 	)
 
 net.add_layer(type = "dot_product", 
-	origin = "conv_pool_3",
+	origin = "conv_2",
 	id = "dot_product_1", 
 	num_neurons = 800, 
 	regularize = True, 
