@@ -20,7 +20,7 @@ net.add_layer(type = "input", id = "input", dataset_init_args = dataset_params)
 net.add_layer(type = "conv_pool",
 	origin = "input",
 	id = "conv_pool_1",
-	num_neurons = 60,
+	num_neurons = 20,
 	filter_size = (5,5),
 	pool_size = (2,2),
 	batch_norm = True,
@@ -31,7 +31,7 @@ net.add_layer(type = "conv_pool",
 net.add_layer(type = "conv_pool",
 	origin = "conv_pool_1",
 	id = "conv_pool_2",
-	num_neurons = 150,
+	num_neurons = 40,
 	filter_size = (3,3),
 	pool_size = (2,2),
 	batch_norm = True,
@@ -40,18 +40,28 @@ net.add_layer(type = "conv_pool",
 
 net.add_layer(type = "conv_pool",
 	origin = "conv_pool_2",
-	id = "conv_pool_3",
-	num_neurons = 270,
+	id = "conv_1",
+	num_neurons = 60,
 	filter_size = (3,3),
-	pool_size = (2,2),
+	pool_size = (1,1),
+	batch_norm = True,
+	activation = 'relu',
+	)
+
+net.add_layer(type = "conv_pool",
+	origin = "conv_1",
+	id = "conv_2",
+	num_neurons = 150,
+	filter_size = (3,3),
+	pool_size = (1,1),
 	batch_norm = True,
 	activation = 'relu',
 	)
 
 net.add_layer(type = "dot_product", 
-	origin = "conv_pool_3",
+	origin = "conv_2",
 	id = "dot_product_1", 
-	num_neurons = 800, 
+	num_neurons = 600, 
 	regularize = True, 
 	activation = 'relu'
 	)
@@ -60,7 +70,7 @@ net.add_layer(type = "dot_product",
 net.add_layer(type = "dot_product", 
 	origin = "dot_product_1",
 	id = "dot_product_2", 
-	num_neurons = 800, 
+	num_neurons = 600, 
 	regularize = True, 
 	activation = 'relu'
 	)
@@ -83,7 +93,7 @@ id = momentum+'-'+optim
 
 optimizer_params = { 
 	"momentum_type" 	: momentum,
-	"momentum_params" 	: (0.7,0.95, 30),
+	"momentum_params" 	: (0.5,0.95, 20),
 	"regularization" 	: (0.0001,0.0002),
 	"optimizer_type" 	: optim,
 	"id"				: id
