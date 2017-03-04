@@ -32,52 +32,24 @@ net.add_layer(type = "conv_pool",
 	origin = "conv_pool_1",
 	id = "conv_pool_2",
 	num_neurons = 40,
-	filter_size = (3,3),
+	filter_size = (5,5),
 	pool_size = (2,2),
 	batch_norm = True,
 	activation = 'relu',
 	)
 
-net.add_layer(type = "conv_pool",
+net.add_layer(type = "dot_product", 
 	origin = "conv_pool_2",
-	id = "conv_1",
-	num_neurons = 60,
-	filter_size = (3,3),
-	pool_size = (1,1),
-	batch_norm = True,
-	activation = 'relu',
-	)
-
-net.add_layer(type = "conv_pool",
-	origin = "conv_1",
-	id = "conv_2",
-	num_neurons = 150,
-	filter_size = (3,3),
-	pool_size = (1,1),
-	batch_norm = True,
-	activation = 'relu',
-	)
-
-net.add_layer(type = "dot_product", 
-	origin = "conv_2",
 	id = "dot_product_1", 
-	num_neurons = 600, 
+	num_neurons = 500, 
 	regularize = True, 
 	activation = 'relu'
 	)
 
-
-net.add_layer(type = "dot_product", 
-	origin = "dot_product_1",
-	id = "dot_product_2", 
-	num_neurons = 600, 
-	regularize = True, 
-	activation = 'relu'
-	)
 
 net.add_layer(type = "classifier",
 	id = "softmax",
-	origin = "dot_product_2",
+	origin = "dot_product_1",
 	num_classes = 10,
 	activation = "softmax"
 	)
@@ -93,7 +65,7 @@ id = momentum+'-'+optim
 
 optimizer_params = { 
 	"momentum_type" 	: momentum,
-	"momentum_params" 	: (0.5,0.95, 20),
+	"momentum_params" 	: (0.6,0.95, 30),
 	"regularization" 	: (0.0001,0.0002),
 	"optimizer_type" 	: optim,
 	"id"				: id
@@ -111,7 +83,7 @@ if run is 1:
 			classifier = 'softmax'
 			)
 
-	net.train( epochs = (10,10),
+	net.train( epochs = (15,15),
 		validate_after_epochs = 2,
 		training_accuracy = True,
 		learning_rates = learning_rates,

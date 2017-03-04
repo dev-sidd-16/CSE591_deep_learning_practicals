@@ -82,7 +82,7 @@ id = momentum+'-'+optim
 
 optimizer_params = { 
 	"momentum_type" 	: momentum,
-	"momentum_params" 	: (0.7,0.95, 30),
+	"momentum_params" 	: (0.7,0.95, 20),
 	"regularization" 	: (0.0001,0.0002),
 	"optimizer_type" 	: optim,
 	"id"				: id

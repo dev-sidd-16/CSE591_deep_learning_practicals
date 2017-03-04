@@ -1,0 +1,181 @@
+. Initializing the network
+.. Adding input layer input
+.. Adding conv_pool layer conv_pool_1
+.. Adding conv_pool layer conv_pool_2
+.. Adding conv_pool layer conv_pool_3
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 5
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 3, 32, 32)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv_pool_1
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 60, 14, 14)
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [2 X 2]
+          |- stride size [1 X 1]
+          |- input shape [32 32]
+          |- input number of feature maps is 3
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: conv_pool_2
+                   |-=================------------------
+                   |- type: conv_pool
+                   |- output shape: (500, 150, 6, 6)
+                   |------------------------------------
+                   |- filter size [3 X 3]
+                   |- pooling size [2 X 2]
+                   |- stride size [1 X 1]
+                   |- input shape [14 14]
+                   |- input number of feature maps is 60
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: conv_pool_3
+                            |-=================------------------
+                            |- type: conv_pool
+                            |- output shape: (500, 270, 2, 2)
+                            |------------------------------------
+                            |- filter size [3 X 3]
+                            |- pooling size [2 X 2]
+                            |- stride size [1 X 1]
+                            |- input shape [6 6]
+                            |- input number of feature maps is 150
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: 5
+                                     |-=================------------------
+                                     |- type: flatten
+                                     |- output shape: (500, 1080)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: dot_product_1
+                                              |-=================------------------
+                                              |- type: dot_product
+                                              |- output shape: (500, 800)
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: dot_product_2
+                                                       |-=================------------------
+                                                       |- type: dot_product
+                                                       |- output shape: (500, 800)
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: softmax
+                                                                |-=================------------------
+                                                                |- type: classifier
+                                                                |- output shape: (500, 10)
+                                                                |------------------------------------
+                                                                         |-
+                                                                         |-
+                                                                         |-
+                                                                         |- id: nil
+                                                                         |-=================------------------
+                                                                         |- type: objective
+                                                                         |- output shape: (1,)
+                                                                         |------------------------------------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.680839
+.. Validation accuracy : 89.4492857143
+.. Training accuracy : 86.8171428571
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.680839
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.400404
+.. Cost                : 0.400404
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.342421
+.. Validation accuracy : 92.4142857143
+.. Training accuracy : 90.5757142857
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.342421
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.308396
+.. Cost                : 0.308396
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.28456
+.. Validation accuracy : 93.4064285714
+.. Training accuracy : 91.9696428571
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.28456
+. 
+
+.. Epoch: 5 Era: 1
+.. Cost                : 0.270876
+.. Cost                : 0.270876
+. 
+
+.. Epoch: 6 Era: 1
+.. Cost                : 0.268183
+.. Validation accuracy : 93.4671428571
+.. Training accuracy : 92.18
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.268183
+. 
+
+.. Epoch: 7 Era: 1
+.. Cost                : 0.266325
+.. Cost                : 0.266325
+. 
+
+.. Epoch: 8 Era: 1
+.. Cost                : 0.264745
+.. Validation accuracy : 93.5135714286
+.. Training accuracy : 92.2725
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.264745
+. 
+
+.. Epoch: 9 Era: 1
+.. Cost                : 0.263331
+.. Cost                : 0.263331
+.. Training complete.Took 63.0112242 minutes
+.. Testing
+.. Testing accuracy : 93.3819047619
+------------------ 2 nesterov-adagrad (0.01, 0.001, 0.0001) ------------------
+================================================

@@ -1,0 +1,7368 @@
+. Initializing the network
+.. Adding input layer input
+.. Adding conv_pool layer conv_pool_1
+.. Adding conv_pool layer conv_pool_2
+.. Adding conv_pool layer conv_pool_3
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 5
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 3, 32, 32)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv_pool_1
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 60, 14, 14)
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [2 X 2]
+          |- stride size [1 X 1]
+          |- input shape [32 32]
+          |- input number of feature maps is 3
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: conv_pool_2
+                   |-=================------------------
+                   |- type: conv_pool
+                   |- output shape: (500, 150, 6, 6)
+                   |------------------------------------
+                   |- filter size [3 X 3]
+                   |- pooling size [2 X 2]
+                   |- stride size [1 X 1]
+                   |- input shape [14 14]
+                   |- input number of feature maps is 60
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: conv_pool_3
+                            |-=================------------------
+                            |- type: conv_pool
+                            |- output shape: (500, 270, 2, 2)
+                            |------------------------------------
+                            |- filter size [3 X 3]
+                            |- pooling size [2 X 2]
+                            |- stride size [1 X 1]
+                            |- input shape [6 6]
+                            |- input number of feature maps is 150
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: 5
+                                     |-=================------------------
+                                     |- type: flatten
+                                     |- output shape: (500, 1080)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: dot_product_1
+                                              |-=================------------------
+                                              |- type: dot_product
+                                              |- output shape: (500, 800)
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: dot_product_2
+                                                       |-=================------------------
+                                                       |- type: dot_product
+                                                       |- output shape: (500, 800)
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: softmax
+                                                                |-=================------------------
+                                                                |- type: classifier
+                                                                |- output shape: (500, 10)
+                                                                |------------------------------------
+                                                                         |-
+                                                                         |-
+                                                                         |-
+                                                                         |- id: nil
+                                                                         |-=================------------------
+                                                                         |- type: objective
+                                                                         |- output shape: (1,)
+                                                                         |------------------------------------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.828205
+.. Validation accuracy : 86.7142857143
+.. Training accuracy : 83.8460714286
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.828205
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.496544
+.. Cost                : 0.496544
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.43618
+.. Validation accuracy : 90.0507142857
+.. Training accuracy : 87.7478571429
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.43618
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.402203
+.. Cost                : 0.402203
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.378605
+.. Validation accuracy : 91.2
+.. Training accuracy : 89.1175
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.378605
+. 
+
+.. Epoch: 5 Era: 1
+.. Cost                : 0.366178
+.. Cost                : 0.366178
+. 
+
+.. Epoch: 6 Era: 1
+.. Cost                : 0.363762
+.. Validation accuracy : 91.2778571429
+.. Training accuracy : 89.3296428571
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.363762
+. 
+
+.. Epoch: 7 Era: 1
+.. Cost                : 0.362014
+.. Cost                : 0.362014
+. 
+
+.. Epoch: 8 Era: 1
+.. Cost                : 0.360517
+.. Validation accuracy : 91.3314285714
+.. Training accuracy : 89.4146428571
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.360517
+. 
+
+.. Epoch: 9 Era: 1
+.. Cost                : 0.359175
+.. Cost                : 0.359175
+.. Training complete.Took 63.51547915 minutes
+.. Testing
+.. Testing accuracy : 91.2566666667
+------------------ 1 polyak-adagrad (0.01, 0.001, 0.0001) ------------------
+================================================
+. Initializing the network
+.. Adding input layer input
+.. Adding conv_pool layer conv_pool_1
+.. Adding conv_pool layer conv_pool_2
+.. Adding conv_pool layer conv_pool_3
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 5
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 3, 32, 32)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv_pool_1
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 60, 14, 14)
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [2 X 2]
+          |- stride size [1 X 1]
+          |- input shape [32 32]
+          |- input number of feature maps is 3
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: conv_pool_2
+                   |-=================------------------
+                   |- type: conv_pool
+                   |- output shape: (500, 150, 6, 6)
+                   |------------------------------------
+                   |- filter size [3 X 3]
+                   |- pooling size [2 X 2]
+                   |- stride size [1 X 1]
+                   |- input shape [14 14]
+                   |- input number of feature maps is 60
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: conv_pool_3
+                            |-=================------------------
+                            |- type: conv_pool
+                            |- output shape: (500, 270, 2, 2)
+                            |------------------------------------
+                            |- filter size [3 X 3]
+                            |- pooling size [2 X 2]
+                            |- stride size [1 X 1]
+                            |- input shape [6 6]
+                            |- input number of feature maps is 150
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: 5
+                                     |-=================------------------
+                                     |- type: flatten
+                                     |- output shape: (500, 1080)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: dot_product_1
+                                              |-=================------------------
+                                              |- type: dot_product
+                                              |- output shape: (500, 800)
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: dot_product_2
+                                                       |-=================------------------
+                                                       |- type: dot_product
+                                                       |- output shape: (500, 800)
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: softmax
+                                                                |-=================------------------
+                                                                |- type: classifier
+                                                                |- output shape: (500, 10)
+                                                                |------------------------------------
+                                                                         |-
+                                                                         |-
+                                                                         |-
+                                                                         |- id: nil
+                                                                         |-=================------------------
+                                                                         |- type: objective
+                                                                         |- output shape: (1,)
+                                                                         |------------------------------------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.491023
+.. Validation accuracy : 94.7242857143
+.. Training accuracy : 92.9525
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 0.491023
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.197102
+.. Cost                : 0.197102
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
+.. NAN! Slowing learning rate by 10 times and restarting epoch.
+. 
+
+.. Epoch: 2 Era: 0
