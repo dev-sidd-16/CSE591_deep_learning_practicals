@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 from yann.network import network
+from yann.utils.pickle import pickle as pk
 import time
 import sys
 
 #run = 1
 dataset = sys.argv[1]
-
+nets = 'network'+dataset+'.pkl'
+print nets
+print '================================='
 momentum = "nesterov"
 optim = "rmsprop"
-lr = (0.01,0.001,0.0001)
+lr = (0.01,0.005,0.001)
 
 
 # create a network
@@ -21,10 +24,10 @@ net.add_layer(type = "conv_pool",
 	origin = "input",
 	id = "conv_pool_1",
 	num_neurons = 20,
-	filter_size = (5,5),
+	filters_ize = (5,5),
 	pool_size = (2,2),
 	batch_norm = True,
-	activation = 'relu',
+	activation = 'relu'
 	)
 
 net.add_layer(type = "conv_pool",
@@ -34,7 +37,7 @@ net.add_layer(type = "conv_pool",
 	filter_size = (3,3),
 	pool_size = (2,2),
 	batch_norm = True,
-	activation = 'relu',
+	activation = 'relu'
 	)
 
 net.add_layer(type = "dot_product", 
@@ -63,7 +66,7 @@ net.add_layer(type = "classifier",
 	activation = "softmax"
 	)
 
-net.add_layer(type = "objectiv",
+net.add_layer(type = "objective",
 	id = "nil",
 	origin = "softmax")
 
@@ -100,6 +103,9 @@ net.train( epochs = (15,15),
 	early_terminate = True)
 
 net.test()
+
+pk(net,nets)
+
 
 # print "------------------",count,id,lr,"------------------"
 # print "================================================"
