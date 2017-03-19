@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="d3viz/css/d3viz.css"/>
+	<link rel="stylesheet" href="d3viz/css/d3-context-menu.css"/>
+	<script type="text/javascript" src="d3viz/js/d3viz.js"></script>
+	<script type="text/javascript" src="d3viz/js/d3.v3.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/dagre-d3.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/graphlib-dot.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/d3-context-menu.js"></script>
+</head>
+<body>
+	<div id='menu' class='menuBar'>
+	    <input name="resetNodes" 
+	           type="button" 
+	           value="Reset nodes"
+	           onclick="resetNodes()"/>
+	    <input name="releaseNodes" 
+	           type="button" 
+	           value="Release nodes"
+	           onclick="releaseNodes()"/>
+	</div>
+
+	<script type="text/javascript">
+		// Backend graph in DOT format
+		var dotGraph = graphlibDot.read("digraph G {\n\tgraph [bb=\"0,0,548,936\"];\n\tnode [label=\"\\N\"];\n\tn1\t [apply_op=GpuDimShuffle,\n\t\theight=0.5,\n\t\tlabel=GpuDimShuffle,\n\t\tnode_type=apply,\n\t\tpos=\"67,282\",\n\t\tshape=ellipse,\n\t\twidth=1.8694];\n\tn34\t [apply_op=GpuElemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=GpuElemwise,\n\t\tnode_type=apply,\n\t\tpos=\"163,194\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.6958];\n\tn1 -> n34\t [label=\"2 float32\",\n\t\tlp=\"124.5,238\",\n\t\tpos=\"e,130.22,209.31 75.307,263.87 81.12,253.17 89.677,239.65 100,230 106.31,224.1 113.79,218.84 121.36,214.3\"];\n\tn2\t [dtype=fvector,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=bias,\n\t\tnode_type=input,\n\t\tpos=\"67,370\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn2 -> n1\t [color=dodgerblue,\n\t\tlabel=fvector,\n\t\tlp=\"86.5,326\",\n\t\tpos=\"e,67,300.08 67,351.6 67,339.75 67,323.82 67,310.29\"];\n\tn4\t [apply_op=GpuDimShuffle,\n\t\theight=0.5,\n\t\tlabel=GpuDimShuffle,\n\t\tnode_type=apply,\n\t\tpos=\"481,424\",\n\t\tshape=ellipse,\n\t\twidth=1.8694];\n\tn32\t [apply_op=GpuDot22,\n\t\theight=0.5,\n\t\tlabel=GpuDot22,\n\t\tnode_type=apply,\n\t\tpos=\"275,282\",\n\t\tshape=ellipse,\n\t\twidth=1.3347];\n\tn4 -> n32\t [label=\"1 float32\",\n\t\tlp=\"455.5,370\",\n\t\tpos=\"e,297.76,297.9 458.02,407.04 428.16,386.35 374.37,349.22 328,318 321.05,313.32 313.57,308.34 306.47,303.65\"];\n\tn5\t [dtype=fmatrix,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=weights,\n\t\tnode_type=input,\n\t\tpos=\"487,566\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.8125];\n\tn5 -> n4\t [color=dodgerblue,\n\t\tlabel=fmatrix,\n\t\tlp=\"506.5,522\",\n\t\tpos=\"e,481.74,442.31 486.26,547.83 485.24,524.01 483.39,480.66 482.17,452.35\"];\n\tn27\t [apply_op=GpuDot22,\n\t\theight=0.5,\n\t\tlabel=GpuDot22,\n\t\tnode_type=apply,\n\t\tpos=\"409,478\",\n\t\tshape=ellipse,\n\t\twidth=1.3347];\n\tn5 -> n27\t [label=\"1 fmatrix\",\n\t\tlp=\"456,522\",\n\t\tpos=\"e,413.09,496.05 457.68,551.7 447.87,546.12 437.53,538.84 430,530 424.02,522.98 419.57,514.02 416.34,505.58\"];\n\tn7\t [apply_op=GpuDimShuffle,\n\t\theight=0.5,\n\t\tlabel=GpuDimShuffle,\n\t\tnode_type=apply,\n\t\tpos=\"275,478\",\n\t\tshape=ellipse,\n\t\twidth=1.8694];\n\tn29\t [apply_op=GpuElemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=GpuElemwise,\n\t\tnode_type=apply,\n\t\tpos=\"275,370\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.6958];\n\tn7 -> n29\t [label=\"2 float32\",\n\t\tlp=\"299.5,424\",\n\t\tpos=\"e,275,388.34 275,459.97 275,443.38 275,417.88 275,398.43\"];\n\tn8\t [dtype=fvector,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=bias,\n\t\tnode_type=input,\n\t\tpos=\"266,566\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn8 -> n7\t [color=dodgerblue,\n\t\tlabel=fvector,\n\t\tlp=\"291.5,522\",\n\t\tpos=\"e,273.21,496.08 267.82,547.6 269.06,535.75 270.73,519.82 272.14,506.29\"];\n\tn10\t [apply_op=Elemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=Elemwise,\n\t\tnode_type=apply,\n\t\tpos=\"122,830\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.2798];\n\tn17\t [apply_op=ScalarFromTensor,\n\t\theight=0.5,\n\t\tlabel=ScalarFromTensor,\n\t\tnode_type=apply,\n\t\tpos=\"122,742\",\n\t\tshape=ellipse,\n\t\twidth=2.1207];\n\tn10 -> n17\t [label=lscalar,\n\t\tlp=\"140,786\",\n\t\tpos=\"e,122,760.08 122,811.6 122,799.75 122,783.82 122,770.29\"];\n\tn11\t [dtype=lscalar,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=500,\n\t\tnode_type=constant_input,\n\t\tpos=\"191,918\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn11 -> n10\t [label=\"0 lscalar\",\n\t\tlp=\"146,874\",\n\t\tpos=\"e,118.12,848.32 163.74,910.32 148.99,905.17 131.99,896.42 123,882 118.7,875.1 117.35,866.6 117.4,858.52\"];\n\tn15\t [apply_op=Elemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=Elemwise,\n\t\tnode_type=apply,\n\t\tpos=\"293,830\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.2798];\n\tn11 -> n15\t [label=\"0 lscalar\",\n\t\tlp=\"279,874\",\n\t\tpos=\"e,276.57,847.11 215.29,899.68 222.71,894.19 230.8,887.99 238,882 248.48,873.28 259.59,863.17 269.05,854.25\"];\n\tn12\t [dtype=lscalar,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=1,\n\t\tnode_type=constant_input,\n\t\tpos=\"53,918\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn12 -> n10\t [label=\"1 lscalar\",\n\t\tlp=\"91,874\",\n\t\tpos=\"e,93.443,844.34 55.022,899.57 56.956,889.02 60.716,875.77 68,866 72.546,859.9 78.492,854.58 84.772,850.04\"];\n\tn13\t [dtype=lscalar,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=index,\n\t\tnode_type=input,\n\t\tpos=\"296,918\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn13 -> n10\t [label=\"2 lscalar\",\n\t\tlp=\"211,874\",\n\t\tpos=\"e,142.79,846.07 268.63,911.24 246.05,905.77 213.68,896.25 188,882 178.35,876.64 177.65,872.86 169,866 163.19,861.4 156.88,856.58 \\\n150.82,852.04\"];\n\tn13 -> n15\t [label=\"1 lscalar\",\n\t\tlp=\"331,874\",\n\t\tpos=\"e,301.33,848.05 303.3,899.57 306.53,889.74 309.16,877.21 307,866 306.47,863.26 305.73,860.47 304.87,857.71\"];\n\tn19\t [apply_op=ScalarFromTensor,\n\t\theight=0.5,\n\t\tlabel=ScalarFromTensor,\n\t\tnode_type=apply,\n\t\tpos=\"293,742\",\n\t\tshape=ellipse,\n\t\twidth=2.1207];\n\tn15 -> n19\t [label=lscalar,\n\t\tlp=\"311,786\",\n\t\tpos=\"e,293,760.08 293,811.6 293,799.75 293,783.82 293,770.29\"];\n\tn21\t [apply_op=GpuSubtensor,\n\t\tfillcolor=\"#FFAAFF\",\n\t\theight=0.5,\n\t\tlabel=GpuSubtensor,\n\t\tnode_type=apply,\n\t\tpos=\"293,654\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.6958];\n\tn17 -> n21\t [label=\"2 fmatrix\",\n\t\tlp=\"249,698\",\n\t\tpos=\"e,263.41,669.88 152.97,725.43 181.4,711.13 223.65,689.88 254.3,674.47\"];\n\tn19 -> n21\t [label=\"1 fmatrix\",\n\t\tlp=\"319,698\",\n\t\tpos=\"e,293,672.08 293,723.6 293,711.75 293,695.82 293,682.29\"];\n\tn24\t [apply_op=GpuReshape,\n\t\theight=0.5,\n\t\tlabel=GpuReshape,\n\t\tnode_type=apply,\n\t\tpos=\"367,566\",\n\t\tshape=ellipse,\n\t\twidth=1.5402];\n\tn21 -> n24\t [color=dodgerblue,\n\t\tlabel=\"0 fmatrix\",\n\t\tlp=\"353,610\",\n\t\tpos=\"e,346.5,583.12 302.68,636.13 308.99,625.79 317.74,612.56 327,602 330.65,597.84 334.79,593.7 338.98,589.81\"];\n\tn22\t [dtype=fmatrix,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=fmatrix,\n\t\tnode_type=input,\n\t\tpos=\"416,742\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.78472];\n\tn22 -> n21\t [color=dodgerblue,\n\t\tlabel=\"0 fmatrix\",\n\t\tlp=\"396,698\",\n\t\tpos=\"e,318.69,670.37 394.65,723.95 381.67,713.79 364.63,700.8 349,690 342.17,685.28 334.72,680.43 327.55,675.9\"];\n\tn24 -> n27\t [label=\"0 lvector\",\n\t\tlp=\"382.5,522\",\n\t\tpos=\"e,379.5,492.41 358.82,548.09 355.04,537.73 352.47,524.5 358,514 361.19,507.94 365.96,502.72 371.33,498.3\"];\n\tn25\t [dtype=lvector,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=\"[500  -1]\",\n\t\tnode_type=constant_input,\n\t\tpos=\"405,654\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.89583];\n\tn25 -> n24\t [label=\"1 lvector\",\n\t\tlp=\"414.5,610\",\n\t\tpos=\"e,374.55,584.08 397.31,635.6 391.97,623.51 384.76,607.18 378.71,593.49\"];\n\tn27 -> n29\t [color=red,\n\t\tlabel=\"1 float32\",\n\t\tlp=\"379.5,424\",\n\t\tpos=\"e,301.93,386.25 382.93,462.68 373.59,456.91 363.33,449.78 355,442 340.38,428.35 342.56,419.71 328,406 322.65,400.96 316.49,396.17 \\\n310.3,391.84\"];\n\tn29 -> n32\t [label=\"0 float32\",\n\t\tlp=\"299.5,326\",\n\t\tpos=\"e,275,300.08 275,351.6 275,339.75 275,323.82 275,310.29\"];\n\tn30\t [dtype=float32,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=\"[[ 0.5]]\",\n\t\tnode_type=constant_input,\n\t\tpos=\"161,478\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.76389];\n\tn30 -> n29\t [label=\"0 float32\",\n\t\tlp=\"246.5,424\",\n\t\tpos=\"e,248.62,386.38 173.62,459.75 185.2,444.59 203.35,422.44 222,406 227.57,401.09 233.89,396.34 240.16,392\"];\n\tn30 -> n34\t [label=\"0 float32\",\n\t\tlp=\"187.5,326\",\n\t\tpos=\"e,162.88,212.35 161.12,459.78 161.46,412.49 162.4,280.26 162.8,222.54\"];\n\tn32 -> n34\t [color=red,\n\t\tlabel=\"1 float32\",\n\t\tlp=\"254.5,238\",\n\t\tpos=\"e,183.99,211.12 254.98,265.62 237.47,252.18 211.83,232.49 192.06,217.31\"];\n\tn36\t [apply_op=HostFromGpu,\n\t\tfillcolor=red,\n\t\theight=0.5,\n\t\tlabel=HostFromGpu,\n\t\tnode_type=apply,\n\t\tpos=\"163,106\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.7048];\n\tn34 -> n36\t [label=float32,\n\t\tlp=\"182.5,150\",\n\t\tpos=\"e,163,124.08 163,175.6 163,163.75 163,147.82 163,134.29\"];\n\tn37\t [dtype=fmatrix,\n\t\tfillcolor=dodgerblue,\n\t\theight=0.5,\n\t\tlabel=fmatrix,\n\t\tnode_type=output,\n\t\tpos=\"163,18\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.78472];\n\tn36 -> n37\t [label=fmatrix,\n\t\tlp=\"183.5,62\",\n\t\tpos=\"e,163,36.084 163,87.597 163,75.746 163,59.817 163,46.292\"];\n}\n");
+		// Frontend graph for visualization
+		var graph = {};
+		
+		var forceLayout;
+		var isProfiled = false; // true if profiling information available
+		var useProfileColors = false;
+		var fixOnInit = true; // fix nodes on initialization
+		var maxProfilePer = 0;
+		var profileColors = ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15"];
+		var pad = 10;
+		var isEditNode = false; // true if node is edited
+		var menuItems = [
+			{
+				title: 'Edit',
+				action: function(elm, d, i) { editNode(elm, d); }
+			},
+			{
+				title: 'Release',
+				action: function(elm, d, i) { releaseNode(d); }
+			}
+		];
+
+		// Create main panel
+		d3.select('body').select('svg').remove();
+		var svg = d3.select('body').append('svg')
+			.attr('width', '100%')
+			.attr('height', '95%');
+		var pane = svg.append('g');
+		
+		// Zoom behaviour
+		var zoom = d3.behavior.zoom()
+			.scaleExtent([0.2, 8])
+			.on('zoom', function(d) {
+				var trans = d3.event.translate;
+				trans[0] += 300;
+				trans[1] += 100;
+				pane.attr('transform', 'translate(' + trans + ') scale(' + d3.event.scale + ')');
+			});
+		svg.call(zoom);
+		zoom.event(svg);
+		svg.on("dblclick.zoom", null);
+		
+		// Edges
+		var edgeDiv = d3.select('body').append('div')
+			.attr('class', 'edgeTooltip')
+			.style('opacity', 0.0);
+		
+		// Div for node details	
+		var nodeInfo = d3.select('body').append('div')
+			.attr('class', 'nodeInfo')
+			.style('opacity', 0.0);
+		
+		// Definition head of edges
+		var markerData = [
+			{'id': 'n', 'color': 'black'},
+			{'id': 'r', 'color': 'red'},
+			{'id': 'b', 'color': 'dodgerblue'}];
+		svg.append("defs").selectAll('marker').data(markerData).enter().append("marker")
+		    .attr("id", function(d) { return 'edgeArrow_' + d.id;})
+		    .attr("markerWidth", 4)
+		    .attr("markerHeight", 4)
+		    .attr("refX", 2)
+		    .attr("refY", 2)
+		    .attr("orient", "auto")
+		  	.append("path")
+		    .attr("d", "M0,0 L4,2 L0,4 Z")
+		    .attr('fill', function(d) { return d.color;});
+	
+		// Initialize graph
+		processDotGraph(dotGraph);		
+		graph = frontEndGraph(dotGraph);
+		drawGraph();
+	</script>
+</body>
+</html>

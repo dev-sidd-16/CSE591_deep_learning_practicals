@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="d3viz/css/d3viz.css"/>
+	<link rel="stylesheet" href="d3viz/css/d3-context-menu.css"/>
+	<script type="text/javascript" src="d3viz/js/d3viz.js"></script>
+	<script type="text/javascript" src="d3viz/js/d3.v3.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/dagre-d3.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/graphlib-dot.min.js"></script>
+	<script type="text/javascript" src="d3viz/js/d3-context-menu.js"></script>
+</head>
+<body>
+	<div id='menu' class='menuBar'>
+	    <input name="resetNodes" 
+	           type="button" 
+	           value="Reset nodes"
+	           onclick="resetNodes()"/>
+	    <input name="releaseNodes" 
+	           type="button" 
+	           value="Release nodes"
+	           onclick="releaseNodes()"/>
+	</div>
+
+	<script type="text/javascript">
+		// Backend graph in DOT format
+		var dotGraph = graphlibDot.read("digraph G {\n\tgraph [bb=\"0,0,434,652\"];\n\tnode [label=\"\\N\"];\n\tn1\t [apply_op=Elemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=Elemwise,\n\t\tnode_type=apply,\n\t\tpos=\"96,546\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.2798];\n\tn8\t [apply_op=ScalarFromTensor,\n\t\theight=0.5,\n\t\tlabel=ScalarFromTensor,\n\t\tnode_type=apply,\n\t\tpos=\"96,458\",\n\t\tshape=ellipse,\n\t\twidth=2.1207];\n\tn1 -> n8\t [label=lscalar,\n\t\tlp=\"114,502\",\n\t\tpos=\"e,96,476.08 96,527.6 96,515.75 96,499.82 96,486.29\"];\n\tn2\t [dtype=lscalar,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=500,\n\t\tnode_type=constant_input,\n\t\tpos=\"148,634\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn2 -> n1\t [label=\"0 lscalar\",\n\t\tlp=\"120,590\",\n\t\tpos=\"e,92.572,564.06 120.75,620.87 111.53,615.3 102.25,607.74 97,598 93.143,590.85 91.923,582.27 91.945,574.2\"];\n\tn6\t [apply_op=Elemwise,\n\t\tfillcolor=\"#FFAABB\",\n\t\theight=0.5,\n\t\tlabel=Elemwise,\n\t\tnode_type=apply,\n\t\tpos=\"267,546\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.2798];\n\tn2 -> n6\t [label=\"0 lscalar\",\n\t\tlp=\"189,590\",\n\t\tpos=\"e,224.38,553.03 150.19,615.82 152.43,604.83 156.94,591 166,582 179.04,569.04 197.11,560.87 214.36,555.72\"];\n\tn3\t [dtype=lscalar,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=1,\n\t\tnode_type=constant_input,\n\t\tpos=\"27,634\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn3 -> n1\t [label=\"1 lscalar\",\n\t\tlp=\"65,590\",\n\t\tpos=\"e,67.443,560.34 29.022,615.57 30.956,605.02 34.716,591.77 42,582 46.546,575.9 52.492,570.58 58.772,566.04\"];\n\tn4\t [dtype=lscalar,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=index,\n\t\tnode_type=input,\n\t\tpos=\"251,634\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75];\n\tn4 -> n1\t [label=\"2 lscalar\",\n\t\tlp=\"251,590\",\n\t\tpos=\"e,138.5,553.24 241.54,615.57 234.69,604.48 224.46,590.63 212,582 193.19,568.98 169.42,560.7 148.3,555.49\"];\n\tn4 -> n6\t [label=\"1 lscalar\",\n\t\tlp=\"305,590\",\n\t\tpos=\"e,276.85,563.77 269.96,615.74 274.44,610.52 278.61,604.46 281,598 283.94,590.04 282.94,581.18 280.45,573.11\"];\n\tn10\t [apply_op=ScalarFromTensor,\n\t\theight=0.5,\n\t\tlabel=ScalarFromTensor,\n\t\tnode_type=apply,\n\t\tpos=\"267,458\",\n\t\tshape=ellipse,\n\t\twidth=2.1207];\n\tn6 -> n10\t [label=lscalar,\n\t\tlp=\"285,502\",\n\t\tpos=\"e,267,476.08 267,527.6 267,515.75 267,499.82 267,486.29\"];\n\tn12\t [apply_op=GpuSubtensor,\n\t\tfillcolor=\"#FFAAFF\",\n\t\theight=0.5,\n\t\tlabel=GpuSubtensor,\n\t\tnode_type=apply,\n\t\tpos=\"267,370\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.6958];\n\tn8 -> n12\t [label=\"2 fmatrix\",\n\t\tlp=\"222,414\",\n\t\tpos=\"e,237.41,385.88 126.97,441.43 155.4,427.13 197.65,405.88 228.3,390.47\"];\n\tn10 -> n12\t [label=\"1 fmatrix\",\n\t\tlp=\"293,414\",\n\t\tpos=\"e,267,388.08 267,439.6 267,427.75 267,411.82 267,398.29\"];\n\tn15\t [apply_op=GpuReshape,\n\t\theight=0.5,\n\t\tlabel=GpuReshape,\n\t\tnode_type=apply,\n\t\tpos=\"340,282\",\n\t\tshape=ellipse,\n\t\twidth=1.5402];\n\tn12 -> n15\t [color=dodgerblue,\n\t\tlabel=\"0 fmatrix\",\n\t\tlp=\"330,326\",\n\t\tpos=\"e,322.18,299.16 278.3,351.91 285.3,341.73 294.69,328.75 304,318 307.41,314.06 311.18,310.06 314.97,306.23\"];\n\tn13\t [dtype=fmatrix,\n\t\tfillcolor=limegreen,\n\t\theight=0.5,\n\t\tlabel=fmatrix,\n\t\tnode_type=input,\n\t\tpos=\"390,458\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.78472];\n\tn13 -> n12\t [color=dodgerblue,\n\t\tlabel=\"0 fmatrix\",\n\t\tlp=\"369,414\",\n\t\tpos=\"e,292.69,386.37 368.65,439.95 355.67,429.79 338.63,416.8 323,406 316.17,401.28 308.72,396.43 301.55,391.9\"];\n\tn18\t [apply_op=GpuDimShuffle,\n\t\theight=0.5,\n\t\tlabel=GpuDimShuffle,\n\t\tnode_type=apply,\n\t\tpos=\"340,194\",\n\t\tshape=ellipse,\n\t\twidth=1.8694];\n\tn15 -> n18\t [color=dodgerblue,\n\t\tlabel=lvector,\n\t\tlp=\"359,238\",\n\t\tpos=\"e,340,212.08 340,263.6 340,251.75 340,235.82 340,222.29\"];\n\tn16\t [dtype=lvector,\n\t\tfillcolor=SpringGreen,\n\t\theight=0.5,\n\t\tlabel=\"[500  28  28]\",\n\t\tnode_type=constant_input,\n\t\tpos=\"390,370\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=1.2083];\n\tn16 -> n15\t [label=\"1 lvector\",\n\t\tlp=\"393.5,326\",\n\t\tpos=\"e,349.76,299.79 379.88,351.6 372.74,339.31 363.05,322.65 355.01,308.82\"];\n\tn20\t [apply_op=HostFromGpu,\n\t\tfillcolor=red,\n\t\theight=0.5,\n\t\tlabel=HostFromGpu,\n\t\tnode_type=apply,\n\t\tpos=\"340,106\",\n\t\tshape=ellipse,\n\t\tstyle=filled,\n\t\ttype=colored,\n\t\twidth=1.7048];\n\tn18 -> n20\t [label=lvector,\n\t\tlp=\"359,150\",\n\t\tpos=\"e,340,124.08 340,175.6 340,163.75 340,147.82 340,134.29\"];\n\tn21\t [dtype=float32,\n\t\tfillcolor=dodgerblue,\n\t\theight=0.5,\n\t\tlabel=float32,\n\t\tnode_type=output,\n\t\tpos=\"340,18\",\n\t\tshape=box,\n\t\tstyle=filled,\n\t\twidth=0.75694];\n\tn20 -> n21\t [label=float32,\n\t\tlp=\"359.5,62\",\n\t\tpos=\"e,340,36.084 340,87.597 340,75.746 340,59.817 340,46.292\"];\n}\n");
+		// Frontend graph for visualization
+		var graph = {};
+		
+		var forceLayout;
+		var isProfiled = false; // true if profiling information available
+		var useProfileColors = false;
+		var fixOnInit = true; // fix nodes on initialization
+		var maxProfilePer = 0;
+		var profileColors = ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15"];
+		var pad = 10;
+		var isEditNode = false; // true if node is edited
+		var menuItems = [
+			{
+				title: 'Edit',
+				action: function(elm, d, i) { editNode(elm, d); }
+			},
+			{
+				title: 'Release',
+				action: function(elm, d, i) { releaseNode(d); }
+			}
+		];
+
+		// Create main panel
+		d3.select('body').select('svg').remove();
+		var svg = d3.select('body').append('svg')
+			.attr('width', '100%')
+			.attr('height', '95%');
+		var pane = svg.append('g');
+		
+		// Zoom behaviour
+		var zoom = d3.behavior.zoom()
+			.scaleExtent([0.2, 8])
+			.on('zoom', function(d) {
+				var trans = d3.event.translate;
+				trans[0] += 300;
+				trans[1] += 100;
+				pane.attr('transform', 'translate(' + trans + ') scale(' + d3.event.scale + ')');
+			});
+		svg.call(zoom);
+		zoom.event(svg);
+		svg.on("dblclick.zoom", null);
+		
+		// Edges
+		var edgeDiv = d3.select('body').append('div')
+			.attr('class', 'edgeTooltip')
+			.style('opacity', 0.0);
+		
+		// Div for node details	
+		var nodeInfo = d3.select('body').append('div')
+			.attr('class', 'nodeInfo')
+			.style('opacity', 0.0);
+		
+		// Definition head of edges
+		var markerData = [
+			{'id': 'n', 'color': 'black'},
+			{'id': 'r', 'color': 'red'},
+			{'id': 'b', 'color': 'dodgerblue'}];
+		svg.append("defs").selectAll('marker').data(markerData).enter().append("marker")
+		    .attr("id", function(d) { return 'edgeArrow_' + d.id;})
+		    .attr("markerWidth", 4)
+		    .attr("markerHeight", 4)
+		    .attr("refX", 2)
+		    .attr("refY", 2)
+		    .attr("orient", "auto")
+		  	.append("path")
+		    .attr("d", "M0,0 L4,2 L0,4 Z")
+		    .attr('fill', function(d) { return d.color;});
+	
+		// Initialize graph
+		processDotGraph(dotGraph);		
+		graph = frontEndGraph(dotGraph);
+		drawGraph();
+	</script>
+</body>
+</html>
