@@ -24,10 +24,10 @@ network_dataset_96731.pkl
           |- id: conv_pool_1
           |-=================------------------
           |- type: conv_pool
-          |- output shape: (500, 20, 13, 13)
+          |- output shape: (500, 20, 12, 12)
           |- batch norm is ON
           |------------------------------------
-          |- filter size [3 X 3]
+          |- filter size [5 X 5]
           |- pooling size [2 X 2]
           |- stride size [1 X 1]
           |- input shape [28 28]
@@ -45,7 +45,7 @@ network_dataset_96731.pkl
                    |- filter size [3 X 3]
                    |- pooling size [2 X 2]
                    |- stride size [1 X 1]
-                   |- input shape [13 13]
+                   |- input shape [12 12]
                    |- input number of feature maps is 20
                    |------------------------------------
                             |-
@@ -99,93 +99,93 @@ network_dataset_96731.pkl
 . 
 
 .. Epoch: 0 Era: 0
-.. Validation accuracy : 15.05
-.. Training accuracy : 16.32
+.. Validation accuracy : 35.95
+.. Training accuracy : 36.45
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 3.3592
+.. Cost                : 1.83202
 . 
 
 .. Epoch: 1 Era: 0
-.. Cost                : 1.12436
+.. Cost                : 0.583439
 . 
 
 .. Epoch: 2 Era: 0
-.. Validation accuracy : 88.5
-.. Training accuracy : 90.6
+.. Validation accuracy : 87.4
+.. Training accuracy : 89.47
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 0.55809
+.. Cost                : 0.342961
 . 
 
 .. Epoch: 3 Era: 0
-.. Cost                : 0.38934
+.. Cost                : 0.264674
 . 
 
 .. Epoch: 4 Era: 0
-.. Validation accuracy : 90.9
-.. Training accuracy : 93.06
+.. Validation accuracy : 91.7
+.. Training accuracy : 93.84
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 0.375987
+.. Cost                : 0.224895
 . 
 
 .. Epoch: 5 Era: 0
-.. Cost                : 0.312944
+.. Cost                : 0.171504
 . 
 
 .. Epoch: 6 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.99
+.. Validation accuracy : 93.5
+.. Training accuracy : 96.21
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 0.323836
+.. Cost                : 0.182879
 . 
 
 .. Epoch: 7 Era: 0
-.. Cost                : 0.323066
+.. Cost                : 0.178727
 . 
 
 .. Epoch: 8 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.98
-.. Cost                : 0.322451
+.. Validation accuracy : 93.45
+.. Training accuracy : 96.17
+.. Cost                : 0.182671
 . 
 
 .. Epoch: 9 Era: 0
-.. Cost                : 0.322395
+.. Cost                : 0.180612
 . 
 
 .. Epoch: 10 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.98
-.. Cost                : 0.314452
+.. Validation accuracy : 93.45
+.. Training accuracy : 96.17
+.. Cost                : 0.180654
 . 
 
 .. Epoch: 11 Era: 0
-.. Cost                : 0.311287
+.. Cost                : 0.179731
 . 
 
 .. Epoch: 12 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.98
-.. Cost                : 0.319569
+.. Validation accuracy : 93.45
+.. Training accuracy : 96.17
+.. Cost                : 0.176935
 . 
 
 .. Epoch: 13 Era: 0
-.. Cost                : 0.319163
+.. Cost                : 0.189324
 . 
 
 .. Epoch: 14 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.98
-.. Cost                : 0.316472
+.. Validation accuracy : 93.45
+.. Training accuracy : 96.17
+.. Cost                : 0.177846
 .. Learning rate was already lower than specified. Not changing it.
 . 
 
 .. Epoch: 15 Era: 1
-.. Cost                : 0.323873
+.. Cost                : 0.181892
 .. Early stopping
-.. Training complete.Took 1.21911916667 minutes
+.. Training complete.Took 1.1228544 minutes
 .. Testing
-.. Testing accuracy : 91.15
+.. Testing accuracy : 92.9

@@ -1,0 +1,190 @@
+.. Loading the network.
+. Initializing the network
+.. Adding input layer input
+.. Adding conv_pool layer conv_pool_1
+.. Adding conv_pool layer conv_pool_2
+.. Adding dot_product layer dot_product_1
+.. Adding flatten layer 4
+.. Adding dot_product layer dot_product_2
+.. Adding classifier layer softmax
+.. Adding objective layer nil
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv_pool_1
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 12, 12)
+          |- batch norm is ON
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [2 X 2]
+          |- stride size [1 X 1]
+          |- input shape [28 28]
+          |- input number of feature maps is 1
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: conv_pool_2
+                   |-=================------------------
+                   |- type: conv_pool
+                   |- output shape: (500, 50, 5, 5)
+                   |- batch norm is ON
+                   |------------------------------------
+                   |- filter size [3 X 3]
+                   |- pooling size [2 X 2]
+                   |- stride size [1 X 1]
+                   |- input shape [12 12]
+                   |- input number of feature maps is 20
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: 4
+                            |-=================------------------
+                            |- type: flatten
+                            |- output shape: (500, 1250)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: dot_product_1
+                                     |-=================------------------
+                                     |- type: dot_product
+                                     |- output shape: (500, 800)
+                                     |- batch norm is OFF
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: dot_product_2
+                                              |-=================------------------
+                                              |- type: dot_product
+                                              |- output shape: (500, 800)
+                                              |- batch norm is OFF
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: softmax
+                                                       |-=================------------------
+                                                       |- type: classifier
+                                                       |- output shape: (500, 10)
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: nil
+                                                                |-=================------------------
+                                                                |- type: objective
+                                                                |- output shape: (1,)
+                                                                |------------------------------------
+.. Setting up the optimizer
+.. Cooking the network
+.. Setting up the visualizer
+.. Setting up the resultor
+.. All checks complete, cooking continues
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Validation accuracy : 44.04
+.. Training accuracy : 44.4825
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.93862
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 1.88343
+. 
+
+.. Epoch: 2 Era: 0
+.. Validation accuracy : 44.84
+.. Training accuracy : 45.2175
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.88138
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 1.87046
+. 
+
+.. Epoch: 4 Era: 0
+.. Validation accuracy : 46.58
+.. Training accuracy : 46.65
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.85731
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 1.84411
+. 
+
+.. Epoch: 6 Era: 0
+.. Validation accuracy : 46.59
+.. Training accuracy : 46.6725
+.. Best training accuracy
+.. Best validation accuracy
+.. Cost                : 1.85757
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 1.84375
+. 
+
+.. Epoch: 8 Era: 0
+.. Validation accuracy : 46.59
+.. Training accuracy : 46.67
+.. Cost                : 1.84839
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 1.85179
+. 
+
+.. Epoch: 10 Era: 0
+.. Validation accuracy : 46.59
+.. Training accuracy : 46.6725
+.. Cost                : 1.84364
+. 
+
+.. Epoch: 11 Era: 0
+.. Cost                : 1.84893
+. 
+
+.. Epoch: 12 Era: 0
+.. Validation accuracy : 46.59
+.. Training accuracy : 46.6725
+.. Cost                : 1.8501
+. 
+
+.. Epoch: 13 Era: 0
+.. Cost                : 1.85164
+. 
+
+.. Epoch: 14 Era: 0
+.. Validation accuracy : 46.59
+.. Training accuracy : 46.6725
+.. Cost                : 1.84865
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 15 Era: 1
+.. Cost                : 1.85156
+.. Early stopping
+.. Training complete.Took 1.82248666667 minutes
+.. Testing
+.. Testing accuracy : 46.16

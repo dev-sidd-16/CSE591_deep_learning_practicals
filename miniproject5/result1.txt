@@ -1,4 +1,4 @@
-network_dataset_32589.pkl
+network_dataset_90998.pkl
 =================================
 . Initializing the network
 .. Adding input layer input
@@ -24,10 +24,10 @@ network_dataset_32589.pkl
           |- id: conv_pool_1
           |-=================------------------
           |- type: conv_pool
-          |- output shape: (500, 20, 13, 13)
+          |- output shape: (500, 20, 12, 12)
           |- batch norm is ON
           |------------------------------------
-          |- filter size [3 X 3]
+          |- filter size [5 X 5]
           |- pooling size [2 X 2]
           |- stride size [1 X 1]
           |- input shape [28 28]
@@ -45,7 +45,7 @@ network_dataset_32589.pkl
                    |- filter size [3 X 3]
                    |- pooling size [2 X 2]
                    |- stride size [1 X 1]
-                   |- input shape [13 13]
+                   |- input shape [12 12]
                    |- input number of feature maps is 20
                    |------------------------------------
                             |-
@@ -99,92 +99,94 @@ network_dataset_32589.pkl
 . 
 
 .. Epoch: 0 Era: 0
-.. Validation accuracy : 75.23
-.. Training accuracy : 75.3325
+.. Validation accuracy : 84.62
+.. Training accuracy : 85.01
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 1.8242
+.. Cost                : 0.718479
 . 
 
 .. Epoch: 1 Era: 0
-.. Cost                : 0.72391
+.. Cost                : 0.240113
 . 
 
 .. Epoch: 2 Era: 0
-.. Validation accuracy : 88.12
-.. Training accuracy : 89.68
+.. Validation accuracy : 92.66
+.. Training accuracy : 94.4
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 0.503129
+.. Cost                : 0.174043
 . 
 
 .. Epoch: 3 Era: 0
-.. Cost                : 0.418963
+.. Cost                : 0.134368
 . 
 
 .. Epoch: 4 Era: 0
-.. Validation accuracy : 92.17
-.. Training accuracy : 93.6325
+.. Validation accuracy : 96.58
+.. Training accuracy : 98.4225
 .. Best training accuracy
 .. Best validation accuracy
-.. Cost                : 0.364203
+.. Cost                : 0.102875
 . 
 
 .. Epoch: 5 Era: 0
-.. Cost                : 0.320786
+.. Cost                : 0.0793494
 . 
 
 .. Epoch: 6 Era: 0
-.. Validation accuracy : 92.15
-.. Training accuracy : 93.7775
+.. Validation accuracy : 96.75
+.. Training accuracy : 98.48
 .. Best training accuracy
-.. Cost                : 0.325509
+.. Best validation accuracy
+.. Cost                : 0.0798622
 . 
 
 .. Epoch: 7 Era: 0
-.. Cost                : 0.329628
+.. Cost                : 0.0789517
 . 
 
 .. Epoch: 8 Era: 0
-.. Validation accuracy : 92.06
-.. Training accuracy : 93.715
-.. Cost                : 0.321229
+.. Validation accuracy : 96.75
+.. Training accuracy : 98.485
+.. Best training accuracy
+.. Cost                : 0.0783707
 . 
 
 .. Epoch: 9 Era: 0
-.. Cost                : 0.321962
+.. Cost                : 0.0782153
 . 
 
 .. Epoch: 10 Era: 0
-.. Validation accuracy : 92.06
-.. Training accuracy : 93.7125
-.. Cost                : 0.324548
+.. Validation accuracy : 96.75
+.. Training accuracy : 98.485
+.. Cost                : 0.0787566
 . 
 
 .. Epoch: 11 Era: 0
-.. Cost                : 0.325881
+.. Cost                : 0.079548
 . 
 
 .. Epoch: 12 Era: 0
-.. Validation accuracy : 92.06
-.. Training accuracy : 93.7125
-.. Cost                : 0.326178
+.. Validation accuracy : 96.75
+.. Training accuracy : 98.485
+.. Cost                : 0.078052
 . 
 
 .. Epoch: 13 Era: 0
-.. Cost                : 0.324013
+.. Cost                : 0.0789832
 . 
 
 .. Epoch: 14 Era: 0
-.. Validation accuracy : 92.06
-.. Training accuracy : 93.7125
-.. Cost                : 0.326394
+.. Validation accuracy : 96.75
+.. Training accuracy : 98.485
+.. Cost                : 0.0789034
 .. Learning rate was already lower than specified. Not changing it.
 . 
 
 .. Epoch: 15 Era: 1
-.. Cost                : 0.33101
+.. Cost                : 0.0781982
 .. Early stopping
-.. Training complete.Took 3.49925865 minutes
+.. Training complete.Took 3.21478301667 minutes
 .. Testing
-.. Testing accuracy : 92.2
+.. Testing accuracy : 96.73
