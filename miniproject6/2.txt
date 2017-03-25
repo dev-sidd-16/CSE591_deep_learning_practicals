@@ -1,0 +1,455 @@
+.. Creating a GAN network
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Adding random layer z
+.. Adding input layer x
+.. Adding dot_product layer G1
+.. Adding dot_product layer G2
+.. Adding dot_product layer G(z)
+.. Adding unflatten layer G(z)-unflattened
+.. Adding dot_product layer D1-x
+.. Adding flatten layer 7
+.. Adding dot_product layer D1-z
+.. Adding flatten layer 9
+.. Adding dot_product layer D2-x
+.. Adding dot_product layer D2-z
+.. Adding dot_product layer D(x)
+.. Adding dot_product layer D(G(z))
+.. Adding classifier layer softmax
+.. Adding tensor layer discriminator_task
+.. Adding objective layer discriminator_obj
+.. Adding tensor layer objective_task
+.. Adding objective layer generator_obj
+.. Adding objective layer classifier_obj
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: x
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: 7
+          |-=================------------------
+          |- type: flatten
+          |- output shape: (500, 784)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: D1-x
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 240)
+                   |- batch norm is OFF
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: D2-x
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (500, 240)
+                            |- batch norm is OFF
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: D(x)
+                                     |-=================------------------
+                                     |- type: dot_product
+                                     |- output shape: (500, 1)
+                                     |- batch norm is OFF
+                                     |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: softmax
+                                     |-=================------------------
+                                     |- type: classifier
+                                     |- output shape: (500, 10)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: classifier_obj
+                                              |-=================------------------
+                                              |- type: objective
+                                              |- output shape: (1,)
+                                              |------------------------------------
+ |-
+ |-
+ |-
+ |- id: objective_task
+ |-=================------------------
+ |- type: tensor
+ |- output shape: (1,)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: generator_obj
+          |-=================------------------
+          |- type: objective
+          |- output shape: (1,)
+          |------------------------------------
+ |-
+ |-
+ |-
+ |- id: z
+ |-=================------------------
+ |- type: random
+ |- output shape: (100, 10)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: G1
+          |-=================------------------
+          |- type: dot_product
+          |- output shape: (100, 1200)
+          |- batch norm is OFF
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: G2
+          |        |-=================------------------
+          |        |- type: dot_product
+          |        |- output shape: (100, 1200)
+          |        |- batch norm is OFF
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: G(z)
+          |                 |-=================------------------
+          |                 |- type: dot_product
+          |                 |- output shape: (100, 784)
+          |                 |- batch norm is OFF
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: G(z)-unflattened
+          |                          |-=================------------------
+          |                          |- type: unflatten
+          |                          |- output shape: (100, 1, 28, 28)
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: 9
+          |                                   |-=================------------------
+          |                                   |- type: flatten
+          |                                   |- output shape: (100, 784)
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: D1-z
+          |                                            |-=================------------------
+          |                                            |- type: dot_product
+          |                                            |- output shape: (100, 240)
+          |                                            |- batch norm is OFF
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: D2-z
+          |                                                     |-=================------------------
+          |                                                     |- type: dot_product
+          |                                                     |- output shape: (100, 240)
+          |                                                     |- batch norm is OFF
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: D(G(z))
+          |                                                              |-=================------------------
+          |                                                              |- type: dot_product
+          |                                                              |- output shape: (100, 1)
+          |                                                              |- batch norm is OFF
+          |                                                              |------------------------------------
+          |-
+          |-
+          |-
+          |- id: G1
+          |-=================------------------
+          |- type: dot_product
+          |- output shape: (100, 1200)
+          |- batch norm is OFF
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: G2
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (100, 1200)
+                   |- batch norm is OFF
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: G(z)
+                            |-=================------------------
+                            |- type: dot_product
+                            |- output shape: (100, 784)
+                            |- batch norm is OFF
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: G(z)-unflattened
+                                     |-=================------------------
+                                     |- type: unflatten
+                                     |- output shape: (100, 1, 28, 28)
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: 9
+                                              |-=================------------------
+                                              |- type: flatten
+                                              |- output shape: (100, 784)
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: D1-z
+                                                       |-=================------------------
+                                                       |- type: dot_product
+                                                       |- output shape: (100, 240)
+                                                       |- batch norm is OFF
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: D2-z
+                                                                |-=================------------------
+                                                                |- type: dot_product
+                                                                |- output shape: (100, 240)
+                                                                |- batch norm is OFF
+                                                                |------------------------------------
+                                                                         |-
+                                                                         |-
+                                                                         |-
+                                                                         |- id: D(G(z))
+                                                                         |-=================------------------
+                                                                         |- type: dot_product
+                                                                         |- output shape: (100, 1)
+                                                                         |- batch norm is OFF
+                                                                         |------------------------------------
+ |-
+ |-
+ |-
+ |- id: discriminator_task
+ |-=================------------------
+ |- type: tensor
+ |- output shape: (1,)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: discriminator_obj
+          |-=================------------------
+          |- type: objective
+          |- output shape: (1,)
+          |------------------------------------
+.. Cooking the network
+.. Setting up the resultor
+.. Setting up the optimizer
+.. Setting up the optimizer
+.. Setting up the optimizer
+. Training
+.. Pre- Training complete.Took 0.000165816666667 minutes
+.
+
+
+.. Epoch: 0 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.00476924
+.. Generator Sigmoid D(G(z))         : 0.820754
+.. Validation accuracy : 89.63
+.. Training accuracy : 88.656
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 1 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.370034
+.. Generator Sigmoid D(G(z))         : 0.999611
+.. Validation accuracy : 93.34
+.. Training accuracy : 92.73
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 2 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.001313
+.. Generator Sigmoid D(G(z))         : 0.839946
+.. Validation accuracy : 93.89
+.. Training accuracy : 93.548
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 3 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.331125
+.. Generator Sigmoid D(G(z))         : 0.990489
+.. Validation accuracy : 95.88
+.. Training accuracy : 96.098
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 4 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.358272
+.. Generator Sigmoid D(G(z))         : 0.997143
+.. Validation accuracy : 96.11
+.. Training accuracy : 96.324
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 5 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0589436
+.. Generator Sigmoid D(G(z))         : 0.970034
+.. Validation accuracy : 95.47
+.. Training accuracy : 96.166
+.
+
+
+.. Epoch: 6 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.25369
+.. Generator Sigmoid D(G(z))         : 0.987771
+.. Validation accuracy : 97.01
+.. Training accuracy : 97.97
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 7 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0928766
+.. Generator Sigmoid D(G(z))         : 0.967594
+.. Validation accuracy : 97.45
+.. Training accuracy : 98.496
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 8 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.00165011
+.. Generator Sigmoid D(G(z))         : 0.88236
+.. Validation accuracy : 97.16
+.. Training accuracy : 98.38
+.
+
+
+.. Epoch: 9 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0917377
+.. Generator Sigmoid D(G(z))         : 0.961668
+.. Validation accuracy : 97.24
+.. Training accuracy : 98.406
+.
+
+
+.. Epoch: 10 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.00626716
+.. Generator Sigmoid D(G(z))         : 0.929047
+.. Validation accuracy : 96.97
+.. Training accuracy : 98.412
+.
+
+
+.. Epoch: 11 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0510281
+.. Generator Sigmoid D(G(z))         : 0.974156
+.. Validation accuracy : 97.52
+.. Training accuracy : 98.78
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 12 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.106204
+.. Generator Sigmoid D(G(z))         : 0.966272
+.. Validation accuracy : 97.52
+.. Training accuracy : 99.056
+.. Best training accuracy
+.
+
+
+.. Epoch: 13 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0238124
+.. Generator Sigmoid D(G(z))         : 0.974992
+.. Validation accuracy : 97.52
+.. Training accuracy : 99.018
+.
+
+
+.. Epoch: 14 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0663054
+.. Generator Sigmoid D(G(z))         : 0.929541
+.. Validation accuracy : 97.37
+.. Training accuracy : 98.852
+.
+
+
+.. Epoch: 15 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0281624
+.. Generator Sigmoid D(G(z))         : 0.955083
+.. Validation accuracy : 97.77
+.. Training accuracy : 99.146
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 16 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0500521
+.. Generator Sigmoid D(G(z))         : 0.951309
+.. Validation accuracy : 97.79
+.. Training accuracy : 99.274
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 17 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0072808
+.. Generator Sigmoid D(G(z))         : 0.962639
+.. Validation accuracy : 97.95
+.. Training accuracy : 99.43
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 18 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.03126
+.. Generator Sigmoid D(G(z))         : 0.968197
+.. Validation accuracy : 97.6
+.. Training accuracy : 99.102
+.
+
+
+.. Epoch: 19 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.0257404
+.. Generator Sigmoid D(G(z))         : 0.955541
+.. Validation accuracy : 97.29
+.. Training accuracy : 98.994
+.. Training complete.Took 3.94508843333 minutes

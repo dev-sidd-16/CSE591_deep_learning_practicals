@@ -1,0 +1,760 @@
+{'type': 'x', 'id': 'data', 'dataset': '_dataset_20329'}
+{'debug_layers': True, 'debug_functions': False, 'rgb_filters': False, 'sample_size': 32, 'frequency': 1, 'root': './experiments/9_autoencoders_cnn_tutorial_64_dataset_20329', 'id': 'main'}
+{'momentum_type': 'nesterov', 'momentum_params': (0.65, 0.95, 30), 'regularization': (0.0001, 0.0001), 'id': 'main', 'optimizer_type': 'rmsprop'}
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Setting up the optimizer
+.. Adding input layer input
+.. Adding conv_pool layer conv
+.. Adding flatten layer flatten
+.. Adding dot_product layer hidden-encoder
+.. Adding dot_product layer encoder
+.. Adding dot_product layer decoder
+.. Adding dot_product layer hidden-decoder
+.. Adding unflatten layer unflatten
+.. Adding deconv layer deconv
+.. Adding merge layer merge
+.. Adding objective layer obj
+.. Cooking the network
+.. Setting up the resultor
+.. All checks complete, cooking continues
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 24, 24)
+          |- batch norm is OFF
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [1 X 1]
+          |- stride size [1 X 1]
+          |- input shape [28 28]
+          |- input number of feature maps is 1
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: flatten
+          |        |-=================------------------
+          |        |- type: flatten
+          |        |- output shape: (500, 11520)
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: hidden-encoder
+          |                 |-=================------------------
+          |                 |- type: dot_product
+          |                 |- output shape: (500, 1200)
+          |                 |- batch norm is OFF
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: encoder
+          |                          |-=================------------------
+          |                          |- type: dot_product
+          |                          |- output shape: (500, 64)
+          |                          |- batch norm is OFF
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: decoder
+          |                                   |-=================------------------
+          |                                   |- type: dot_product
+          |                                   |- output shape: (500, 1200)
+          |                                   |- batch norm is OFF
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: hidden-decoder
+          |                                            |-=================------------------
+          |                                            |- type: dot_product
+          |                                            |- output shape: (500, 11520)
+          |                                            |- batch norm is OFF
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: unflatten
+          |                                                     |-=================------------------
+          |                                                     |- type: unflatten
+          |                                                     |- output shape: (500, 20, 24, 24)
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: deconv
+          |                                                              |-=================------------------
+          |                                                              |- type: deconv
+          |                                                              |- output shape: (500, 1, 28, 28)
+          |                                                              |------------------------------------
+          |                                                              |- filter size [5 X 5]
+          |                                                              |- stride size [1 X 1]
+          |                                                              |- input shape [24 24]
+          |                                                              |- input number of feature maps is 20
+          |                                                              |------------------------------------
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |- id: merge
+          |                                                                       |-=================------------------
+          |                                                                       |- type: merge
+          |                                                                       |- output shape: (1,)
+          |                                                                       |------------------------------------
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |- id: obj
+          |                                                                                |-=================------------------
+          |                                                                                |- type: objective
+          |                                                                                |- output shape: (1,)
+          |                                                                                |------------------------------------
+          |-
+          |-
+          |-
+          |- id: merge
+          |-=================------------------
+          |- type: merge
+          |- output shape: (1,)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: obj
+                   |-=================------------------
+                   |- type: objective
+                   |- output shape: (1,)
+                   |------------------------------------
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.278218
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.276154
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.276121
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.276063
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.307704
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.308251
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.308298
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.308301
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 10 Era: 1
+.. Cost                : 0.308301
+.. Early stopping
+.. Training complete.Took 18.9982823833 minutes
+{'type': 'x', 'id': 'data', 'dataset': '_dataset_20329'}
+{'debug_layers': True, 'debug_functions': False, 'rgb_filters': False, 'sample_size': 32, 'frequency': 1, 'root': './experiments/9_autoencoders_cnn_tutorial_128_dataset_20329', 'id': 'main'}
+{'momentum_type': 'nesterov', 'momentum_params': (0.65, 0.95, 30), 'regularization': (0.0001, 0.0001), 'id': 'main', 'optimizer_type': 'rmsprop'}
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Setting up the optimizer
+.. Adding input layer input
+.. Adding conv_pool layer conv
+.. Adding flatten layer flatten
+.. Adding dot_product layer hidden-encoder
+.. Adding dot_product layer encoder
+.. Adding dot_product layer decoder
+.. Adding dot_product layer hidden-decoder
+.. Adding unflatten layer unflatten
+.. Adding deconv layer deconv
+.. Adding merge layer merge
+.. Adding objective layer obj
+.. Cooking the network
+.. Setting up the resultor
+.. All checks complete, cooking continues
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 24, 24)
+          |- batch norm is OFF
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [1 X 1]
+          |- stride size [1 X 1]
+          |- input shape [28 28]
+          |- input number of feature maps is 1
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: flatten
+          |        |-=================------------------
+          |        |- type: flatten
+          |        |- output shape: (500, 11520)
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: hidden-encoder
+          |                 |-=================------------------
+          |                 |- type: dot_product
+          |                 |- output shape: (500, 1200)
+          |                 |- batch norm is OFF
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: encoder
+          |                          |-=================------------------
+          |                          |- type: dot_product
+          |                          |- output shape: (500, 128)
+          |                          |- batch norm is OFF
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: decoder
+          |                                   |-=================------------------
+          |                                   |- type: dot_product
+          |                                   |- output shape: (500, 1200)
+          |                                   |- batch norm is OFF
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: hidden-decoder
+          |                                            |-=================------------------
+          |                                            |- type: dot_product
+          |                                            |- output shape: (500, 11520)
+          |                                            |- batch norm is OFF
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: unflatten
+          |                                                     |-=================------------------
+          |                                                     |- type: unflatten
+          |                                                     |- output shape: (500, 20, 24, 24)
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: deconv
+          |                                                              |-=================------------------
+          |                                                              |- type: deconv
+          |                                                              |- output shape: (500, 1, 28, 28)
+          |                                                              |------------------------------------
+          |                                                              |- filter size [5 X 5]
+          |                                                              |- stride size [1 X 1]
+          |                                                              |- input shape [24 24]
+          |                                                              |- input number of feature maps is 20
+          |                                                              |------------------------------------
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |- id: merge
+          |                                                                       |-=================------------------
+          |                                                                       |- type: merge
+          |                                                                       |- output shape: (1,)
+          |                                                                       |------------------------------------
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |- id: obj
+          |                                                                                |-=================------------------
+          |                                                                                |- type: objective
+          |                                                                                |- output shape: (1,)
+          |                                                                                |------------------------------------
+          |-
+          |-
+          |-
+          |- id: merge
+          |-=================------------------
+          |- type: merge
+          |- output shape: (1,)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: obj
+                   |-=================------------------
+                   |- type: objective
+                   |- output shape: (1,)
+                   |------------------------------------
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.278763
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.276168
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.276105
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.268494
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.308039
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.308276
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.3083
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.308301
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 10 Era: 1
+.. Cost                : 0.308301
+.. Early stopping
+.. Training complete.Took 19.1144913333 minutes
+{'type': 'x', 'id': 'data', 'dataset': '_dataset_20329'}
+{'debug_layers': True, 'debug_functions': False, 'rgb_filters': False, 'sample_size': 32, 'frequency': 1, 'root': './experiments/9_autoencoders_cnn_tutorial_256_dataset_20329', 'id': 'main'}
+{'momentum_type': 'nesterov', 'momentum_params': (0.65, 0.95, 30), 'regularization': (0.0001, 0.0001), 'id': 'main', 'optimizer_type': 'rmsprop'}
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Setting up the optimizer
+.. Adding input layer input
+.. Adding conv_pool layer conv
+.. Adding flatten layer flatten
+.. Adding dot_product layer hidden-encoder
+.. Adding dot_product layer encoder
+.. Adding dot_product layer decoder
+.. Adding dot_product layer hidden-decoder
+.. Adding unflatten layer unflatten
+.. Adding deconv layer deconv
+.. Adding merge layer merge
+.. Adding objective layer obj
+.. Cooking the network
+.. Setting up the resultor
+.. All checks complete, cooking continues
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 24, 24)
+          |- batch norm is OFF
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [1 X 1]
+          |- stride size [1 X 1]
+          |- input shape [28 28]
+          |- input number of feature maps is 1
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: flatten
+          |        |-=================------------------
+          |        |- type: flatten
+          |        |- output shape: (500, 11520)
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: hidden-encoder
+          |                 |-=================------------------
+          |                 |- type: dot_product
+          |                 |- output shape: (500, 1200)
+          |                 |- batch norm is OFF
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: encoder
+          |                          |-=================------------------
+          |                          |- type: dot_product
+          |                          |- output shape: (500, 256)
+          |                          |- batch norm is OFF
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: decoder
+          |                                   |-=================------------------
+          |                                   |- type: dot_product
+          |                                   |- output shape: (500, 1200)
+          |                                   |- batch norm is OFF
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: hidden-decoder
+          |                                            |-=================------------------
+          |                                            |- type: dot_product
+          |                                            |- output shape: (500, 11520)
+          |                                            |- batch norm is OFF
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: unflatten
+          |                                                     |-=================------------------
+          |                                                     |- type: unflatten
+          |                                                     |- output shape: (500, 20, 24, 24)
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: deconv
+          |                                                              |-=================------------------
+          |                                                              |- type: deconv
+          |                                                              |- output shape: (500, 1, 28, 28)
+          |                                                              |------------------------------------
+          |                                                              |- filter size [5 X 5]
+          |                                                              |- stride size [1 X 1]
+          |                                                              |- input shape [24 24]
+          |                                                              |- input number of feature maps is 20
+          |                                                              |------------------------------------
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |- id: merge
+          |                                                                       |-=================------------------
+          |                                                                       |- type: merge
+          |                                                                       |- output shape: (1,)
+          |                                                                       |------------------------------------
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |- id: obj
+          |                                                                                |-=================------------------
+          |                                                                                |- type: objective
+          |                                                                                |- output shape: (1,)
+          |                                                                                |------------------------------------
+          |-
+          |-
+          |-
+          |- id: merge
+          |-=================------------------
+          |- type: merge
+          |- output shape: (1,)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: obj
+                   |-=================------------------
+                   |- type: objective
+                   |- output shape: (1,)
+                   |------------------------------------
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.278187
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.255774
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.227414
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.20697
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.283554
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.308288
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.308299
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.308301
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 10 Era: 1
+.. Cost                : 0.308301
+.. Early stopping
+.. Training complete.Took 20.0681352 minutes
+{'type': 'x', 'id': 'data', 'dataset': '_dataset_20329'}
+{'debug_layers': True, 'debug_functions': False, 'rgb_filters': False, 'sample_size': 32, 'frequency': 1, 'root': './experiments/9_autoencoders_cnn_tutorial_512_dataset_20329', 'id': 'main'}
+{'momentum_type': 'nesterov', 'momentum_params': (0.65, 0.95, 30), 'regularization': (0.0001, 0.0001), 'id': 'main', 'optimizer_type': 'rmsprop'}
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Setting up the optimizer
+.. Adding input layer input
+.. Adding conv_pool layer conv
+.. Adding flatten layer flatten
+.. Adding dot_product layer hidden-encoder
+.. Adding dot_product layer encoder
+.. Adding dot_product layer decoder
+.. Adding dot_product layer hidden-decoder
+.. Adding unflatten layer unflatten
+.. Adding deconv layer deconv
+.. Adding merge layer merge
+.. Adding objective layer obj
+.. Cooking the network
+.. Setting up the resultor
+.. All checks complete, cooking continues
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: input
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 1, 28, 28)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: conv
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 24, 24)
+          |- batch norm is OFF
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [1 X 1]
+          |- stride size [1 X 1]
+          |- input shape [28 28]
+          |- input number of feature maps is 1
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: flatten
+          |        |-=================------------------
+          |        |- type: flatten
+          |        |- output shape: (500, 11520)
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: hidden-encoder
+          |                 |-=================------------------
+          |                 |- type: dot_product
+          |                 |- output shape: (500, 1200)
+          |                 |- batch norm is OFF
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: encoder
+          |                          |-=================------------------
+          |                          |- type: dot_product
+          |                          |- output shape: (500, 512)
+          |                          |- batch norm is OFF
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: decoder
+          |                                   |-=================------------------
+          |                                   |- type: dot_product
+          |                                   |- output shape: (500, 1200)
+          |                                   |- batch norm is OFF
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: hidden-decoder
+          |                                            |-=================------------------
+          |                                            |- type: dot_product
+          |                                            |- output shape: (500, 11520)
+          |                                            |- batch norm is OFF
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: unflatten
+          |                                                     |-=================------------------
+          |                                                     |- type: unflatten
+          |                                                     |- output shape: (500, 20, 24, 24)
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: deconv
+          |                                                              |-=================------------------
+          |                                                              |- type: deconv
+          |                                                              |- output shape: (500, 1, 28, 28)
+          |                                                              |------------------------------------
+          |                                                              |- filter size [5 X 5]
+          |                                                              |- stride size [1 X 1]
+          |                                                              |- input shape [24 24]
+          |                                                              |- input number of feature maps is 20
+          |                                                              |------------------------------------
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |- id: merge
+          |                                                                       |-=================------------------
+          |                                                                       |- type: merge
+          |                                                                       |- output shape: (1,)
+          |                                                                       |------------------------------------
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |- id: obj
+          |                                                                                |-=================------------------
+          |                                                                                |- type: objective
+          |                                                                                |- output shape: (1,)
+          |                                                                                |------------------------------------
+          |-
+          |-
+          |-
+          |- id: merge
+          |-=================------------------
+          |- type: merge
+          |- output shape: (1,)
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: obj
+                   |-=================------------------
+                   |- type: objective
+                   |- output shape: (1,)
+                   |------------------------------------
+. Training
+. 
+
+.. Epoch: 0 Era: 0
+.. Cost                : 0.279836
+. 
+
+.. Epoch: 1 Era: 0
+.. Cost                : 0.264283
+. 
+
+.. Epoch: 2 Era: 0
+.. Cost                : 0.235555
+. 
+
+.. Epoch: 3 Era: 0
+.. Cost                : 0.206109
+. 
+
+.. Epoch: 4 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 5 Era: 0
+.. Cost                : 0.308035
+. 
+
+.. Epoch: 6 Era: 0
+.. Cost                : 0.308277
+. 
+
+.. Epoch: 7 Era: 0
+.. Cost                : 0.3083
+. 
+
+.. Epoch: 8 Era: 0
+.. Cost                : 0.308301
+. 
+
+.. Epoch: 9 Era: 0
+.. Cost                : 0.308301
+.. Learning rate was already lower than specified. Not changing it.
+. 
+
+.. Epoch: 10 Era: 1
+.. Cost                : 0.308301
+.. Early stopping
+.. Training complete.Took 20.01638885 minutes

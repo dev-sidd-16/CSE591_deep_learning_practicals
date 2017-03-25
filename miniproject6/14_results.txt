@@ -1,0 +1,595 @@
+.. Creating a GAN network
+{'momentum_type': 'nesterov', 'momentum_params': (0.55, 0.9, 20), 'regularization': (1e-05, 1e-05), 'id': 'main', 'optimizer_type': 'adagrad'}
+{'type': 'xy', 'id': 'data', 'dataset': '_dataset_83914'}
+{'debug_layers': False, 'debug_functions': False, 'rgb_filters': True, 'sample_size': 225, 'frequency': 1, 'root': './experiments/lsgan', 'id': 'main'}
+. Initializing the network
+.. Setting up the datastream
+.. Setting up the visualizer
+.. Adding random layer z
+.. Adding dot_product layer G1
+.. Adding dot_product layer G2
+.. Adding unflatten layer G2-unflatten
+.. Adding deconv layer G3
+.. Adding deconv layer G(z)
+.. Adding input layer x
+.. Adding conv_pool layer D1-x
+.. Adding conv_pool layer D1-z
+.. Adding conv_pool layer D2-x
+.. Adding conv_pool layer D2-z
+.. Adding dot_product layer D3-x
+.. Adding flatten layer 12
+.. Adding dot_product layer D3-z
+.. Adding flatten layer 14
+.. Adding dot_product layer D4-x
+.. Adding dot_product layer D4-z
+.. Adding dot_product layer D(x)
+.. Adding dot_product layer D(G(z))
+.. Adding classifier layer softmax
+.. Adding tensor layer discriminator_task
+.. Adding objective layer discriminator_obj
+.. Adding tensor layer objective_task
+.. Adding objective layer generator_obj
+.. Adding objective layer classifier_obj
+.. This method will be deprecated with the implementation of a visualizer,also this works only for tree-like networks. This will cause errors in printing DAG-style networks.
+ |-
+ |-
+ |-
+ |- id: discriminator_task
+ |-=================------------------
+ |- type: tensor
+ |- output shape: (1,)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: discriminator_obj
+          |-=================------------------
+          |- type: objective
+          |- output shape: (1,)
+          |------------------------------------
+ |-
+ |-
+ |-
+ |- id: objective_task
+ |-=================------------------
+ |- type: tensor
+ |- output shape: (1,)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: generator_obj
+          |-=================------------------
+          |- type: objective
+          |- output shape: (1,)
+          |------------------------------------
+ |-
+ |-
+ |-
+ |- id: x
+ |-=================------------------
+ |- type: input
+ |- output shape: (500, 3, 32, 32)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: D1-x
+          |-=================------------------
+          |- type: conv_pool
+          |- output shape: (500, 20, 14, 14)
+          |- batch norm is ON
+          |------------------------------------
+          |- filter size [5 X 5]
+          |- pooling size [2 X 2]
+          |- stride size [1 X 1]
+          |- input shape [32 32]
+          |- input number of feature maps is 3
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: D2-x
+                   |-=================------------------
+                   |- type: conv_pool
+                   |- output shape: (500, 50, 6, 6)
+                   |- batch norm is ON
+                   |------------------------------------
+                   |- filter size [3 X 3]
+                   |- pooling size [2 X 2]
+                   |- stride size [1 X 1]
+                   |- input shape [14 14]
+                   |- input number of feature maps is 20
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: 12
+                            |-=================------------------
+                            |- type: flatten
+                            |- output shape: (500, 1800)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: D3-x
+                                     |-=================------------------
+                                     |- type: dot_product
+                                     |- output shape: (500, 1200)
+                                     |- batch norm is ON
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: D4-x
+                                              |-=================------------------
+                                              |- type: dot_product
+                                              |- output shape: (500, 1200)
+                                              |- batch norm is ON
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: D(x)
+                                                       |-=================------------------
+                                                       |- type: dot_product
+                                                       |- output shape: (500, 1)
+                                                       |- batch norm is OFF
+                                                       |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: softmax
+                                                       |-=================------------------
+                                                       |- type: classifier
+                                                       |- output shape: (500, 10)
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: classifier_obj
+                                                                |-=================------------------
+                                                                |- type: objective
+                                                                |- output shape: (1,)
+                                                                |------------------------------------
+ |-
+ |-
+ |-
+ |- id: z
+ |-=================------------------
+ |- type: random
+ |- output shape: (500, 32)
+ |------------------------------------
+          |-
+          |-
+          |-
+          |- id: G1
+          |-=================------------------
+          |- type: dot_product
+          |- output shape: (500, 1200)
+          |- batch norm is ON
+          |------------------------------------
+          |        |-
+          |        |-
+          |        |-
+          |        |- id: G2
+          |        |-=================------------------
+          |        |- type: dot_product
+          |        |- output shape: (500, 5408)
+          |        |- batch norm is ON
+          |        |------------------------------------
+          |                 |-
+          |                 |-
+          |                 |-
+          |                 |- id: G2-unflatten
+          |                 |-=================------------------
+          |                 |- type: unflatten
+          |                 |- output shape: (500, 32, 13, 13)
+          |                 |------------------------------------
+          |                          |-
+          |                          |-
+          |                          |-
+          |                          |- id: G3
+          |                          |-=================------------------
+          |                          |- type: deconv
+          |                          |- output shape: (500, 32, 28, 28)
+          |                          |- batch norm is ON
+          |                          |------------------------------------
+          |                          |- filter size [3 X 3]
+          |                          |- stride size [2 X 2]
+          |                          |- input shape [13 13]
+          |                          |- input number of feature maps is 32
+          |                          |------------------------------------
+          |                                   |-
+          |                                   |-
+          |                                   |-
+          |                                   |- id: G(z)
+          |                                   |-=================------------------
+          |                                   |- type: deconv
+          |                                   |- output shape: (500, 3, 32, 32)
+          |                                   |------------------------------------
+          |                                   |- filter size [5 X 5]
+          |                                   |- stride size [1 X 1]
+          |                                   |- input shape [28 28]
+          |                                   |- input number of feature maps is 32
+          |                                   |------------------------------------
+          |                                            |-
+          |                                            |-
+          |                                            |-
+          |                                            |- id: D1-z
+          |                                            |-=================------------------
+          |                                            |- type: conv_pool
+          |                                            |- output shape: (500, 20, 14, 14)
+          |                                            |- batch norm is ON
+          |                                            |------------------------------------
+          |                                            |- filter size [5 X 5]
+          |                                            |- pooling size [2 X 2]
+          |                                            |- stride size [1 X 1]
+          |                                            |- input shape [32 32]
+          |                                            |- input number of feature maps is 3
+          |                                            |------------------------------------
+          |                                                     |-
+          |                                                     |-
+          |                                                     |-
+          |                                                     |- id: D2-z
+          |                                                     |-=================------------------
+          |                                                     |- type: conv_pool
+          |                                                     |- output shape: (500, 50, 6, 6)
+          |                                                     |- batch norm is ON
+          |                                                     |------------------------------------
+          |                                                     |- filter size [3 X 3]
+          |                                                     |- pooling size [2 X 2]
+          |                                                     |- stride size [1 X 1]
+          |                                                     |- input shape [14 14]
+          |                                                     |- input number of feature maps is 20
+          |                                                     |------------------------------------
+          |                                                              |-
+          |                                                              |-
+          |                                                              |-
+          |                                                              |- id: 14
+          |                                                              |-=================------------------
+          |                                                              |- type: flatten
+          |                                                              |- output shape: (500, 1800)
+          |                                                              |------------------------------------
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |-
+          |                                                                       |- id: D3-z
+          |                                                                       |-=================------------------
+          |                                                                       |- type: dot_product
+          |                                                                       |- output shape: (500, 1200)
+          |                                                                       |- batch norm is ON
+          |                                                                       |------------------------------------
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |-
+          |                                                                                |- id: D4-z
+          |                                                                                |-=================------------------
+          |                                                                                |- type: dot_product
+          |                                                                                |- output shape: (500, 1200)
+          |                                                                                |- batch norm is ON
+          |                                                                                |------------------------------------
+          |                                                                                         |-
+          |                                                                                         |-
+          |                                                                                         |-
+          |                                                                                         |- id: D(G(z))
+          |                                                                                         |-=================------------------
+          |                                                                                         |- type: dot_product
+          |                                                                                         |- output shape: (500, 1)
+          |                                                                                         |- batch norm is OFF
+          |                                                                                         |------------------------------------
+          |-
+          |-
+          |-
+          |- id: G1
+          |-=================------------------
+          |- type: dot_product
+          |- output shape: (500, 1200)
+          |- batch norm is ON
+          |------------------------------------
+                   |-
+                   |-
+                   |-
+                   |- id: G2
+                   |-=================------------------
+                   |- type: dot_product
+                   |- output shape: (500, 5408)
+                   |- batch norm is ON
+                   |------------------------------------
+                            |-
+                            |-
+                            |-
+                            |- id: G2-unflatten
+                            |-=================------------------
+                            |- type: unflatten
+                            |- output shape: (500, 32, 13, 13)
+                            |------------------------------------
+                                     |-
+                                     |-
+                                     |-
+                                     |- id: G3
+                                     |-=================------------------
+                                     |- type: deconv
+                                     |- output shape: (500, 32, 28, 28)
+                                     |- batch norm is ON
+                                     |------------------------------------
+                                     |- filter size [3 X 3]
+                                     |- stride size [2 X 2]
+                                     |- input shape [13 13]
+                                     |- input number of feature maps is 32
+                                     |------------------------------------
+                                              |-
+                                              |-
+                                              |-
+                                              |- id: G(z)
+                                              |-=================------------------
+                                              |- type: deconv
+                                              |- output shape: (500, 3, 32, 32)
+                                              |------------------------------------
+                                              |- filter size [5 X 5]
+                                              |- stride size [1 X 1]
+                                              |- input shape [28 28]
+                                              |- input number of feature maps is 32
+                                              |------------------------------------
+                                                       |-
+                                                       |-
+                                                       |-
+                                                       |- id: D1-z
+                                                       |-=================------------------
+                                                       |- type: conv_pool
+                                                       |- output shape: (500, 20, 14, 14)
+                                                       |- batch norm is ON
+                                                       |------------------------------------
+                                                       |- filter size [5 X 5]
+                                                       |- pooling size [2 X 2]
+                                                       |- stride size [1 X 1]
+                                                       |- input shape [32 32]
+                                                       |- input number of feature maps is 3
+                                                       |------------------------------------
+                                                                |-
+                                                                |-
+                                                                |-
+                                                                |- id: D2-z
+                                                                |-=================------------------
+                                                                |- type: conv_pool
+                                                                |- output shape: (500, 50, 6, 6)
+                                                                |- batch norm is ON
+                                                                |------------------------------------
+                                                                |- filter size [3 X 3]
+                                                                |- pooling size [2 X 2]
+                                                                |- stride size [1 X 1]
+                                                                |- input shape [14 14]
+                                                                |- input number of feature maps is 20
+                                                                |------------------------------------
+                                                                         |-
+                                                                         |-
+                                                                         |-
+                                                                         |- id: 14
+                                                                         |-=================------------------
+                                                                         |- type: flatten
+                                                                         |- output shape: (500, 1800)
+                                                                         |------------------------------------
+                                                                                  |-
+                                                                                  |-
+                                                                                  |-
+                                                                                  |- id: D3-z
+                                                                                  |-=================------------------
+                                                                                  |- type: dot_product
+                                                                                  |- output shape: (500, 1200)
+                                                                                  |- batch norm is ON
+                                                                                  |------------------------------------
+                                                                                           |-
+                                                                                           |-
+                                                                                           |-
+                                                                                           |- id: D4-z
+                                                                                           |-=================------------------
+                                                                                           |- type: dot_product
+                                                                                           |- output shape: (500, 1200)
+                                                                                           |- batch norm is ON
+                                                                                           |------------------------------------
+                                                                                                    |-
+                                                                                                    |-
+                                                                                                    |-
+                                                                                                    |- id: D(G(z))
+                                                                                                    |-=================------------------
+                                                                                                    |- type: dot_product
+                                                                                                    |- output shape: (500, 1)
+                                                                                                    |- batch norm is OFF
+                                                                                                    |------------------------------------
+.. Cooking the network
+.. Setting up the resultor
+.. Setting up the optimizer
+.. Setting up the optimizer
+.. Setting up the optimizer
+. Training
+.. Pre- Training complete.Took 0.00135953333333 minutes
+.
+
+
+.. Epoch: 0 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.382452
+.. Generator Sigmoid D(G(z))         : 0.762333
+.. Validation accuracy : 54.73
+.. Training accuracy : 56.865
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 1 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.261344
+.. Generator Sigmoid D(G(z))         : 0.714186
+.. Validation accuracy : 62.32
+.. Training accuracy : 66.29
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 2 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.249078
+.. Generator Sigmoid D(G(z))         : 0.750435
+.. Validation accuracy : 65.48
+.. Training accuracy : 71.605
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 3 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.401434
+.. Generator Sigmoid D(G(z))         : 0.755803
+.. Validation accuracy : 66.47
+.. Training accuracy : 74.49
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 4 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.252514
+.. Generator Sigmoid D(G(z))         : 0.765099
+.. Validation accuracy : 68.31
+.. Training accuracy : 78.3025
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 5 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.225244
+.. Generator Sigmoid D(G(z))         : 0.757442
+.. Validation accuracy : 68.53
+.. Training accuracy : 80.2875
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 6 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.228811
+.. Generator Sigmoid D(G(z))         : 0.776065
+.. Validation accuracy : 68.94
+.. Training accuracy : 82.41
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 7 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.199897
+.. Generator Sigmoid D(G(z))         : 0.7849
+.. Validation accuracy : 69.59
+.. Training accuracy : 85.06
+.. Best training accuracy
+.. Best validation accuracy
+.
+
+
+.. Epoch: 8 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.229422
+.. Generator Sigmoid D(G(z))         : 0.7867
+.. Validation accuracy : 69.54
+.. Training accuracy : 86.62
+.. Best training accuracy
+.
+
+
+.. Epoch: 9 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.199124
+.. Generator Sigmoid D(G(z))         : 0.729262
+.. Validation accuracy : 69.42
+.. Training accuracy : 87.4175
+.. Best training accuracy
+.
+
+
+.. Epoch: 10 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.21526
+.. Generator Sigmoid D(G(z))         : 0.73178
+.. Validation accuracy : 68.95
+.. Training accuracy : 88.27
+.. Best training accuracy
+.
+
+
+.. Epoch: 11 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.185593
+.. Generator Sigmoid D(G(z))         : 0.719862
+.. Validation accuracy : 69.36
+.. Training accuracy : 89.6275
+.. Best training accuracy
+.
+
+
+.. Epoch: 12 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.212021
+.. Generator Sigmoid D(G(z))         : 0.711673
+.. Validation accuracy : 69.33
+.. Training accuracy : 90.65
+.. Best training accuracy
+.
+
+
+.. Epoch: 13 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.179728
+.. Generator Sigmoid D(G(z))         : 0.723768
+.. Validation accuracy : 69.08
+.. Training accuracy : 91.08
+.. Best training accuracy
+.
+
+
+.. Epoch: 14 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.205481
+.. Generator Sigmoid D(G(z))         : 0.752772
+.. Validation accuracy : 69.12
+.. Training accuracy : 92.125
+.. Best training accuracy
+.
+
+
+.. Epoch: 15 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.192073
+.. Generator Sigmoid D(G(z))         : 0.733523
+.. Validation accuracy : 69.15
+.. Training accuracy : 92.795
+.. Best training accuracy
+.
+
+
+.. Epoch: 16 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.194596
+.. Generator Sigmoid D(G(z))         : 0.768678
+.. Validation accuracy : 69.41
+.. Training accuracy : 93.555
+.. Best training accuracy
+.
+
+
+.. Epoch: 17 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.219469
+.. Generator Sigmoid D(G(z))         : 0.740258
+.. Validation accuracy : 69.06
+.. Training accuracy : 93.6275
+.. Best training accuracy
+.
+
+
+.. Epoch: 18 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.182242
+.. Generator Sigmoid D(G(z))         : 0.758585
+.. Validation accuracy : 69.17
+.. Training accuracy : 94.3075
+.. Best training accuracy
+.
+
+
+.. Epoch: 19 Era: 0
+.. Discriminator Sigmoid D(x)   : 0.193661
+.. Generator Sigmoid D(G(z))         : 0.714176
+.. Validation accuracy : 69.74
+.. Training accuracy : 95.2075
+.. Best training accuracy
+.. Best validation accuracy
+.. Training complete.Took 36.9422957 minutes
